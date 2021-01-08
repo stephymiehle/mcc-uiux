@@ -80,6 +80,8 @@ const googleFonts = [
   },
 ];
 
+const instagramAccessToken = process.env.INSTAGRAM_ACCESS_TOKEN;
+
 export {
   baseUrl,
   siteMetadata,
@@ -88,4 +90,5 @@ export {
   social,
   manifestOptions,
   googleFonts,
+  instagramAccessToken,
 };
