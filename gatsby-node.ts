@@ -1,63 +1,38 @@
 import { GatsbyNode } from 'gatsby';
+import { createFilePath } from 'gatsby-source-filesystem';
 import * as path from 'path';
 
-// export const createPages: GatsbyNode['createPages'] = async ({
-//   graphql,
+const getDataOrPanic = async (query, graphql, reporter) => {
+  const { data, errors } = await graphql(query);
+  if (errors) {
+    reporter.panicOnBuild(`🚨  ERROR: ${errors}`);
+  }
+  return data;
+};
+
+const getChild = (node: any) => {
+  return node.childMarkdownRemark || node.childMdx;
+};
+
+// export const onCreateNode: GatsbyNode['onCreateNode'] = ({
 //   actions,
-//   reporter,
+//   node,
+//   getNode,
 // }) => {
-//   const { createPage } = actions;
-
-//   const { data, errors } = await graphql<any>(
-//     `
-//       {
-//         allFile(filter: { extension: { regex: "/md|js/" } }, limit: 1000) {
-//           edges {
-//             node {
-//               id
-//               name: sourceInstanceName
-//               path: absolutePath
-//               remark: childMarkdownRemark {
-//                 id
-//                 frontmatter {
-//                   layout
-//                   path
-//                 }
-//               }
-//             }
-//           }
-//         }
-//       }
-//     `,
-//   );
-//   if (errors) {
-//     console.log(errors);
-//     reporter.error(errors);
+//   const { createNodeField, createNode } = actions;
+//   if (
+//     node.internal.type === 'Mdx' &&
+//     node.fileAbsolutePath &&
+//     node.internal.fieldOwners.slug !== 'gatsby-plugin-i18n'
+//   ) {
+//     const value = createFilePath({ node, getNode });
+//     console.log({ value, node });
+//     createNodeField({
+//       name: 'slug',
+//       node,
+//       value,
+//     });
 //   }
-
-//   // Create blog posts & pages.
-//   const items = data.allFile.edges;
-//   const posts: any[] = items.filter(({ node }) => /posts/.test(node.name));
-//   posts.forEach(({ node }) => {
-//     if (!node.remark) return;
-//     const { path: pagePath } = node.remark.frontmatter;
-//     createPage({
-//       path: pagePath,
-//       component: null,
-//       context: null,
-//     });
-//   });
-
-//   const pages: any[] = items.filter(({ node }) => /page/.test(node.name));
-//   pages.forEach(({ node }) => {
-//     if (!node.remark) return;
-//     const { path: pagePath } = node.remark.frontmatter;
-//     createPage({
-//       path: pagePath,
-//       component: null,
-//       context: null,
-//     });
-//   });
 // };
 
 export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
