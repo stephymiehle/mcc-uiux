@@ -12,11 +12,16 @@ import { FullWidthContainer } from '../components/FullWidthContainer';
 
 const MdxH2 = (props) => <h2 className="flex mt-12 mb-3 text-3xl" {...props} />;
 
+const MdxFigcaption = (props) => (
+  <figcaption className="text-grey-500" {...props} />
+);
+
 const elements = {
   Blockquote,
   Link,
   FullWidthContainer,
   h2: MdxH2,
+  figcaption: MdxFigcaption,
 };
 
 const DocPageTemplate: React.FC<PageProps<GatsbyTypes.DocTemplateQuery>> = ({
