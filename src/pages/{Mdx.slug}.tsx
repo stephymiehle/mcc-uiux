@@ -22,8 +22,8 @@ const DocPageTemplate: React.FC<PageProps<GatsbyTypes.DocTemplateQuery>> = ({
   return (
     <Layout location={location} title={data.mdx.frontmatter.title}>
       <MDXProvider components={shortcodes}>
-        <div className="container mx-auto">
-          <div className="mx-auto text-lg max-w-prose">
+        <div className="container px-4 mx-auto">
+          <div className="mx-auto md:text-lg max-w-prose">
             <h1 className="my-4 text-4xl">{data.mdx.frontmatter.title}</h1>
             <MDXRenderer>{data.mdx.body}</MDXRenderer>
           </div>

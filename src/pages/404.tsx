@@ -2,9 +2,9 @@ import * as React from 'react';
 
 const NotFoundPage: React.FC = () => {
   return (
-    <div className="h-screen w-screen bg-gray-100 flex items-center justify-center">
+    <div className="h-screen w-screen bg-grey-100 flex items-center justify-center">
       <div className="container">
-        <div className="flex flex-col md:flex-row items-center justify-center px-5 text-gray-700">
+        <div className="flex flex-col md:flex-row items-center justify-center px-5 text-grey-700">
           <div className="flex-1">
             <div className="text-5xl font-dark font-bold">404</div>
             <p className="text-2xl md:text-3xl font-light leading-normal">

@@ -10,10 +10,10 @@ interface IHomepageProps {
 
 const HomePage: React.FC<IHomepageProps> = ({ location, data }) => (
   <Layout location={location}>
-    <section className="text-gray-700 body-font">
+    <section className="text-grey-700 body-font">
       <div className="container flex flex-col items-center px-4 py-6 mx-auto sm:py-12 md:py-24 md:flex-row">
         <div className="flex flex-col items-center mb-12 text-center md:mb-16 lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 md:items-start md:text-left md:mb-0">
-          <h1 className="mb-4 text-3xl font-medium leading-tight text-gray-900 title-font sm:text-4xl">
+          <h1 className="mb-4 text-3xl font-medium leading-tight text-grey-900 title-font sm:text-4xl">
             Hero Element Title
           </h1>
           <p className="mb-8 leading-relaxed">
@@ -30,7 +30,7 @@ const HomePage: React.FC<IHomepageProps> = ({ location, data }) => (
               Button
             </button>
             <button
-              className="inline-flex px-6 py-2 ml-4 text-lg text-gray-700 bg-gray-200 border-0 rounded focus:outline-none hover:bg-gray-300"
+              className="inline-flex px-6 py-2 ml-4 text-lg text-grey-700 bg-grey-200 border-0 rounded focus:outline-none hover:bg-grey-300"
               type="button"
             >
               Button

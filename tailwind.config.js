@@ -8,6 +8,10 @@ const theme = {
       ...colors.teal,
       DEFAULT: colors.teal[500],
     },
+    grey: {
+      ...colors.coolGray,
+      DEFAULT: colors.coolGray[500],
+    },
     secondary: {
       50: '#f3f1e0',
       100: '#e0dcb3',
@@ -25,23 +29,10 @@ const theme = {
       ...colors.green,
       DEFAULT: colors.green[500],
     },
-    muted: {
-      50: '#ededed',
-      100: '#d1d1d1',
-      200: '#b3b1b0',
-      300: '#9a918c',
-      400: '#87786f',
-      500: '#756054',
-      600: '#69574c',
-      700: '#594a42',
-      800: '#4a3e38',
-      900: '#3a302d',
-      DEFAULT: '#594a42',
-    },
   },
   fontFamily: {
     sans: [
-      'Mulish',
+      'Inter',
       '-apple-system',
       'BlinkMacSystemFont',
       'Segoe UI',
@@ -81,4 +72,5 @@ module.exports = {
   theme,
   variants,
   plugins,
+  darkMode: 'media',
 };

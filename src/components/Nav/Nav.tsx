@@ -16,16 +16,19 @@ export const Nav: React.FC = () => {
   useResize(handleResize);
 
   return (
-    <nav className="z-10 w-full py-4 bg-white border-b border-gray-100 shadow-sm md:shadow-none md:bg-transparent md:border-none">
+    <nav className="z-10 w-full py-4 bg-white border-b shadow-sm border-grey-100 dark:bg-grey-900 dark:border-grey-800 md:shadow-none md:bg-transparent md:border-none">
       <div className="container flex flex-wrap items-center justify-between px-4 mx-auto md:flex-row">
-        <Link to="/" className="relative flex items-center mr-6">
-          <span className="text-2xl">Starter</span>
+        <Link
+          to="/"
+          className="relative flex items-center mr-6 text-primary dark:text-primary-200"
+        >
+          <span className="text-2xl">UI/UX at MCC</span>
         </Link>
 
         <div className="block md:hidden">
           <button
             id="nav-toggle"
-            className="flex items-center px-3 py-2 text-gray-400 border border-gray-400 rounded hover:text-gray-300 hover:border-gray-300"
+            className="flex items-center px-3 py-2 border rounded text-grey-400 border-grey-400 hover:text-grey-300 hover:border-grey-300 dark:text-grey-600 dark:hover:text-grey-500 dark:border-grey-600 dark:hover:border-grey-500"
             onClick={toggleNav}
             type="button"
           >
@@ -50,7 +53,7 @@ export const Nav: React.FC = () => {
             <NavLink to="/">Home</NavLink>
             <NavLink to="/about/">About</NavLink>
             <NavLink to="#">
-              <span className="relative inline-block px-3 py-1 text-base uppercase transition-colors duration-200 ease-in-out bg-white border-2 rounded text-primary border-primary fold-bold hover:bg-primary-500 hover:text-white">
+              <span className="relative inline-block px-3 py-1 text-base uppercase transition-colors duration-200 ease-in-out border-2 rounded text-primary border-primary hover:bg-primary-500 hover:text-white">
                 Sign Up
               </span>
             </NavLink>

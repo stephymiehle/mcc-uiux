@@ -75,7 +75,7 @@ const manifestOptions = {
 
 const googleFonts = [
   {
-    family: 'Mulish',
+    family: 'Inter',
     variable: true,
     weights: ['300..700'],
   },

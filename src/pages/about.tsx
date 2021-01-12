@@ -10,7 +10,7 @@ interface IAboutPageProps {
 
 const AboutPage: React.FC<IAboutPageProps> = ({ location, data }) => (
   <Layout location={location} title="About">
-    <section className="text-gray-700 body-font">
+    <section className="text-grey-700 body-font">
       <div className="container flex flex-col px-4 py-12 mx-auto md:py-24">
         <div className="mx-auto lg:w-4/6">
           <div className="h-64 overflow-hidden rounded-lg shadow">
@@ -22,7 +22,7 @@ const AboutPage: React.FC<IAboutPageProps> = ({ location, data }) => (
           </div>
           <div className="flex flex-col mt-10 sm:flex-row">
             <div className="text-center sm:w-1/3 sm:pr-8 sm:py-8">
-              <div className="inline-flex items-center justify-center w-20 h-20 text-gray-400 bg-gray-200 rounded-full">
+              <div className="inline-flex items-center justify-center w-20 h-20 text-grey-400 bg-grey-200 rounded-full">
                 <svg
                   fill="none"
                   stroke="currentColor"
@@ -37,17 +37,17 @@ const AboutPage: React.FC<IAboutPageProps> = ({ location, data }) => (
                 </svg>
               </div>
               <div className="flex flex-col items-center justify-center text-center">
-                <h2 className="mt-4 text-lg font-medium text-gray-900 title-font">
+                <h2 className="mt-4 text-lg font-medium text-grey-900 title-font">
                   Company Name
                 </h2>
                 <div className="w-12 h-1 mt-2 mb-4 rounded bg-primary-500" />
-                <p className="text-base text-gray-600">
+                <p className="text-base text-grey-600">
                   Grey yellow lime, light rainbow, navy blue red magenta mint
                   blue plum.
                 </p>
               </div>
             </div>
-            <div className="pt-4 mt-4 text-center border-t border-gray-300 sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l sm:border-t-0 sm:mt-0 sm:text-left">
+            <div className="pt-4 mt-4 text-center border-t border-grey-300 sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l sm:border-t-0 sm:mt-0 sm:text-left">
               <p className="mb-0 text-lg leading-relaxed">
                 Rainbow cyan fuchsia, silver navy blue plum dark aqua. Purple
                 white orange swatch, olive gray blue, neon crimson silver
@@ -64,8 +64,8 @@ const AboutPage: React.FC<IAboutPageProps> = ({ location, data }) => (
       </div>
     </section>
 
-    <section className="relative text-gray-700 body-font">
-      <div className="absolute inset-0 bg-gray-300">
+    <section className="relative text-grey-700 body-font">
+      <div className="absolute inset-0 bg-grey-300">
         <iframe
           width="100%"
           height="100%"
@@ -79,20 +79,20 @@ const AboutPage: React.FC<IAboutPageProps> = ({ location, data }) => (
       </div>
       <div className="container flex px-4 py-24 mx-auto">
         <div className="relative z-10 flex flex-col w-full p-8 mt-10 bg-white rounded-lg lg:w-1/3 md:w-1/2 md:ml-auto md:mt-0">
-          <h2 className="mb-1 text-lg font-medium text-gray-900 title-font">
+          <h2 className="mb-1 text-lg font-medium text-grey-900 title-font">
             Feedback
           </h2>
-          <p className="mb-5 leading-relaxed text-gray-600">
+          <p className="mb-5 leading-relaxed text-grey-600">
             White aquamarine pastel, saturation black, crimson grey red color
             persimmon navy blue paint; chroma grey gradient.
           </p>
           <input
-            className="px-4 py-2 mb-4 text-base bg-white border border-gray-400 rounded focus:outline-none focus:border-primary-500"
+            className="px-4 py-2 mb-4 text-base bg-white border border-grey-400 rounded focus:outline-none focus:border-primary-500"
             placeholder="Email"
             type="email"
           />
           <textarea
-            className="h-32 px-4 py-2 mb-4 text-base bg-white border border-gray-400 rounded resize-none focus:outline-none focus:border-primary-500"
+            className="h-32 px-4 py-2 mb-4 text-base bg-white border border-grey-400 rounded resize-none focus:outline-none focus:border-primary-500"
             placeholder="Message"
           />
           <button
@@ -101,7 +101,7 @@ const AboutPage: React.FC<IAboutPageProps> = ({ location, data }) => (
           >
             Button
           </button>
-          <p className="mt-3 text-xs text-gray-500">
+          <p className="mt-3 text-xs text-grey-500">
             Grey yellow lime, rainbow light, navy blue red magenta mint blue.
             Hot pink mint charcoal violet, chroma coral.
           </p>

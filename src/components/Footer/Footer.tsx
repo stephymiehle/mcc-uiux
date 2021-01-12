@@ -21,11 +21,11 @@ const Footer: React.FC<IFooterProps> = () => {
     siteBuildMetadata: { buildYear },
   } = data;
   return (
-    <footer className="text-gray-700 body-font">
+    <footer className="text-grey-700 dark:text-grey-400 dark:bg-grey-800">
       <div className="container flex flex-col flex-wrap px-4 py-12 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap">
         <div className="flex-shrink-0 mx-auto text-center md:w-64 md:mx-0 md:text-left">
           <Link
-            className="inline-flex items-center justify-center font-medium text-left text-gray-900 md:justify-start"
+            className="inline-flex items-center justify-center font-medium text-left text-grey-900 dark:text-white md:justify-start"
             to="/"
           >
             <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary-500">
@@ -44,58 +44,84 @@ const Footer: React.FC<IFooterProps> = () => {
             </div>
             <span className="ml-3 text-xl leading-none">{title}</span>
           </Link>
-          <p className="mt-2 text-sm text-gray-500">{description}</p>
+          <p className="mt-2 text-sm text-grey-500 dark:text-grey-300">
+            {description}
+          </p>
         </div>
         <div className="flex flex-wrap flex-grow mt-10 -mb-10 text-center md:pl-20 md:mt-0 md:text-left md:justify-end md:-mx-8">
           <div className="w-full px-4 md:px-8 md:w-auto">
-            <h2 className="mb-3 text-sm font-medium tracking-widest text-gray-900">
+            <h2 className="mb-3 text-sm font-medium tracking-widest text-grey-900 dark:text-white">
               CATEGORIES
             </h2>
             <nav className="mb-10 list-none">
               <li>
-                <Link className="text-gray-600 hover:text-gray-800" to="/">
+                <Link
+                  className="text-grey-600 hover:text-grey-800 dark:text-grey-400 dark:hover:text-grey-200"
+                  to="/"
+                >
                   First Link
                 </Link>
               </li>
               <li>
-                <Link className="text-gray-600 hover:text-gray-800" to="/">
+                <Link
+                  className="text-grey-600 hover:text-grey-800 dark:text-grey-400 dark:hover:text-grey-200"
+                  to="/"
+                >
                   Second Link
                 </Link>
               </li>
               <li>
-                <Link className="text-gray-600 hover:text-gray-800" to="/">
+                <Link
+                  className="text-grey-600 hover:text-grey-800 dark:text-grey-400 dark:hover:text-grey-200"
+                  to="/"
+                >
                   Third Link
                 </Link>
               </li>
               <li>
-                <Link className="text-gray-600 hover:text-gray-800" to="/">
+                <Link
+                  className="text-grey-600 hover:text-grey-800 dark:text-grey-400 dark:hover:text-grey-200"
+                  to="/"
+                >
                   Fourth Link
                 </Link>
               </li>
             </nav>
           </div>
           <div className="w-full px-4 md:px-8 md:w-auto">
-            <h2 className="mb-3 text-sm font-medium tracking-widest text-gray-900">
+            <h2 className="mb-3 text-sm font-medium tracking-widest text-grey-900 dark:text-white">
               CATEGORIES
             </h2>
             <nav className="mb-10 list-none">
               <li>
-                <Link className="text-gray-600 hover:text-gray-800" to="/">
+                <Link
+                  className="text-grey-600 hover:text-grey-800 dark:text-grey-400 dark:hover:text-grey-200"
+                  to="/"
+                >
                   First Link
                 </Link>
               </li>
               <li>
-                <Link className="text-gray-600 hover:text-gray-800" to="/">
+                <Link
+                  className="text-grey-600 hover:text-grey-800 dark:text-grey-400 dark:hover:text-grey-200"
+                  to="/"
+                >
                   Second Link
                 </Link>
               </li>
               <li>
-                <Link className="text-gray-600 hover:text-gray-800" to="/">
+                <Link
+                  className="text-grey-600 hover:text-grey-800 dark:text-grey-400 dark:hover:text-grey-200"
+                  to="/"
+                >
                   Third Link
                 </Link>
               </li>
               <li>
-                <Link className="text-gray-600 hover:text-gray-800" to="/">
+                <Link
+                  className="text-grey-600 hover:text-grey-800 dark:text-grey-400 dark:hover:text-grey-200"
+                  to="/"
+                >
                   Fourth Link
                 </Link>
               </li>
@@ -103,14 +129,14 @@ const Footer: React.FC<IFooterProps> = () => {
           </div>
         </div>
       </div>
-      <div className="bg-blueGray-100">
+      <div className="bg-grey-100 dark:bg-grey-700">
         <div className="container flex flex-col flex-wrap px-4 py-4 mx-auto sm:flex-row">
-          <p className="text-sm text-center text-gray-500 sm:text-left">
+          <p className="text-sm text-center text-grey-500 dark:text-grey-400 sm:text-left">
             © {buildYear} {title} —
             <Link
               to={`https://twitter.com/${twitter.username}`}
               rel="noopener noreferrer"
-              className="ml-1 text-gray-600"
+              className="ml-1 text-grey-600 dark:text-grey-300"
               target="_blank"
             >
               {twitter.username}
@@ -118,7 +144,7 @@ const Footer: React.FC<IFooterProps> = () => {
           </p>
           <span className="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start">
             <Link
-              className="text-gray-500"
+              className="text-grey-500 dark:text-grey-400"
               to={`https://facebook.com/${facebook.username}`}
             >
               <svg
@@ -133,7 +159,7 @@ const Footer: React.FC<IFooterProps> = () => {
               </svg>
             </Link>
             <Link
-              className="ml-3 text-gray-500"
+              className="ml-3 text-grey-500 dark:text-grey-400"
               to={`https://twitter.com/${twitter.username}`}
             >
               <svg
@@ -148,7 +174,7 @@ const Footer: React.FC<IFooterProps> = () => {
               </svg>
             </Link>
             <Link
-              className="ml-3 text-gray-500"
+              className="ml-3 text-grey-500 dark:text-grey-400"
               to={`https://instagram.com/${instagram.username}`}
             >
               <svg
