@@ -42,9 +42,10 @@ const social = {
 };
 
 const siteMetadata = {
-  title: 'Gatsby Starter: Tailwind & TS', // Site title.
-  titleShort: 'Tailwind & TS Starter', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
-  description: 'Starter Gatsby application', // Website description used for RSS feeds/meta description tag.
+  title: 'UI/UX at MCC', // Site title.
+  titleShort: 'UI/UX at MCC', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
+  description:
+    'User Interface and User Experience Design at McHenry County College', // Website description used for RSS feeds/meta description tag.
   pathPrefix,
   siteUrl: baseUrl,
   buildContext: BUILD_CONTEXT,
@@ -74,7 +75,7 @@ const manifestOptions = {
 
 const googleFonts = [
   {
-    family: 'Work Sans',
+    family: 'Mulish',
     variable: true,
     weights: ['300..700'],
   },

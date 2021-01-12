@@ -2824,7 +2824,6 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___legacy
   pluginCreator___pluginOptions___theme_color_in_head
   pluginCreator___pluginOptions___cacheDigest
-  pluginCreator___pluginOptions___trackingId
   pluginCreator___pluginOptions___anonymize
   pluginCreator___pluginOptions___respectDNT
   pluginCreator___pluginOptions___mergeSecurityHeaders
@@ -3121,7 +3120,6 @@ enum SitePluginFieldsEnum {
   pluginOptions___legacy
   pluginOptions___theme_color_in_head
   pluginOptions___cacheDigest
-  pluginOptions___trackingId
   pluginOptions___anonymize
   pluginOptions___respectDNT
   pluginOptions___mergeSecurityHeaders
@@ -3269,7 +3267,6 @@ type SitePluginPluginOptions {
   legacy: Boolean
   theme_color_in_head: Boolean
   cacheDigest: String
-  trackingId: String
   anonymize: Boolean
   respectDNT: Boolean
   mergeSecurityHeaders: Boolean
@@ -3321,7 +3318,6 @@ input SitePluginPluginOptionsFilterInput {
   legacy: BooleanQueryOperatorInput
   theme_color_in_head: BooleanQueryOperatorInput
   cacheDigest: StringQueryOperatorInput
-  trackingId: StringQueryOperatorInput
   anonymize: BooleanQueryOperatorInput
   respectDNT: BooleanQueryOperatorInput
   mergeSecurityHeaders: BooleanQueryOperatorInput

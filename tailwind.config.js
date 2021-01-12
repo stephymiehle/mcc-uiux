@@ -41,7 +41,7 @@ const theme = {
   },
   fontFamily: {
     sans: [
-      'Work Sans',
+      'Mulish',
       '-apple-system',
       'BlinkMacSystemFont',
       'Segoe UI',
