@@ -45,7 +45,7 @@ export const Nav: React.FC = () => {
 
         <div
           id="nav-content"
-          className={`flex-grow w-full pt-2 md:flex md:items-center md:w-auto md:block md:pt-0 transition-all ease-in-out transform md:transform-none md:visible ${
+          className={`flex-grow w-full pt-2 md:flex md:items-center md:w-auto md:pt-0 transition-all ease-in-out transform md:transform-none md:visible ${
             !isOpen && 'hidden'
           }`}
         >
