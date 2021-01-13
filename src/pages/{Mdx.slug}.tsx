@@ -21,9 +21,17 @@ const MdxFigcaption = (props) => (
   <figcaption className="text-grey-500" {...props} />
 );
 
+const MdxLink = (props) => (
+  <Link
+    className="font-semibold underline text-primary-700 hover:text-primary-500 dark:text-primary-200"
+    {...props}
+  />
+);
+
 const elements = {
   Blockquote,
-  Link,
+  a: MdxLink,
+  Link: MdxLink,
   FullWidthContainer,
   h2: MdxH2,
   figcaption: MdxFigcaption,
