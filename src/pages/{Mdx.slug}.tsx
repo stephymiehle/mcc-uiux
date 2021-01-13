@@ -10,7 +10,12 @@ import { Blockquote } from '../components/Blockquote';
 import { Link } from '../components/Link';
 import { FullWidthContainer } from '../components/FullWidthContainer';
 
-const MdxH2 = (props) => <h2 className="flex mt-12 mb-3 text-3xl" {...props} />;
+const MdxH2 = (props) => (
+  <h2
+    className="flex mt-12 mb-3 text-3xl text-black dark:text-white"
+    {...props}
+  />
+);
 
 const MdxFigcaption = (props) => (
   <figcaption className="text-grey-500" {...props} />
@@ -34,7 +39,9 @@ const DocPageTemplate: React.FC<PageProps<GatsbyTypes.DocTemplateQuery>> = ({
       <MDXProvider components={elements}>
         <div className="container px-4 mx-auto">
           <div className="mx-auto md:text-lg max-w-prose">
-            <h1 className="my-4 text-4xl">{data.mdx.frontmatter.title}</h1>
+            <h1 className="mt-4 mb-8 text-5xl text-black dark:text-white">
+              {data.mdx.frontmatter.title}
+            </h1>
             <MDXRenderer>{data.mdx.body}</MDXRenderer>
           </div>
         </div>
