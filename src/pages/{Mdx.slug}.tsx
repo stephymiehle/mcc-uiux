@@ -7,27 +7,14 @@ import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Layout } from '../components/Layout';
 import { Blockquote } from '../components/Blockquote';
-import { Link } from '../components/Link';
 import { License } from '../components/License';
 import { FullWidthContainer } from '../components/FullWidthContainer';
-
-const MdxH2 = (props) => (
-  <h2
-    className="flex mt-12 mb-3 text-3xl text-black dark:text-white"
-    {...props}
-  />
-);
-
-const MdxFigcaption = (props) => (
-  <figcaption className="text-grey-500" {...props} />
-);
-
-const MdxLink = (props) => (
-  <Link
-    className="font-semibold underline text-primary-700 hover:text-primary-500 dark:text-primary-200"
-    {...props}
-  />
-);
+import {
+  MdxH2,
+  MdxFigcaption,
+  MdxFigure,
+  MdxLink,
+} from '../components/MdxComponents';
 
 const elements = {
   Blockquote,
@@ -35,6 +22,7 @@ const elements = {
   Link: MdxLink,
   FullWidthContainer,
   h2: MdxH2,
+  figure: MdxFigure,
   figcaption: MdxFigcaption,
   License,
 };

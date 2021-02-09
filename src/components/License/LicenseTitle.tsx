@@ -16,7 +16,11 @@ export const LicenseTitle: React.FC<LicenseTitleProps> = ({
   const titleOrMediaType = title || mediaType;
 
   if (link) {
-    return <Link to={link}>{wrapWithQuotes(titleOrMediaType, !!title)}</Link>;
+    return (
+      <Link to={link} className="underline">
+        {wrapWithQuotes(titleOrMediaType, !!title)}
+      </Link>
+    );
   }
 
   return <>{wrapWithQuotes(titleOrMediaType, !!title)}</>;

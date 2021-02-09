@@ -5,6 +5,8 @@ interface IOutboundLinkProps {
   href: string;
 }
 
+export type LinkProps = Omit<GatsbyLinkProps<HTMLAnchorElement>, 'ref'>;
+
 const OutboundLink: React.FC<IOutboundLinkProps> = ({
   href,
   children,
@@ -15,11 +17,7 @@ const OutboundLink: React.FC<IOutboundLinkProps> = ({
   </a>
 );
 
-const Link: React.FC<Omit<GatsbyLinkProps<HTMLAnchorElement>, 'ref'>> = ({
-  children,
-  to,
-  ...rest
-}) => {
+const Link: React.FC<LinkProps> = ({ children, to, ...rest }) => {
   const internal = /^\/(?!\/)/.test(to);
 
   if (internal) {

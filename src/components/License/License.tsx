@@ -13,6 +13,7 @@ export interface ILicenseProps {
   ccVersion?: string;
   ccLicense?: CCLicense;
   type: string;
+  className?: string;
 }
 
 export const License: React.FC<ILicenseProps> = ({
@@ -23,32 +24,32 @@ export const License: React.FC<ILicenseProps> = ({
   link,
   ccVersion = '4.0',
   ccLicense,
+  className,
 }) => {
   const ccLicenseLink = `https://creativecommons.org/licenses/${ccLicense}/${ccVersion}/`.toLowerCase();
   const unsplashLicenseLink = 'https://unsplash.com/license';
   return (
-    <>
-      <cite className="text-base not-italic">
-        <LicenseTitle title={title} mediaType={mediaType} link={link} /> by{' '}
-        <LicenseAuthors authors={authors} />
-        {type === 'cc' && (
-          <>
-            {' '}
-            is licensed under{' '}
-            <Link to={ccLicenseLink}>
-              CC {ccLicense} {ccVersion}
-            </Link>
-            .
-          </>
-        )}
-        {type === 'unsplash' && (
-          <>
-            {' '}
-            on <Link to={unsplashLicenseLink}>Unsplash</Link>.
-          </>
-        )}
-      </cite>
-
+    <cite className="block mt-4 not-italic">
+      <LicenseTitle title={title} mediaType={mediaType} link={link} /> by{' '}
+      <LicenseAuthors authors={authors} />
+      {type === 'cc' && (
+        <>
+          {' '}
+          is licensed under{' '}
+          <Link to={ccLicenseLink} className="underline">
+            CC {ccLicense} {ccVersion}
+          </Link>
+        </>
+      )}
+      {type === 'unsplash' && (
+        <>
+          {' '}
+          on{' '}
+          <Link to={unsplashLicenseLink} className="underline">
+            Unsplash
+          </Link>
+        </>
+      )}
       {type === 'cc' && (
         <div role="presentation">
           <CCIcons license={ccLicense} />
@@ -56,6 +57,6 @@ export const License: React.FC<ILicenseProps> = ({
            https://creativecommons.org/licenses/by-nc-nd/4.0/ */}
         </div>
       )}
-    </>
+    </cite>
   );
 };

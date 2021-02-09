@@ -32,7 +32,11 @@ const delimiter = (arr, serial = 'and', d = ',') => {
 
 const LicenseAuthor: React.FC<LicenseAuthorProps> = ({ name, link }) => {
   if (link) {
-    return <Link to={link}>{name}</Link>;
+    return (
+      <Link to={link} className="underline">
+        {name}
+      </Link>
+    );
   }
 
   return <>{[name]}</>;
