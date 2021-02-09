@@ -14,6 +14,9 @@ import {
   MdxFigcaption,
   MdxFigure,
   MdxLink,
+  MdxUl,
+  MdxOl,
+  MdxLi,
 } from '../components/MdxComponents';
 
 const elements = {
@@ -24,6 +27,9 @@ const elements = {
   h2: MdxH2,
   figure: MdxFigure,
   figcaption: MdxFigcaption,
+  ul: MdxUl,
+  ol: MdxOl,
+  li: MdxLi,
   License,
 };
 
