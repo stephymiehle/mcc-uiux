@@ -3945,7 +3945,7 @@
             "description": "",
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "MdxFrontmatterReadingFilterListInput",
+              "name": "MdxFrontmatterReadingFilterInput",
               "ofType": null
             },
             "defaultValue": null
@@ -4009,16 +4009,16 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "MdxFrontmatterReadingFilterListInput",
+        "name": "MdxFrontmatterReadingFilterInput",
         "description": null,
         "fields": null,
         "inputFields": [
           {
-            "name": "elemMatch",
+            "name": "required",
             "description": "",
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "MdxFrontmatterReadingFilterInput",
+              "name": "MdxFrontmatterReadingRequiredFilterListInput",
               "ofType": null
             },
             "defaultValue": null
@@ -4030,7 +4030,28 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "MdxFrontmatterReadingFilterInput",
+        "name": "MdxFrontmatterReadingRequiredFilterListInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "elemMatch",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "MdxFrontmatterReadingRequiredFilterInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "MdxFrontmatterReadingRequiredFilterInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -8518,13 +8539,9 @@
             "description": null,
             "args": [],
             "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "MdxFrontmatterReading",
-                "ofType": null
-              }
+              "kind": "OBJECT",
+              "name": "MdxFrontmatterReading",
+              "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -8573,6 +8590,33 @@
       {
         "kind": "OBJECT",
         "name": "MdxFrontmatterReading",
+        "description": null,
+        "fields": [
+          {
+            "name": "required",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "MdxFrontmatterReadingRequired",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "MdxFrontmatterReadingRequired",
         "description": null,
         "fields": [
           {
@@ -10569,19 +10613,7 @@
             "deprecationReason": null
           },
           {
-            "name": "childrenMdx___frontmatter___reading",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "childrenMdx___frontmatter___reading___title",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "childrenMdx___frontmatter___reading___link",
+            "name": "childrenMdx___frontmatter___reading___required",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -10935,19 +10967,7 @@
             "deprecationReason": null
           },
           {
-            "name": "childMdx___frontmatter___reading",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "childMdx___frontmatter___reading___title",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "childMdx___frontmatter___reading___link",
+            "name": "childMdx___frontmatter___reading___required",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -21837,19 +21857,19 @@
             "deprecationReason": null
           },
           {
-            "name": "frontmatter___reading",
+            "name": "frontmatter___reading___required",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "frontmatter___reading___title",
+            "name": "frontmatter___reading___required___title",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "frontmatter___reading___link",
+            "name": "frontmatter___reading___required___link",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null

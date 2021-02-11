@@ -8,6 +8,7 @@
   "dependencies": {
     "@dream-bit-de/gatsby-plugin-better-page-tree": "^1.6.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
     "@fortawesome/pro-duotone-svg-icons": "^5.15.1",
     "@fortawesome/pro-light-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.14",

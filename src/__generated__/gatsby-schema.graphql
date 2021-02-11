@@ -842,9 +842,7 @@ enum FileFieldsEnum {
   childrenMdx___frontmatter___resources
   childrenMdx___frontmatter___resources___title
   childrenMdx___frontmatter___resources___link
-  childrenMdx___frontmatter___reading
-  childrenMdx___frontmatter___reading___title
-  childrenMdx___frontmatter___reading___link
+  childrenMdx___frontmatter___reading___required
   childrenMdx___slug
   childrenMdx___body
   childrenMdx___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -903,9 +901,7 @@ enum FileFieldsEnum {
   childMdx___frontmatter___resources
   childMdx___frontmatter___resources___title
   childMdx___frontmatter___resources___link
-  childMdx___frontmatter___reading
-  childMdx___frontmatter___reading___title
-  childMdx___frontmatter___reading___link
+  childMdx___frontmatter___reading___required
   childMdx___slug
   childMdx___body
   childMdx___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -1739,9 +1735,9 @@ enum MdxFieldsEnum {
   frontmatter___resources
   frontmatter___resources___title
   frontmatter___resources___link
-  frontmatter___reading
-  frontmatter___reading___title
-  frontmatter___reading___link
+  frontmatter___reading___required
+  frontmatter___reading___required___title
+  frontmatter___reading___required___link
   slug
   body
   excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -1871,27 +1867,35 @@ input MdxFilterListInput {
 type MdxFrontmatter {
   title: String!
   resources: [MdxFrontmatterResources]
-  reading: [MdxFrontmatterReading]
+  reading: MdxFrontmatterReading
 }
 
 input MdxFrontmatterFilterInput {
   title: StringQueryOperatorInput
   resources: MdxFrontmatterResourcesFilterListInput
-  reading: MdxFrontmatterReadingFilterListInput
+  reading: MdxFrontmatterReadingFilterInput
 }
 
 type MdxFrontmatterReading {
+  required: [MdxFrontmatterReadingRequired]
+}
+
+input MdxFrontmatterReadingFilterInput {
+  required: MdxFrontmatterReadingRequiredFilterListInput
+}
+
+type MdxFrontmatterReadingRequired {
   title: String
   link: String
 }
 
-input MdxFrontmatterReadingFilterInput {
+input MdxFrontmatterReadingRequiredFilterInput {
   title: StringQueryOperatorInput
   link: StringQueryOperatorInput
 }
 
-input MdxFrontmatterReadingFilterListInput {
-  elemMatch: MdxFrontmatterReadingFilterInput
+input MdxFrontmatterReadingRequiredFilterListInput {
+  elemMatch: MdxFrontmatterReadingRequiredFilterInput
 }
 
 type MdxFrontmatterResources {

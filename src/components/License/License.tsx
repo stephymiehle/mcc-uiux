@@ -16,6 +16,9 @@ export interface ILicenseProps {
   className?: string;
 }
 
+export const ccLicenseLink = (ccLicense: CCLicense, ccVersion: string) =>
+  `https://creativecommons.org/licenses/${ccLicense}/${ccVersion}/`.toLowerCase();
+
 export const License: React.FC<ILicenseProps> = ({
   type,
   authors, // TODO: author.name = "unknown creator" if author = null
@@ -26,7 +29,6 @@ export const License: React.FC<ILicenseProps> = ({
   ccLicense,
   className,
 }) => {
-  const ccLicenseLink = `https://creativecommons.org/licenses/${ccLicense}/${ccVersion}/`.toLowerCase();
   const unsplashLicenseLink = 'https://unsplash.com/license';
   return (
     <cite className="block mt-4 not-italic">
@@ -35,9 +37,9 @@ export const License: React.FC<ILicenseProps> = ({
       {type === 'cc' && (
         <>
           {' '}
-          is licensed under{' '}
-          <Link to={ccLicenseLink} className="underline">
-            CC {ccLicense} {ccVersion}
+          licensed under{' '}
+          <Link to={ccLicenseLink(ccLicense, ccVersion)} className="underline">
+            CC{ccLicense === 'ZERO' ? '0' : ` ${ccLicense}`} {ccVersion}
           </Link>
         </>
       )}
@@ -51,7 +53,7 @@ export const License: React.FC<ILicenseProps> = ({
         </>
       )}
       {type === 'cc' && (
-        <div role="presentation">
+        <div role="presentation" className="mt-2">
           <CCIcons license={ccLicense} />
           {/* order: by?-nc?-[sa? || nd?]
            https://creativecommons.org/licenses/by-nc-nd/4.0/ */}

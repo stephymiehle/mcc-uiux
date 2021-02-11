@@ -4,6 +4,7 @@ export interface Author {
 }
 
 export type CCLicense =
+  | 'ZERO'
   | 'BY'
   | 'BY-SA'
   | 'BY-ND'

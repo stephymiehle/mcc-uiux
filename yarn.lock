@@ -1574,12 +1574,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fortawesome/fontawesome-common-types@npm:^0.2.34":
+  version: 0.2.34
+  resolution: "@fortawesome/fontawesome-common-types@npm:0.2.34::__archiveUrl=https%3A%2F%2Fnpm.fontawesome.com%2F%40fortawesome%2Ffontawesome-common-types%2F-%2F0.2.34%2Ffontawesome-common-types-0.2.34.tgz"
+  checksum: cbfa1ad00fc80bc162a74c793bd96773001908c94316f0ac817b43e819334e42b21d35db47f78ff542f5e4397d394d7f68c0cbf7a7bf0719b0554cc6dea11cd8
+  languageName: node
+  linkType: hard
+
 "@fortawesome/fontawesome-svg-core@npm:^1.2.32":
   version: 1.2.32
   resolution: "@fortawesome/fontawesome-svg-core@npm:1.2.32::__archiveUrl=https%3A%2F%2Fnpm.fontawesome.com%2F%40fortawesome%2Ffontawesome-svg-core%2F-%2F1.2.32%2Ffontawesome-svg-core-1.2.32.tgz"
   dependencies:
     "@fortawesome/fontawesome-common-types": ^0.2.32
   checksum: 0fd346935c42fbf37eaf19f2a0b7e5f5f6da0a922d9b44326b3db44602143334885ad0fed29c26ce56f5fd54616023655f8a1f0316c68161fd2779ce94756d4b
+  languageName: node
+  linkType: hard
+
+"@fortawesome/free-brands-svg-icons@npm:^5.15.2":
+  version: 5.15.2
+  resolution: "@fortawesome/free-brands-svg-icons@npm:5.15.2::__archiveUrl=https%3A%2F%2Fnpm.fontawesome.com%2F%40fortawesome%2Ffree-brands-svg-icons%2F-%2F5.15.2%2Ffree-brands-svg-icons-5.15.2.tgz"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": ^0.2.34
+  checksum: ccc4b05113caf94eb7a67cb80ad0af025b6d7526638254b885fd023cd59612e8c070b4f253c4038d1e13ca4dbb6304f811dddc10a49d88c986baba21fa0008ef
   languageName: node
   linkType: hard
 
@@ -2842,6 +2858,7 @@ __metadata:
   dependencies:
     "@dream-bit-de/gatsby-plugin-better-page-tree": ^1.6.0
     "@fortawesome/fontawesome-svg-core": ^1.2.32
+    "@fortawesome/free-brands-svg-icons": ^5.15.2
     "@fortawesome/pro-duotone-svg-icons": ^5.15.1
     "@fortawesome/pro-light-svg-icons": ^5.15.1
     "@fortawesome/react-fontawesome": ^0.1.14
