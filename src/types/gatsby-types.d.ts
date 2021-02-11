@@ -730,9 +730,7 @@ enum FileFieldsEnum {
   childrenMdx___frontmatter___resources = 'childrenMdx.frontmatter.resources',
   childrenMdx___frontmatter___resources___title = 'childrenMdx.frontmatter.resources.title',
   childrenMdx___frontmatter___resources___link = 'childrenMdx.frontmatter.resources.link',
-  childrenMdx___frontmatter___reading = 'childrenMdx.frontmatter.reading',
-  childrenMdx___frontmatter___reading___title = 'childrenMdx.frontmatter.reading.title',
-  childrenMdx___frontmatter___reading___link = 'childrenMdx.frontmatter.reading.link',
+  childrenMdx___frontmatter___reading___required = 'childrenMdx.frontmatter.reading.required',
   childrenMdx___slug = 'childrenMdx.slug',
   childrenMdx___body = 'childrenMdx.body',
   childrenMdx___excerpt = 'childrenMdx.excerpt',
@@ -791,9 +789,7 @@ enum FileFieldsEnum {
   childMdx___frontmatter___resources = 'childMdx.frontmatter.resources',
   childMdx___frontmatter___resources___title = 'childMdx.frontmatter.resources.title',
   childMdx___frontmatter___resources___link = 'childMdx.frontmatter.resources.link',
-  childMdx___frontmatter___reading = 'childMdx.frontmatter.reading',
-  childMdx___frontmatter___reading___title = 'childMdx.frontmatter.reading.title',
-  childMdx___frontmatter___reading___link = 'childMdx.frontmatter.reading.link',
+  childMdx___frontmatter___reading___required = 'childMdx.frontmatter.reading.required',
   childMdx___slug = 'childMdx.slug',
   childMdx___body = 'childMdx.body',
   childMdx___excerpt = 'childMdx.excerpt',
@@ -1681,9 +1677,9 @@ enum MdxFieldsEnum {
   frontmatter___resources = 'frontmatter.resources',
   frontmatter___resources___title = 'frontmatter.resources.title',
   frontmatter___resources___link = 'frontmatter.resources.link',
-  frontmatter___reading = 'frontmatter.reading',
-  frontmatter___reading___title = 'frontmatter.reading.title',
-  frontmatter___reading___link = 'frontmatter.reading.link',
+  frontmatter___reading___required = 'frontmatter.reading.required',
+  frontmatter___reading___required___title = 'frontmatter.reading.required.title',
+  frontmatter___reading___required___link = 'frontmatter.reading.required.link',
   slug = 'slug',
   body = 'body',
   excerpt = 'excerpt',
@@ -1813,27 +1809,35 @@ type MdxFilterListInput = {
 type MdxFrontmatter = {
   readonly title: Scalars['String'];
   readonly resources: Maybe<ReadonlyArray<Maybe<MdxFrontmatterResources>>>;
-  readonly reading: Maybe<ReadonlyArray<Maybe<MdxFrontmatterReading>>>;
+  readonly reading: Maybe<MdxFrontmatterReading>;
 };
 
 type MdxFrontmatterFilterInput = {
   readonly title: Maybe<StringQueryOperatorInput>;
   readonly resources: Maybe<MdxFrontmatterResourcesFilterListInput>;
-  readonly reading: Maybe<MdxFrontmatterReadingFilterListInput>;
+  readonly reading: Maybe<MdxFrontmatterReadingFilterInput>;
 };
 
 type MdxFrontmatterReading = {
+  readonly required: Maybe<ReadonlyArray<Maybe<MdxFrontmatterReadingRequired>>>;
+};
+
+type MdxFrontmatterReadingFilterInput = {
+  readonly required: Maybe<MdxFrontmatterReadingRequiredFilterListInput>;
+};
+
+type MdxFrontmatterReadingRequired = {
   readonly title: Maybe<Scalars['String']>;
   readonly link: Maybe<Scalars['String']>;
 };
 
-type MdxFrontmatterReadingFilterInput = {
+type MdxFrontmatterReadingRequiredFilterInput = {
   readonly title: Maybe<StringQueryOperatorInput>;
   readonly link: Maybe<StringQueryOperatorInput>;
 };
 
-type MdxFrontmatterReadingFilterListInput = {
-  readonly elemMatch: Maybe<MdxFrontmatterReadingFilterInput>;
+type MdxFrontmatterReadingRequiredFilterListInput = {
+  readonly elemMatch: Maybe<MdxFrontmatterReadingRequiredFilterInput>;
 };
 
 type MdxFrontmatterResources = {
@@ -3759,7 +3763,10 @@ type DocTemplateQueryVariables = Exact<{
 
 type DocTemplateQuery = { readonly mdx: Maybe<(
     Pick<Mdx, 'slug' | 'body'>
-    & { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'title'>> }
+    & { readonly frontmatter: Maybe<(
+      Pick<MdxFrontmatter, 'title'>
+      & { readonly reading: Maybe<{ readonly required: Maybe<ReadonlyArray<Maybe<Pick<MdxFrontmatterReadingRequired, 'title' | 'link'>>>> }> }
+    )> }
   )> };
 
 type FooterDataQueryVariables = Exact<{ [key: string]: never; }>;
@@ -3767,15 +3774,23 @@ type FooterDataQueryVariables = Exact<{ [key: string]: never; }>;
 
 type FooterDataQuery = { readonly siteBuildMetadata: Maybe<{ buildYear: SiteBuildMetadata['buildTime'] }> };
 
-type SocialImageQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SocialImageQueryQuery = { readonly socialImage: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<Pick<ImageSharpFluid, 'src'>> }> }> };
-
 type SocialQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type SocialQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<{ readonly social: Maybe<{ readonly twitter: Maybe<Pick<SiteSiteMetadataSocialTwitter, 'username'>>, readonly facebook: Maybe<Pick<SiteSiteMetadataSocialFacebook, 'username'>>, readonly instagram: Maybe<Pick<SiteSiteMetadataSocialInstagram, 'username'>> }> }> }> };
+
+type SiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SiteMetadataQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
+      Pick<SiteSiteMetadata, 'siteUrl' | 'title' | 'description'>
+      & { readonly social: Maybe<{ readonly twitter: Maybe<Pick<SiteSiteMetadataSocialTwitter, 'username'>> }> }
+    )> }> };
+
+type SocialImageQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SocialImageQueryQuery = { readonly socialImage: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<Pick<ImageSharpFluid, 'src'>> }> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -3824,13 +3839,5 @@ type GatsbyImageSharpSizes_withWebp_tracedSVGFragment = Pick<ImageSharpSizes, 't
 type GatsbyImageSharpSizes_noBase64Fragment = Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpSizes_withWebp_noBase64Fragment = Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
-
-type SiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SiteMetadataQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
-      Pick<SiteSiteMetadata, 'siteUrl' | 'title' | 'description'>
-      & { readonly social: Maybe<{ readonly twitter: Maybe<Pick<SiteSiteMetadataSocialTwitter, 'username'>> }> }
-    )> }> };
 
 }

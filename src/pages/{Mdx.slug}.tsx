@@ -63,6 +63,12 @@ export const query = graphql`
       body
       frontmatter {
         title
+        reading {
+          required {
+            title
+            link
+          }
+        }
       }
     }
   }
