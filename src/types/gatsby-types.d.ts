@@ -731,6 +731,7 @@ enum FileFieldsEnum {
   childrenMdx___frontmatter___resources___title = 'childrenMdx.frontmatter.resources.title',
   childrenMdx___frontmatter___resources___link = 'childrenMdx.frontmatter.resources.link',
   childrenMdx___frontmatter___reading___required = 'childrenMdx.frontmatter.reading.required',
+  childrenMdx___frontmatter___reading___optional = 'childrenMdx.frontmatter.reading.optional',
   childrenMdx___slug = 'childrenMdx.slug',
   childrenMdx___body = 'childrenMdx.body',
   childrenMdx___excerpt = 'childrenMdx.excerpt',
@@ -790,6 +791,7 @@ enum FileFieldsEnum {
   childMdx___frontmatter___resources___title = 'childMdx.frontmatter.resources.title',
   childMdx___frontmatter___resources___link = 'childMdx.frontmatter.resources.link',
   childMdx___frontmatter___reading___required = 'childMdx.frontmatter.reading.required',
+  childMdx___frontmatter___reading___optional = 'childMdx.frontmatter.reading.optional',
   childMdx___slug = 'childMdx.slug',
   childMdx___body = 'childMdx.body',
   childMdx___excerpt = 'childMdx.excerpt',
@@ -1680,6 +1682,9 @@ enum MdxFieldsEnum {
   frontmatter___reading___required = 'frontmatter.reading.required',
   frontmatter___reading___required___title = 'frontmatter.reading.required.title',
   frontmatter___reading___required___link = 'frontmatter.reading.required.link',
+  frontmatter___reading___optional = 'frontmatter.reading.optional',
+  frontmatter___reading___optional___title = 'frontmatter.reading.optional.title',
+  frontmatter___reading___optional___link = 'frontmatter.reading.optional.link',
   slug = 'slug',
   body = 'body',
   excerpt = 'excerpt',
@@ -1820,10 +1825,26 @@ type MdxFrontmatterFilterInput = {
 
 type MdxFrontmatterReading = {
   readonly required: Maybe<ReadonlyArray<Maybe<MdxFrontmatterReadingRequired>>>;
+  readonly optional: Maybe<ReadonlyArray<Maybe<MdxFrontmatterReadingOptional>>>;
 };
 
 type MdxFrontmatterReadingFilterInput = {
   readonly required: Maybe<MdxFrontmatterReadingRequiredFilterListInput>;
+  readonly optional: Maybe<MdxFrontmatterReadingOptionalFilterListInput>;
+};
+
+type MdxFrontmatterReadingOptional = {
+  readonly title: Maybe<Scalars['String']>;
+  readonly link: Maybe<Scalars['String']>;
+};
+
+type MdxFrontmatterReadingOptionalFilterInput = {
+  readonly title: Maybe<StringQueryOperatorInput>;
+  readonly link: Maybe<StringQueryOperatorInput>;
+};
+
+type MdxFrontmatterReadingOptionalFilterListInput = {
+  readonly elemMatch: Maybe<MdxFrontmatterReadingOptionalFilterInput>;
 };
 
 type MdxFrontmatterReadingRequired = {
@@ -3765,19 +3786,9 @@ type DocTemplateQuery = { readonly mdx: Maybe<(
     Pick<Mdx, 'slug' | 'body'>
     & { readonly frontmatter: Maybe<(
       Pick<MdxFrontmatter, 'title'>
-      & { readonly reading: Maybe<{ readonly required: Maybe<ReadonlyArray<Maybe<Pick<MdxFrontmatterReadingRequired, 'title' | 'link'>>>> }> }
+      & { readonly reading: Maybe<{ readonly required: Maybe<ReadonlyArray<Maybe<Pick<MdxFrontmatterReadingRequired, 'title' | 'link'>>>>, readonly optional: Maybe<ReadonlyArray<Maybe<Pick<MdxFrontmatterReadingOptional, 'title' | 'link'>>>> }> }
     )> }
   )> };
-
-type FooterDataQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type FooterDataQuery = { readonly siteBuildMetadata: Maybe<{ buildYear: SiteBuildMetadata['buildTime'] }> };
-
-type SocialQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SocialQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<{ readonly social: Maybe<{ readonly twitter: Maybe<Pick<SiteSiteMetadataSocialTwitter, 'username'>>, readonly facebook: Maybe<Pick<SiteSiteMetadataSocialFacebook, 'username'>>, readonly instagram: Maybe<Pick<SiteSiteMetadataSocialInstagram, 'username'>> }> }> }> };
 
 type SiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3791,6 +3802,16 @@ type SocialImageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type SocialImageQueryQuery = { readonly socialImage: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<Pick<ImageSharpFluid, 'src'>> }> }> };
+
+type SocialQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SocialQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<{ readonly social: Maybe<{ readonly twitter: Maybe<Pick<SiteSiteMetadataSocialTwitter, 'username'>>, readonly facebook: Maybe<Pick<SiteSiteMetadataSocialFacebook, 'username'>>, readonly instagram: Maybe<Pick<SiteSiteMetadataSocialInstagram, 'username'>> }> }> }> };
+
+type FooterDataQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type FooterDataQuery = { readonly siteBuildMetadata: Maybe<{ buildYear: SiteBuildMetadata['buildTime'] }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

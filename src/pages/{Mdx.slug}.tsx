@@ -68,6 +68,10 @@ export const query = graphql`
             title
             link
           }
+          optional {
+            title
+            link
+          }
         }
       }
     }

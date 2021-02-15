@@ -843,6 +843,7 @@ enum FileFieldsEnum {
   childrenMdx___frontmatter___resources___title
   childrenMdx___frontmatter___resources___link
   childrenMdx___frontmatter___reading___required
+  childrenMdx___frontmatter___reading___optional
   childrenMdx___slug
   childrenMdx___body
   childrenMdx___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -902,6 +903,7 @@ enum FileFieldsEnum {
   childMdx___frontmatter___resources___title
   childMdx___frontmatter___resources___link
   childMdx___frontmatter___reading___required
+  childMdx___frontmatter___reading___optional
   childMdx___slug
   childMdx___body
   childMdx___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -1738,6 +1740,9 @@ enum MdxFieldsEnum {
   frontmatter___reading___required
   frontmatter___reading___required___title
   frontmatter___reading___required___link
+  frontmatter___reading___optional
+  frontmatter___reading___optional___title
+  frontmatter___reading___optional___link
   slug
   body
   excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -1878,10 +1883,26 @@ input MdxFrontmatterFilterInput {
 
 type MdxFrontmatterReading {
   required: [MdxFrontmatterReadingRequired]
+  optional: [MdxFrontmatterReadingOptional]
 }
 
 input MdxFrontmatterReadingFilterInput {
   required: MdxFrontmatterReadingRequiredFilterListInput
+  optional: MdxFrontmatterReadingOptionalFilterListInput
+}
+
+type MdxFrontmatterReadingOptional {
+  title: String
+  link: String
+}
+
+input MdxFrontmatterReadingOptionalFilterInput {
+  title: StringQueryOperatorInput
+  link: StringQueryOperatorInput
+}
+
+input MdxFrontmatterReadingOptionalFilterListInput {
+  elemMatch: MdxFrontmatterReadingOptionalFilterInput
 }
 
 type MdxFrontmatterReadingRequired {
