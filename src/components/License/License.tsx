@@ -52,6 +52,7 @@ export const License: React.FC<ILicenseProps> = ({
           </Link>
         </>
       )}
+      {type === 'public' && <>; public domain</>}
       {type === 'cc' && (
         <div role="presentation" className="mt-2">
           <CCIcons license={ccLicense} />
