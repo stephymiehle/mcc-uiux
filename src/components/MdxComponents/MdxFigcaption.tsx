@@ -2,7 +2,7 @@
 import * as React from 'react';
 
 const MdxFigcaption: React.FC = ({ ...props }) => {
-  return <figcaption className="mt-4" {...props} />;
+  return <figcaption className="mt-4 first:mt-0" {...props} />;
 };
 
 export { MdxFigcaption };

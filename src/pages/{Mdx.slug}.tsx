@@ -8,9 +8,11 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Layout } from '../components/Layout';
 import { Blockquote } from '../components/Blockquote';
 import { License } from '../components/License';
+import { Panel } from '../components/Panel';
 import { FullWidthContainer } from '../components/FullWidthContainer';
 import {
   MdxH2,
+  MdxH3,
   MdxFigcaption,
   MdxFigure,
   MdxLink,
@@ -25,12 +27,14 @@ const elements = {
   Link: MdxLink,
   FullWidthContainer,
   h2: MdxH2,
+  h3: MdxH3,
   figure: MdxFigure,
   figcaption: MdxFigcaption,
   ul: MdxUl,
   ol: MdxOl,
   li: MdxLi,
   License,
+  Panel,
 };
 
 const DocPageTemplate: React.FC<PageProps<GatsbyTypes.DocTemplateQuery>> = ({

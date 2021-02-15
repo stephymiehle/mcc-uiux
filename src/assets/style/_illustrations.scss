@@ -1,0 +1,15 @@
+.fill-none {
+  fill: none;
+}
+
+.cube-illustration {
+  .line,
+  .dashed-line {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 5px;
+  }
+  .dashed-line {
+    stroke-dasharray: 10 10.5;
+  }
+}

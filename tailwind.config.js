@@ -60,7 +60,7 @@ const theme = {
 
 const variants = {
   borderWidth: ['responsive', 'first'],
-  margin: ['responsive', 'last'],
+  margin: ['responsive', 'last', 'first'],
 };
 
 const plugins = [];
