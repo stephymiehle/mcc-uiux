@@ -1,3 +1,7 @@
 .grid > figure {
   margin: 0;
 }
+
+figure .gatsby-resp-image-wrapper {
+  @apply rounded overflow-hidden;
+}
