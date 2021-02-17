@@ -727,11 +727,11 @@ enum FileFieldsEnum {
   childrenMdx___rawBody = 'childrenMdx.rawBody',
   childrenMdx___fileAbsolutePath = 'childrenMdx.fileAbsolutePath',
   childrenMdx___frontmatter___title = 'childrenMdx.frontmatter.title',
+  childrenMdx___frontmatter___reading___required = 'childrenMdx.frontmatter.reading.required',
+  childrenMdx___frontmatter___reading___optional = 'childrenMdx.frontmatter.reading.optional',
   childrenMdx___frontmatter___resources = 'childrenMdx.frontmatter.resources',
   childrenMdx___frontmatter___resources___title = 'childrenMdx.frontmatter.resources.title',
   childrenMdx___frontmatter___resources___link = 'childrenMdx.frontmatter.resources.link',
-  childrenMdx___frontmatter___reading___required = 'childrenMdx.frontmatter.reading.required',
-  childrenMdx___frontmatter___reading___optional = 'childrenMdx.frontmatter.reading.optional',
   childrenMdx___slug = 'childrenMdx.slug',
   childrenMdx___body = 'childrenMdx.body',
   childrenMdx___excerpt = 'childrenMdx.excerpt',
@@ -787,11 +787,11 @@ enum FileFieldsEnum {
   childMdx___rawBody = 'childMdx.rawBody',
   childMdx___fileAbsolutePath = 'childMdx.fileAbsolutePath',
   childMdx___frontmatter___title = 'childMdx.frontmatter.title',
+  childMdx___frontmatter___reading___required = 'childMdx.frontmatter.reading.required',
+  childMdx___frontmatter___reading___optional = 'childMdx.frontmatter.reading.optional',
   childMdx___frontmatter___resources = 'childMdx.frontmatter.resources',
   childMdx___frontmatter___resources___title = 'childMdx.frontmatter.resources.title',
   childMdx___frontmatter___resources___link = 'childMdx.frontmatter.resources.link',
-  childMdx___frontmatter___reading___required = 'childMdx.frontmatter.reading.required',
-  childMdx___frontmatter___reading___optional = 'childMdx.frontmatter.reading.optional',
   childMdx___slug = 'childMdx.slug',
   childMdx___body = 'childMdx.body',
   childMdx___excerpt = 'childMdx.excerpt',
@@ -1676,15 +1676,15 @@ enum MdxFieldsEnum {
   rawBody = 'rawBody',
   fileAbsolutePath = 'fileAbsolutePath',
   frontmatter___title = 'frontmatter.title',
-  frontmatter___resources = 'frontmatter.resources',
-  frontmatter___resources___title = 'frontmatter.resources.title',
-  frontmatter___resources___link = 'frontmatter.resources.link',
   frontmatter___reading___required = 'frontmatter.reading.required',
   frontmatter___reading___required___title = 'frontmatter.reading.required.title',
   frontmatter___reading___required___link = 'frontmatter.reading.required.link',
   frontmatter___reading___optional = 'frontmatter.reading.optional',
   frontmatter___reading___optional___title = 'frontmatter.reading.optional.title',
   frontmatter___reading___optional___link = 'frontmatter.reading.optional.link',
+  frontmatter___resources = 'frontmatter.resources',
+  frontmatter___resources___title = 'frontmatter.resources.title',
+  frontmatter___resources___link = 'frontmatter.resources.link',
   slug = 'slug',
   body = 'body',
   excerpt = 'excerpt',
@@ -1813,14 +1813,14 @@ type MdxFilterListInput = {
 
 type MdxFrontmatter = {
   readonly title: Scalars['String'];
-  readonly resources: Maybe<ReadonlyArray<Maybe<MdxFrontmatterResources>>>;
   readonly reading: Maybe<MdxFrontmatterReading>;
+  readonly resources: Maybe<ReadonlyArray<Maybe<MdxFrontmatterResources>>>;
 };
 
 type MdxFrontmatterFilterInput = {
   readonly title: Maybe<StringQueryOperatorInput>;
-  readonly resources: Maybe<MdxFrontmatterResourcesFilterListInput>;
   readonly reading: Maybe<MdxFrontmatterReadingFilterInput>;
+  readonly resources: Maybe<MdxFrontmatterResourcesFilterListInput>;
 };
 
 type MdxFrontmatterReading = {
@@ -1952,10 +1952,6 @@ type PageTree = Node & {
   readonly isRootPage: Maybe<Scalars['Boolean']>;
   readonly name: Maybe<Scalars['String']>;
   readonly pathRaw: Maybe<Scalars['String']>;
-  /** Returns all children nodes filtered by type PageTree */
-  readonly childrenPageTree: Maybe<ReadonlyArray<Maybe<PageTree>>>;
-  /** Returns the first child node of type PageTree or null if there are no children of given type on this node */
-  readonly childPageTree: Maybe<PageTree>;
 };
 
 type PageTreeConnection = {
@@ -2074,212 +2070,7 @@ enum PageTreeFieldsEnum {
   internal___type = 'internal.type',
   isRootPage = 'isRootPage',
   name = 'name',
-  pathRaw = 'pathRaw',
-  childrenPageTree = 'childrenPageTree',
-  childrenPageTree___id = 'childrenPageTree.id',
-  childrenPageTree___parent___id = 'childrenPageTree.parent.id',
-  childrenPageTree___parent___parent___id = 'childrenPageTree.parent.parent.id',
-  childrenPageTree___parent___parent___children = 'childrenPageTree.parent.parent.children',
-  childrenPageTree___parent___children = 'childrenPageTree.parent.children',
-  childrenPageTree___parent___children___id = 'childrenPageTree.parent.children.id',
-  childrenPageTree___parent___children___children = 'childrenPageTree.parent.children.children',
-  childrenPageTree___parent___internal___content = 'childrenPageTree.parent.internal.content',
-  childrenPageTree___parent___internal___contentDigest = 'childrenPageTree.parent.internal.contentDigest',
-  childrenPageTree___parent___internal___description = 'childrenPageTree.parent.internal.description',
-  childrenPageTree___parent___internal___fieldOwners = 'childrenPageTree.parent.internal.fieldOwners',
-  childrenPageTree___parent___internal___ignoreType = 'childrenPageTree.parent.internal.ignoreType',
-  childrenPageTree___parent___internal___mediaType = 'childrenPageTree.parent.internal.mediaType',
-  childrenPageTree___parent___internal___owner = 'childrenPageTree.parent.internal.owner',
-  childrenPageTree___parent___internal___type = 'childrenPageTree.parent.internal.type',
-  childrenPageTree___children = 'childrenPageTree.children',
-  childrenPageTree___children___id = 'childrenPageTree.children.id',
-  childrenPageTree___children___parent___id = 'childrenPageTree.children.parent.id',
-  childrenPageTree___children___parent___children = 'childrenPageTree.children.parent.children',
-  childrenPageTree___children___children = 'childrenPageTree.children.children',
-  childrenPageTree___children___children___id = 'childrenPageTree.children.children.id',
-  childrenPageTree___children___children___children = 'childrenPageTree.children.children.children',
-  childrenPageTree___children___internal___content = 'childrenPageTree.children.internal.content',
-  childrenPageTree___children___internal___contentDigest = 'childrenPageTree.children.internal.contentDigest',
-  childrenPageTree___children___internal___description = 'childrenPageTree.children.internal.description',
-  childrenPageTree___children___internal___fieldOwners = 'childrenPageTree.children.internal.fieldOwners',
-  childrenPageTree___children___internal___ignoreType = 'childrenPageTree.children.internal.ignoreType',
-  childrenPageTree___children___internal___mediaType = 'childrenPageTree.children.internal.mediaType',
-  childrenPageTree___children___internal___owner = 'childrenPageTree.children.internal.owner',
-  childrenPageTree___children___internal___type = 'childrenPageTree.children.internal.type',
-  childrenPageTree___internal___content = 'childrenPageTree.internal.content',
-  childrenPageTree___internal___contentDigest = 'childrenPageTree.internal.contentDigest',
-  childrenPageTree___internal___description = 'childrenPageTree.internal.description',
-  childrenPageTree___internal___fieldOwners = 'childrenPageTree.internal.fieldOwners',
-  childrenPageTree___internal___ignoreType = 'childrenPageTree.internal.ignoreType',
-  childrenPageTree___internal___mediaType = 'childrenPageTree.internal.mediaType',
-  childrenPageTree___internal___owner = 'childrenPageTree.internal.owner',
-  childrenPageTree___internal___type = 'childrenPageTree.internal.type',
-  childrenPageTree___isRootPage = 'childrenPageTree.isRootPage',
-  childrenPageTree___name = 'childrenPageTree.name',
-  childrenPageTree___pathRaw = 'childrenPageTree.pathRaw',
-  childrenPageTree___childrenPageTree = 'childrenPageTree.childrenPageTree',
-  childrenPageTree___childrenPageTree___id = 'childrenPageTree.childrenPageTree.id',
-  childrenPageTree___childrenPageTree___parent___id = 'childrenPageTree.childrenPageTree.parent.id',
-  childrenPageTree___childrenPageTree___parent___children = 'childrenPageTree.childrenPageTree.parent.children',
-  childrenPageTree___childrenPageTree___children = 'childrenPageTree.childrenPageTree.children',
-  childrenPageTree___childrenPageTree___children___id = 'childrenPageTree.childrenPageTree.children.id',
-  childrenPageTree___childrenPageTree___children___children = 'childrenPageTree.childrenPageTree.children.children',
-  childrenPageTree___childrenPageTree___internal___content = 'childrenPageTree.childrenPageTree.internal.content',
-  childrenPageTree___childrenPageTree___internal___contentDigest = 'childrenPageTree.childrenPageTree.internal.contentDigest',
-  childrenPageTree___childrenPageTree___internal___description = 'childrenPageTree.childrenPageTree.internal.description',
-  childrenPageTree___childrenPageTree___internal___fieldOwners = 'childrenPageTree.childrenPageTree.internal.fieldOwners',
-  childrenPageTree___childrenPageTree___internal___ignoreType = 'childrenPageTree.childrenPageTree.internal.ignoreType',
-  childrenPageTree___childrenPageTree___internal___mediaType = 'childrenPageTree.childrenPageTree.internal.mediaType',
-  childrenPageTree___childrenPageTree___internal___owner = 'childrenPageTree.childrenPageTree.internal.owner',
-  childrenPageTree___childrenPageTree___internal___type = 'childrenPageTree.childrenPageTree.internal.type',
-  childrenPageTree___childrenPageTree___isRootPage = 'childrenPageTree.childrenPageTree.isRootPage',
-  childrenPageTree___childrenPageTree___name = 'childrenPageTree.childrenPageTree.name',
-  childrenPageTree___childrenPageTree___pathRaw = 'childrenPageTree.childrenPageTree.pathRaw',
-  childrenPageTree___childrenPageTree___childrenPageTree = 'childrenPageTree.childrenPageTree.childrenPageTree',
-  childrenPageTree___childrenPageTree___childrenPageTree___id = 'childrenPageTree.childrenPageTree.childrenPageTree.id',
-  childrenPageTree___childrenPageTree___childrenPageTree___children = 'childrenPageTree.childrenPageTree.childrenPageTree.children',
-  childrenPageTree___childrenPageTree___childrenPageTree___isRootPage = 'childrenPageTree.childrenPageTree.childrenPageTree.isRootPage',
-  childrenPageTree___childrenPageTree___childrenPageTree___name = 'childrenPageTree.childrenPageTree.childrenPageTree.name',
-  childrenPageTree___childrenPageTree___childrenPageTree___pathRaw = 'childrenPageTree.childrenPageTree.childrenPageTree.pathRaw',
-  childrenPageTree___childrenPageTree___childrenPageTree___childrenPageTree = 'childrenPageTree.childrenPageTree.childrenPageTree.childrenPageTree',
-  childrenPageTree___childrenPageTree___childPageTree___id = 'childrenPageTree.childrenPageTree.childPageTree.id',
-  childrenPageTree___childrenPageTree___childPageTree___children = 'childrenPageTree.childrenPageTree.childPageTree.children',
-  childrenPageTree___childrenPageTree___childPageTree___isRootPage = 'childrenPageTree.childrenPageTree.childPageTree.isRootPage',
-  childrenPageTree___childrenPageTree___childPageTree___name = 'childrenPageTree.childrenPageTree.childPageTree.name',
-  childrenPageTree___childrenPageTree___childPageTree___pathRaw = 'childrenPageTree.childrenPageTree.childPageTree.pathRaw',
-  childrenPageTree___childrenPageTree___childPageTree___childrenPageTree = 'childrenPageTree.childrenPageTree.childPageTree.childrenPageTree',
-  childrenPageTree___childPageTree___id = 'childrenPageTree.childPageTree.id',
-  childrenPageTree___childPageTree___parent___id = 'childrenPageTree.childPageTree.parent.id',
-  childrenPageTree___childPageTree___parent___children = 'childrenPageTree.childPageTree.parent.children',
-  childrenPageTree___childPageTree___children = 'childrenPageTree.childPageTree.children',
-  childrenPageTree___childPageTree___children___id = 'childrenPageTree.childPageTree.children.id',
-  childrenPageTree___childPageTree___children___children = 'childrenPageTree.childPageTree.children.children',
-  childrenPageTree___childPageTree___internal___content = 'childrenPageTree.childPageTree.internal.content',
-  childrenPageTree___childPageTree___internal___contentDigest = 'childrenPageTree.childPageTree.internal.contentDigest',
-  childrenPageTree___childPageTree___internal___description = 'childrenPageTree.childPageTree.internal.description',
-  childrenPageTree___childPageTree___internal___fieldOwners = 'childrenPageTree.childPageTree.internal.fieldOwners',
-  childrenPageTree___childPageTree___internal___ignoreType = 'childrenPageTree.childPageTree.internal.ignoreType',
-  childrenPageTree___childPageTree___internal___mediaType = 'childrenPageTree.childPageTree.internal.mediaType',
-  childrenPageTree___childPageTree___internal___owner = 'childrenPageTree.childPageTree.internal.owner',
-  childrenPageTree___childPageTree___internal___type = 'childrenPageTree.childPageTree.internal.type',
-  childrenPageTree___childPageTree___isRootPage = 'childrenPageTree.childPageTree.isRootPage',
-  childrenPageTree___childPageTree___name = 'childrenPageTree.childPageTree.name',
-  childrenPageTree___childPageTree___pathRaw = 'childrenPageTree.childPageTree.pathRaw',
-  childrenPageTree___childPageTree___childrenPageTree = 'childrenPageTree.childPageTree.childrenPageTree',
-  childrenPageTree___childPageTree___childrenPageTree___id = 'childrenPageTree.childPageTree.childrenPageTree.id',
-  childrenPageTree___childPageTree___childrenPageTree___children = 'childrenPageTree.childPageTree.childrenPageTree.children',
-  childrenPageTree___childPageTree___childrenPageTree___isRootPage = 'childrenPageTree.childPageTree.childrenPageTree.isRootPage',
-  childrenPageTree___childPageTree___childrenPageTree___name = 'childrenPageTree.childPageTree.childrenPageTree.name',
-  childrenPageTree___childPageTree___childrenPageTree___pathRaw = 'childrenPageTree.childPageTree.childrenPageTree.pathRaw',
-  childrenPageTree___childPageTree___childrenPageTree___childrenPageTree = 'childrenPageTree.childPageTree.childrenPageTree.childrenPageTree',
-  childrenPageTree___childPageTree___childPageTree___id = 'childrenPageTree.childPageTree.childPageTree.id',
-  childrenPageTree___childPageTree___childPageTree___children = 'childrenPageTree.childPageTree.childPageTree.children',
-  childrenPageTree___childPageTree___childPageTree___isRootPage = 'childrenPageTree.childPageTree.childPageTree.isRootPage',
-  childrenPageTree___childPageTree___childPageTree___name = 'childrenPageTree.childPageTree.childPageTree.name',
-  childrenPageTree___childPageTree___childPageTree___pathRaw = 'childrenPageTree.childPageTree.childPageTree.pathRaw',
-  childrenPageTree___childPageTree___childPageTree___childrenPageTree = 'childrenPageTree.childPageTree.childPageTree.childrenPageTree',
-  childPageTree___id = 'childPageTree.id',
-  childPageTree___parent___id = 'childPageTree.parent.id',
-  childPageTree___parent___parent___id = 'childPageTree.parent.parent.id',
-  childPageTree___parent___parent___children = 'childPageTree.parent.parent.children',
-  childPageTree___parent___children = 'childPageTree.parent.children',
-  childPageTree___parent___children___id = 'childPageTree.parent.children.id',
-  childPageTree___parent___children___children = 'childPageTree.parent.children.children',
-  childPageTree___parent___internal___content = 'childPageTree.parent.internal.content',
-  childPageTree___parent___internal___contentDigest = 'childPageTree.parent.internal.contentDigest',
-  childPageTree___parent___internal___description = 'childPageTree.parent.internal.description',
-  childPageTree___parent___internal___fieldOwners = 'childPageTree.parent.internal.fieldOwners',
-  childPageTree___parent___internal___ignoreType = 'childPageTree.parent.internal.ignoreType',
-  childPageTree___parent___internal___mediaType = 'childPageTree.parent.internal.mediaType',
-  childPageTree___parent___internal___owner = 'childPageTree.parent.internal.owner',
-  childPageTree___parent___internal___type = 'childPageTree.parent.internal.type',
-  childPageTree___children = 'childPageTree.children',
-  childPageTree___children___id = 'childPageTree.children.id',
-  childPageTree___children___parent___id = 'childPageTree.children.parent.id',
-  childPageTree___children___parent___children = 'childPageTree.children.parent.children',
-  childPageTree___children___children = 'childPageTree.children.children',
-  childPageTree___children___children___id = 'childPageTree.children.children.id',
-  childPageTree___children___children___children = 'childPageTree.children.children.children',
-  childPageTree___children___internal___content = 'childPageTree.children.internal.content',
-  childPageTree___children___internal___contentDigest = 'childPageTree.children.internal.contentDigest',
-  childPageTree___children___internal___description = 'childPageTree.children.internal.description',
-  childPageTree___children___internal___fieldOwners = 'childPageTree.children.internal.fieldOwners',
-  childPageTree___children___internal___ignoreType = 'childPageTree.children.internal.ignoreType',
-  childPageTree___children___internal___mediaType = 'childPageTree.children.internal.mediaType',
-  childPageTree___children___internal___owner = 'childPageTree.children.internal.owner',
-  childPageTree___children___internal___type = 'childPageTree.children.internal.type',
-  childPageTree___internal___content = 'childPageTree.internal.content',
-  childPageTree___internal___contentDigest = 'childPageTree.internal.contentDigest',
-  childPageTree___internal___description = 'childPageTree.internal.description',
-  childPageTree___internal___fieldOwners = 'childPageTree.internal.fieldOwners',
-  childPageTree___internal___ignoreType = 'childPageTree.internal.ignoreType',
-  childPageTree___internal___mediaType = 'childPageTree.internal.mediaType',
-  childPageTree___internal___owner = 'childPageTree.internal.owner',
-  childPageTree___internal___type = 'childPageTree.internal.type',
-  childPageTree___isRootPage = 'childPageTree.isRootPage',
-  childPageTree___name = 'childPageTree.name',
-  childPageTree___pathRaw = 'childPageTree.pathRaw',
-  childPageTree___childrenPageTree = 'childPageTree.childrenPageTree',
-  childPageTree___childrenPageTree___id = 'childPageTree.childrenPageTree.id',
-  childPageTree___childrenPageTree___parent___id = 'childPageTree.childrenPageTree.parent.id',
-  childPageTree___childrenPageTree___parent___children = 'childPageTree.childrenPageTree.parent.children',
-  childPageTree___childrenPageTree___children = 'childPageTree.childrenPageTree.children',
-  childPageTree___childrenPageTree___children___id = 'childPageTree.childrenPageTree.children.id',
-  childPageTree___childrenPageTree___children___children = 'childPageTree.childrenPageTree.children.children',
-  childPageTree___childrenPageTree___internal___content = 'childPageTree.childrenPageTree.internal.content',
-  childPageTree___childrenPageTree___internal___contentDigest = 'childPageTree.childrenPageTree.internal.contentDigest',
-  childPageTree___childrenPageTree___internal___description = 'childPageTree.childrenPageTree.internal.description',
-  childPageTree___childrenPageTree___internal___fieldOwners = 'childPageTree.childrenPageTree.internal.fieldOwners',
-  childPageTree___childrenPageTree___internal___ignoreType = 'childPageTree.childrenPageTree.internal.ignoreType',
-  childPageTree___childrenPageTree___internal___mediaType = 'childPageTree.childrenPageTree.internal.mediaType',
-  childPageTree___childrenPageTree___internal___owner = 'childPageTree.childrenPageTree.internal.owner',
-  childPageTree___childrenPageTree___internal___type = 'childPageTree.childrenPageTree.internal.type',
-  childPageTree___childrenPageTree___isRootPage = 'childPageTree.childrenPageTree.isRootPage',
-  childPageTree___childrenPageTree___name = 'childPageTree.childrenPageTree.name',
-  childPageTree___childrenPageTree___pathRaw = 'childPageTree.childrenPageTree.pathRaw',
-  childPageTree___childrenPageTree___childrenPageTree = 'childPageTree.childrenPageTree.childrenPageTree',
-  childPageTree___childrenPageTree___childrenPageTree___id = 'childPageTree.childrenPageTree.childrenPageTree.id',
-  childPageTree___childrenPageTree___childrenPageTree___children = 'childPageTree.childrenPageTree.childrenPageTree.children',
-  childPageTree___childrenPageTree___childrenPageTree___isRootPage = 'childPageTree.childrenPageTree.childrenPageTree.isRootPage',
-  childPageTree___childrenPageTree___childrenPageTree___name = 'childPageTree.childrenPageTree.childrenPageTree.name',
-  childPageTree___childrenPageTree___childrenPageTree___pathRaw = 'childPageTree.childrenPageTree.childrenPageTree.pathRaw',
-  childPageTree___childrenPageTree___childrenPageTree___childrenPageTree = 'childPageTree.childrenPageTree.childrenPageTree.childrenPageTree',
-  childPageTree___childrenPageTree___childPageTree___id = 'childPageTree.childrenPageTree.childPageTree.id',
-  childPageTree___childrenPageTree___childPageTree___children = 'childPageTree.childrenPageTree.childPageTree.children',
-  childPageTree___childrenPageTree___childPageTree___isRootPage = 'childPageTree.childrenPageTree.childPageTree.isRootPage',
-  childPageTree___childrenPageTree___childPageTree___name = 'childPageTree.childrenPageTree.childPageTree.name',
-  childPageTree___childrenPageTree___childPageTree___pathRaw = 'childPageTree.childrenPageTree.childPageTree.pathRaw',
-  childPageTree___childrenPageTree___childPageTree___childrenPageTree = 'childPageTree.childrenPageTree.childPageTree.childrenPageTree',
-  childPageTree___childPageTree___id = 'childPageTree.childPageTree.id',
-  childPageTree___childPageTree___parent___id = 'childPageTree.childPageTree.parent.id',
-  childPageTree___childPageTree___parent___children = 'childPageTree.childPageTree.parent.children',
-  childPageTree___childPageTree___children = 'childPageTree.childPageTree.children',
-  childPageTree___childPageTree___children___id = 'childPageTree.childPageTree.children.id',
-  childPageTree___childPageTree___children___children = 'childPageTree.childPageTree.children.children',
-  childPageTree___childPageTree___internal___content = 'childPageTree.childPageTree.internal.content',
-  childPageTree___childPageTree___internal___contentDigest = 'childPageTree.childPageTree.internal.contentDigest',
-  childPageTree___childPageTree___internal___description = 'childPageTree.childPageTree.internal.description',
-  childPageTree___childPageTree___internal___fieldOwners = 'childPageTree.childPageTree.internal.fieldOwners',
-  childPageTree___childPageTree___internal___ignoreType = 'childPageTree.childPageTree.internal.ignoreType',
-  childPageTree___childPageTree___internal___mediaType = 'childPageTree.childPageTree.internal.mediaType',
-  childPageTree___childPageTree___internal___owner = 'childPageTree.childPageTree.internal.owner',
-  childPageTree___childPageTree___internal___type = 'childPageTree.childPageTree.internal.type',
-  childPageTree___childPageTree___isRootPage = 'childPageTree.childPageTree.isRootPage',
-  childPageTree___childPageTree___name = 'childPageTree.childPageTree.name',
-  childPageTree___childPageTree___pathRaw = 'childPageTree.childPageTree.pathRaw',
-  childPageTree___childPageTree___childrenPageTree = 'childPageTree.childPageTree.childrenPageTree',
-  childPageTree___childPageTree___childrenPageTree___id = 'childPageTree.childPageTree.childrenPageTree.id',
-  childPageTree___childPageTree___childrenPageTree___children = 'childPageTree.childPageTree.childrenPageTree.children',
-  childPageTree___childPageTree___childrenPageTree___isRootPage = 'childPageTree.childPageTree.childrenPageTree.isRootPage',
-  childPageTree___childPageTree___childrenPageTree___name = 'childPageTree.childPageTree.childrenPageTree.name',
-  childPageTree___childPageTree___childrenPageTree___pathRaw = 'childPageTree.childPageTree.childrenPageTree.pathRaw',
-  childPageTree___childPageTree___childrenPageTree___childrenPageTree = 'childPageTree.childPageTree.childrenPageTree.childrenPageTree',
-  childPageTree___childPageTree___childPageTree___id = 'childPageTree.childPageTree.childPageTree.id',
-  childPageTree___childPageTree___childPageTree___children = 'childPageTree.childPageTree.childPageTree.children',
-  childPageTree___childPageTree___childPageTree___isRootPage = 'childPageTree.childPageTree.childPageTree.isRootPage',
-  childPageTree___childPageTree___childPageTree___name = 'childPageTree.childPageTree.childPageTree.name',
-  childPageTree___childPageTree___childPageTree___pathRaw = 'childPageTree.childPageTree.childPageTree.pathRaw',
-  childPageTree___childPageTree___childPageTree___childrenPageTree = 'childPageTree.childPageTree.childPageTree.childrenPageTree'
+  pathRaw = 'pathRaw'
 }
 
 type PageTreeFilterInput = {
@@ -2290,12 +2081,6 @@ type PageTreeFilterInput = {
   readonly isRootPage: Maybe<BooleanQueryOperatorInput>;
   readonly name: Maybe<StringQueryOperatorInput>;
   readonly pathRaw: Maybe<StringQueryOperatorInput>;
-  readonly childrenPageTree: Maybe<PageTreeFilterListInput>;
-  readonly childPageTree: Maybe<PageTreeFilterInput>;
-};
-
-type PageTreeFilterListInput = {
-  readonly elemMatch: Maybe<PageTreeFilterInput>;
 };
 
 type PageTreeGroupConnection = {
@@ -2492,15 +2277,15 @@ type Query_sitePageArgs = {
   internalComponentName: Maybe<StringQueryOperatorInput>;
   componentChunkName: Maybe<StringQueryOperatorInput>;
   matchPath: Maybe<StringQueryOperatorInput>;
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
   context: Maybe<SitePageContextFilterInput>;
   pluginCreator: Maybe<SitePluginFilterInput>;
   pluginCreatorId: Maybe<StringQueryOperatorInput>;
   componentPath: Maybe<StringQueryOperatorInput>;
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
 };
 
 
@@ -2572,8 +2357,6 @@ type Query_pageTreeArgs = {
   isRootPage: Maybe<BooleanQueryOperatorInput>;
   name: Maybe<StringQueryOperatorInput>;
   pathRaw: Maybe<StringQueryOperatorInput>;
-  childrenPageTree: Maybe<PageTreeFilterListInput>;
-  childPageTree: Maybe<PageTreeFilterInput>;
 };
 
 
@@ -2981,15 +2764,15 @@ type SitePage = Node & {
   readonly internalComponentName: Scalars['String'];
   readonly componentChunkName: Scalars['String'];
   readonly matchPath: Maybe<Scalars['String']>;
+  readonly id: Scalars['ID'];
+  readonly parent: Maybe<Node>;
+  readonly children: ReadonlyArray<Node>;
+  readonly internal: Internal;
   readonly isCreatedByStatefulCreatePages: Maybe<Scalars['Boolean']>;
   readonly context: Maybe<SitePageContext>;
   readonly pluginCreator: Maybe<SitePlugin>;
   readonly pluginCreatorId: Maybe<Scalars['String']>;
   readonly componentPath: Maybe<Scalars['String']>;
-  readonly id: Scalars['ID'];
-  readonly parent: Maybe<Node>;
-  readonly children: ReadonlyArray<Node>;
-  readonly internal: Internal;
 };
 
 type SitePageConnection = {
@@ -3045,6 +2828,92 @@ enum SitePageFieldsEnum {
   internalComponentName = 'internalComponentName',
   componentChunkName = 'componentChunkName',
   matchPath = 'matchPath',
+  id = 'id',
+  parent___id = 'parent.id',
+  parent___parent___id = 'parent.parent.id',
+  parent___parent___parent___id = 'parent.parent.parent.id',
+  parent___parent___parent___children = 'parent.parent.parent.children',
+  parent___parent___children = 'parent.parent.children',
+  parent___parent___children___id = 'parent.parent.children.id',
+  parent___parent___children___children = 'parent.parent.children.children',
+  parent___parent___internal___content = 'parent.parent.internal.content',
+  parent___parent___internal___contentDigest = 'parent.parent.internal.contentDigest',
+  parent___parent___internal___description = 'parent.parent.internal.description',
+  parent___parent___internal___fieldOwners = 'parent.parent.internal.fieldOwners',
+  parent___parent___internal___ignoreType = 'parent.parent.internal.ignoreType',
+  parent___parent___internal___mediaType = 'parent.parent.internal.mediaType',
+  parent___parent___internal___owner = 'parent.parent.internal.owner',
+  parent___parent___internal___type = 'parent.parent.internal.type',
+  parent___children = 'parent.children',
+  parent___children___id = 'parent.children.id',
+  parent___children___parent___id = 'parent.children.parent.id',
+  parent___children___parent___children = 'parent.children.parent.children',
+  parent___children___children = 'parent.children.children',
+  parent___children___children___id = 'parent.children.children.id',
+  parent___children___children___children = 'parent.children.children.children',
+  parent___children___internal___content = 'parent.children.internal.content',
+  parent___children___internal___contentDigest = 'parent.children.internal.contentDigest',
+  parent___children___internal___description = 'parent.children.internal.description',
+  parent___children___internal___fieldOwners = 'parent.children.internal.fieldOwners',
+  parent___children___internal___ignoreType = 'parent.children.internal.ignoreType',
+  parent___children___internal___mediaType = 'parent.children.internal.mediaType',
+  parent___children___internal___owner = 'parent.children.internal.owner',
+  parent___children___internal___type = 'parent.children.internal.type',
+  parent___internal___content = 'parent.internal.content',
+  parent___internal___contentDigest = 'parent.internal.contentDigest',
+  parent___internal___description = 'parent.internal.description',
+  parent___internal___fieldOwners = 'parent.internal.fieldOwners',
+  parent___internal___ignoreType = 'parent.internal.ignoreType',
+  parent___internal___mediaType = 'parent.internal.mediaType',
+  parent___internal___owner = 'parent.internal.owner',
+  parent___internal___type = 'parent.internal.type',
+  children = 'children',
+  children___id = 'children.id',
+  children___parent___id = 'children.parent.id',
+  children___parent___parent___id = 'children.parent.parent.id',
+  children___parent___parent___children = 'children.parent.parent.children',
+  children___parent___children = 'children.parent.children',
+  children___parent___children___id = 'children.parent.children.id',
+  children___parent___children___children = 'children.parent.children.children',
+  children___parent___internal___content = 'children.parent.internal.content',
+  children___parent___internal___contentDigest = 'children.parent.internal.contentDigest',
+  children___parent___internal___description = 'children.parent.internal.description',
+  children___parent___internal___fieldOwners = 'children.parent.internal.fieldOwners',
+  children___parent___internal___ignoreType = 'children.parent.internal.ignoreType',
+  children___parent___internal___mediaType = 'children.parent.internal.mediaType',
+  children___parent___internal___owner = 'children.parent.internal.owner',
+  children___parent___internal___type = 'children.parent.internal.type',
+  children___children = 'children.children',
+  children___children___id = 'children.children.id',
+  children___children___parent___id = 'children.children.parent.id',
+  children___children___parent___children = 'children.children.parent.children',
+  children___children___children = 'children.children.children',
+  children___children___children___id = 'children.children.children.id',
+  children___children___children___children = 'children.children.children.children',
+  children___children___internal___content = 'children.children.internal.content',
+  children___children___internal___contentDigest = 'children.children.internal.contentDigest',
+  children___children___internal___description = 'children.children.internal.description',
+  children___children___internal___fieldOwners = 'children.children.internal.fieldOwners',
+  children___children___internal___ignoreType = 'children.children.internal.ignoreType',
+  children___children___internal___mediaType = 'children.children.internal.mediaType',
+  children___children___internal___owner = 'children.children.internal.owner',
+  children___children___internal___type = 'children.children.internal.type',
+  children___internal___content = 'children.internal.content',
+  children___internal___contentDigest = 'children.internal.contentDigest',
+  children___internal___description = 'children.internal.description',
+  children___internal___fieldOwners = 'children.internal.fieldOwners',
+  children___internal___ignoreType = 'children.internal.ignoreType',
+  children___internal___mediaType = 'children.internal.mediaType',
+  children___internal___owner = 'children.internal.owner',
+  children___internal___type = 'children.internal.type',
+  internal___content = 'internal.content',
+  internal___contentDigest = 'internal.contentDigest',
+  internal___description = 'internal.description',
+  internal___fieldOwners = 'internal.fieldOwners',
+  internal___ignoreType = 'internal.ignoreType',
+  internal___mediaType = 'internal.mediaType',
+  internal___owner = 'internal.owner',
+  internal___type = 'internal.type',
   isCreatedByStatefulCreatePages = 'isCreatedByStatefulCreatePages',
   context___id = 'context.id',
   context___slug = 'context.slug',
@@ -3145,93 +3014,7 @@ enum SitePageFieldsEnum {
   pluginCreator___packageJson___peerDependencies___version = 'pluginCreator.packageJson.peerDependencies.version',
   pluginCreator___packageJson___keywords = 'pluginCreator.packageJson.keywords',
   pluginCreatorId = 'pluginCreatorId',
-  componentPath = 'componentPath',
-  id = 'id',
-  parent___id = 'parent.id',
-  parent___parent___id = 'parent.parent.id',
-  parent___parent___parent___id = 'parent.parent.parent.id',
-  parent___parent___parent___children = 'parent.parent.parent.children',
-  parent___parent___children = 'parent.parent.children',
-  parent___parent___children___id = 'parent.parent.children.id',
-  parent___parent___children___children = 'parent.parent.children.children',
-  parent___parent___internal___content = 'parent.parent.internal.content',
-  parent___parent___internal___contentDigest = 'parent.parent.internal.contentDigest',
-  parent___parent___internal___description = 'parent.parent.internal.description',
-  parent___parent___internal___fieldOwners = 'parent.parent.internal.fieldOwners',
-  parent___parent___internal___ignoreType = 'parent.parent.internal.ignoreType',
-  parent___parent___internal___mediaType = 'parent.parent.internal.mediaType',
-  parent___parent___internal___owner = 'parent.parent.internal.owner',
-  parent___parent___internal___type = 'parent.parent.internal.type',
-  parent___children = 'parent.children',
-  parent___children___id = 'parent.children.id',
-  parent___children___parent___id = 'parent.children.parent.id',
-  parent___children___parent___children = 'parent.children.parent.children',
-  parent___children___children = 'parent.children.children',
-  parent___children___children___id = 'parent.children.children.id',
-  parent___children___children___children = 'parent.children.children.children',
-  parent___children___internal___content = 'parent.children.internal.content',
-  parent___children___internal___contentDigest = 'parent.children.internal.contentDigest',
-  parent___children___internal___description = 'parent.children.internal.description',
-  parent___children___internal___fieldOwners = 'parent.children.internal.fieldOwners',
-  parent___children___internal___ignoreType = 'parent.children.internal.ignoreType',
-  parent___children___internal___mediaType = 'parent.children.internal.mediaType',
-  parent___children___internal___owner = 'parent.children.internal.owner',
-  parent___children___internal___type = 'parent.children.internal.type',
-  parent___internal___content = 'parent.internal.content',
-  parent___internal___contentDigest = 'parent.internal.contentDigest',
-  parent___internal___description = 'parent.internal.description',
-  parent___internal___fieldOwners = 'parent.internal.fieldOwners',
-  parent___internal___ignoreType = 'parent.internal.ignoreType',
-  parent___internal___mediaType = 'parent.internal.mediaType',
-  parent___internal___owner = 'parent.internal.owner',
-  parent___internal___type = 'parent.internal.type',
-  children = 'children',
-  children___id = 'children.id',
-  children___parent___id = 'children.parent.id',
-  children___parent___parent___id = 'children.parent.parent.id',
-  children___parent___parent___children = 'children.parent.parent.children',
-  children___parent___children = 'children.parent.children',
-  children___parent___children___id = 'children.parent.children.id',
-  children___parent___children___children = 'children.parent.children.children',
-  children___parent___internal___content = 'children.parent.internal.content',
-  children___parent___internal___contentDigest = 'children.parent.internal.contentDigest',
-  children___parent___internal___description = 'children.parent.internal.description',
-  children___parent___internal___fieldOwners = 'children.parent.internal.fieldOwners',
-  children___parent___internal___ignoreType = 'children.parent.internal.ignoreType',
-  children___parent___internal___mediaType = 'children.parent.internal.mediaType',
-  children___parent___internal___owner = 'children.parent.internal.owner',
-  children___parent___internal___type = 'children.parent.internal.type',
-  children___children = 'children.children',
-  children___children___id = 'children.children.id',
-  children___children___parent___id = 'children.children.parent.id',
-  children___children___parent___children = 'children.children.parent.children',
-  children___children___children = 'children.children.children',
-  children___children___children___id = 'children.children.children.id',
-  children___children___children___children = 'children.children.children.children',
-  children___children___internal___content = 'children.children.internal.content',
-  children___children___internal___contentDigest = 'children.children.internal.contentDigest',
-  children___children___internal___description = 'children.children.internal.description',
-  children___children___internal___fieldOwners = 'children.children.internal.fieldOwners',
-  children___children___internal___ignoreType = 'children.children.internal.ignoreType',
-  children___children___internal___mediaType = 'children.children.internal.mediaType',
-  children___children___internal___owner = 'children.children.internal.owner',
-  children___children___internal___type = 'children.children.internal.type',
-  children___internal___content = 'children.internal.content',
-  children___internal___contentDigest = 'children.internal.contentDigest',
-  children___internal___description = 'children.internal.description',
-  children___internal___fieldOwners = 'children.internal.fieldOwners',
-  children___internal___ignoreType = 'children.internal.ignoreType',
-  children___internal___mediaType = 'children.internal.mediaType',
-  children___internal___owner = 'children.internal.owner',
-  children___internal___type = 'children.internal.type',
-  internal___content = 'internal.content',
-  internal___contentDigest = 'internal.contentDigest',
-  internal___description = 'internal.description',
-  internal___fieldOwners = 'internal.fieldOwners',
-  internal___ignoreType = 'internal.ignoreType',
-  internal___mediaType = 'internal.mediaType',
-  internal___owner = 'internal.owner',
-  internal___type = 'internal.type'
+  componentPath = 'componentPath'
 }
 
 type SitePageFilterInput = {
@@ -3240,15 +3023,15 @@ type SitePageFilterInput = {
   readonly internalComponentName: Maybe<StringQueryOperatorInput>;
   readonly componentChunkName: Maybe<StringQueryOperatorInput>;
   readonly matchPath: Maybe<StringQueryOperatorInput>;
+  readonly id: Maybe<StringQueryOperatorInput>;
+  readonly parent: Maybe<NodeFilterInput>;
+  readonly children: Maybe<NodeFilterListInput>;
+  readonly internal: Maybe<InternalFilterInput>;
   readonly isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
   readonly context: Maybe<SitePageContextFilterInput>;
   readonly pluginCreator: Maybe<SitePluginFilterInput>;
   readonly pluginCreatorId: Maybe<StringQueryOperatorInput>;
   readonly componentPath: Maybe<StringQueryOperatorInput>;
-  readonly id: Maybe<StringQueryOperatorInput>;
-  readonly parent: Maybe<NodeFilterInput>;
-  readonly children: Maybe<NodeFilterListInput>;
-  readonly internal: Maybe<InternalFilterInput>;
 };
 
 type SitePageGroupConnection = {
@@ -3790,20 +3573,15 @@ type DocTemplateQuery = { readonly mdx: Maybe<(
     )> }
   )> };
 
-type SocialQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SocialQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<{ readonly social: Maybe<{ readonly twitter: Maybe<Pick<SiteSiteMetadataSocialTwitter, 'username'>>, readonly facebook: Maybe<Pick<SiteSiteMetadataSocialFacebook, 'username'>>, readonly instagram: Maybe<Pick<SiteSiteMetadataSocialInstagram, 'username'>> }> }> }> };
-
 type FooterDataQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type FooterDataQuery = { readonly siteBuildMetadata: Maybe<{ buildYear: SiteBuildMetadata['buildTime'] }> };
 
-type SocialImageQueryQueryVariables = Exact<{ [key: string]: never; }>;
+type SocialQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type SocialImageQueryQuery = { readonly socialImage: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<Pick<ImageSharpFluid, 'src'>> }> }> };
+type SocialQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<{ readonly social: Maybe<{ readonly twitter: Maybe<Pick<SiteSiteMetadataSocialTwitter, 'username'>>, readonly facebook: Maybe<Pick<SiteSiteMetadataSocialFacebook, 'username'>>, readonly instagram: Maybe<Pick<SiteSiteMetadataSocialInstagram, 'username'>> }> }> }> };
 
 type SiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3812,6 +3590,11 @@ type SiteMetadataQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
       Pick<SiteSiteMetadata, 'siteUrl' | 'title' | 'description'>
       & { readonly social: Maybe<{ readonly twitter: Maybe<Pick<SiteSiteMetadataSocialTwitter, 'username'>> }> }
     )> }> };
+
+type SocialImageQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SocialImageQueryQuery = { readonly socialImage: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<Pick<ImageSharpFluid, 'src'>> }> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

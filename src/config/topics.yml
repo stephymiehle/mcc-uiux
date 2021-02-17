@@ -1,0 +1,21 @@
+- label: Color
+  items:
+    - color-blindness
+
+- label: Typography
+  items:
+    - fonts-and-copyright
+
+- label: Layout
+  items:
+    - gestalt-theory
+
+- label: Design Elements
+  items:
+    - app-icons
+    - icons-for-navigation
+    - forms
+
+- label: Interaction
+  items:
+    - animation
