@@ -33,7 +33,7 @@ export const License: React.FC<ILicenseProps> = ({
   return (
     <cite className="block mt-4 not-italic">
       <LicenseTitle title={title} mediaType={mediaType} link={link} />
-      {type === 'copyright' ? ' &copy; ' : ' by '}
+      {type === 'copyright' ? <> &copy; </> : ' by '}
       <LicenseAuthors authors={authors} />
       {type === 'cc' && (
         <>
