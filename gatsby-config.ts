@@ -129,6 +129,12 @@ const config: GatsbyConfig = {
         fonts: googleFonts,
       },
     },
+    {
+      resolve: 'gatsby-plugin-draft',
+      options: {
+        nodeType: 'Mdx',
+      },
+    },
   ],
 };
 
