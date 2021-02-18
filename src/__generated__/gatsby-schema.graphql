@@ -994,8 +994,6 @@ enum FileFieldsEnum {
   childrenMdx___frontmatter___topic___id
   childrenMdx___frontmatter___topic___children
   childrenMdx___frontmatter___title
-  childrenMdx___frontmatter___reading___optional
-  childrenMdx___frontmatter___reading___required
   childrenMdx___frontmatter___resources
   childrenMdx___frontmatter___resources___title
   childrenMdx___frontmatter___resources___link
@@ -1059,8 +1057,6 @@ enum FileFieldsEnum {
   childMdx___frontmatter___topic___id
   childMdx___frontmatter___topic___children
   childMdx___frontmatter___title
-  childMdx___frontmatter___reading___optional
-  childMdx___frontmatter___reading___required
   childMdx___frontmatter___resources
   childMdx___frontmatter___resources___title
   childMdx___frontmatter___resources___link
@@ -1282,14 +1278,12 @@ input FloatQueryOperatorInput {
 type Frontmatter {
   topic: TopicsYaml
   title: String
-  reading: MdxFrontmatterReading
   resources: [MdxFrontmatterResources]
 }
 
 input FrontmatterFilterInput {
   topic: TopicsYamlFilterInput
   title: StringQueryOperatorInput
-  reading: MdxFrontmatterReadingFilterInput
   resources: MdxFrontmatterResourcesFilterListInput
 }
 
@@ -1945,12 +1939,6 @@ enum MdxFieldsEnum {
   frontmatter___topic___internal___owner
   frontmatter___topic___internal___type
   frontmatter___title
-  frontmatter___reading___optional
-  frontmatter___reading___optional___title
-  frontmatter___reading___optional___link
-  frontmatter___reading___required
-  frontmatter___reading___required___title
-  frontmatter___reading___required___link
   frontmatter___resources
   frontmatter___resources___title
   frontmatter___resources___link
@@ -2090,44 +2078,6 @@ input MdxFilterListInput {
 
 type MdxFrontmatter {
   title: String!
-}
-
-type MdxFrontmatterReading {
-  optional: [MdxFrontmatterReadingOptional]
-  required: [MdxFrontmatterReadingRequired]
-}
-
-input MdxFrontmatterReadingFilterInput {
-  optional: MdxFrontmatterReadingOptionalFilterListInput
-  required: MdxFrontmatterReadingRequiredFilterListInput
-}
-
-type MdxFrontmatterReadingOptional {
-  title: String
-  link: String
-}
-
-input MdxFrontmatterReadingOptionalFilterInput {
-  title: StringQueryOperatorInput
-  link: StringQueryOperatorInput
-}
-
-input MdxFrontmatterReadingOptionalFilterListInput {
-  elemMatch: MdxFrontmatterReadingOptionalFilterInput
-}
-
-type MdxFrontmatterReadingRequired {
-  title: String
-  link: String
-}
-
-input MdxFrontmatterReadingRequiredFilterInput {
-  title: StringQueryOperatorInput
-  link: StringQueryOperatorInput
-}
-
-input MdxFrontmatterReadingRequiredFilterListInput {
-  elemMatch: MdxFrontmatterReadingRequiredFilterInput
 }
 
 type MdxFrontmatterResources {
@@ -3523,8 +3473,6 @@ enum TopicsYamlFieldsEnum {
   items___frontmatter___topic___id
   items___frontmatter___topic___children
   items___frontmatter___title
-  items___frontmatter___reading___optional
-  items___frontmatter___reading___required
   items___frontmatter___resources
   items___frontmatter___resources___title
   items___frontmatter___resources___link

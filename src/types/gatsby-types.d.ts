@@ -880,8 +880,6 @@ enum FileFieldsEnum {
   childrenMdx___frontmatter___topic___id = 'childrenMdx.frontmatter.topic.id',
   childrenMdx___frontmatter___topic___children = 'childrenMdx.frontmatter.topic.children',
   childrenMdx___frontmatter___title = 'childrenMdx.frontmatter.title',
-  childrenMdx___frontmatter___reading___optional = 'childrenMdx.frontmatter.reading.optional',
-  childrenMdx___frontmatter___reading___required = 'childrenMdx.frontmatter.reading.required',
   childrenMdx___frontmatter___resources = 'childrenMdx.frontmatter.resources',
   childrenMdx___frontmatter___resources___title = 'childrenMdx.frontmatter.resources.title',
   childrenMdx___frontmatter___resources___link = 'childrenMdx.frontmatter.resources.link',
@@ -945,8 +943,6 @@ enum FileFieldsEnum {
   childMdx___frontmatter___topic___id = 'childMdx.frontmatter.topic.id',
   childMdx___frontmatter___topic___children = 'childMdx.frontmatter.topic.children',
   childMdx___frontmatter___title = 'childMdx.frontmatter.title',
-  childMdx___frontmatter___reading___optional = 'childMdx.frontmatter.reading.optional',
-  childMdx___frontmatter___reading___required = 'childMdx.frontmatter.reading.required',
   childMdx___frontmatter___resources = 'childMdx.frontmatter.resources',
   childMdx___frontmatter___resources___title = 'childMdx.frontmatter.resources.title',
   childMdx___frontmatter___resources___link = 'childMdx.frontmatter.resources.link',
@@ -1168,14 +1164,12 @@ type FloatQueryOperatorInput = {
 type Frontmatter = {
   readonly topic: Maybe<TopicsYaml>;
   readonly title: Maybe<Scalars['String']>;
-  readonly reading: Maybe<MdxFrontmatterReading>;
   readonly resources: Maybe<ReadonlyArray<Maybe<MdxFrontmatterResources>>>;
 };
 
 type FrontmatterFilterInput = {
   readonly topic: Maybe<TopicsYamlFilterInput>;
   readonly title: Maybe<StringQueryOperatorInput>;
-  readonly reading: Maybe<MdxFrontmatterReadingFilterInput>;
   readonly resources: Maybe<MdxFrontmatterResourcesFilterListInput>;
 };
 
@@ -1885,12 +1879,6 @@ enum MdxFieldsEnum {
   frontmatter___topic___internal___owner = 'frontmatter.topic.internal.owner',
   frontmatter___topic___internal___type = 'frontmatter.topic.internal.type',
   frontmatter___title = 'frontmatter.title',
-  frontmatter___reading___optional = 'frontmatter.reading.optional',
-  frontmatter___reading___optional___title = 'frontmatter.reading.optional.title',
-  frontmatter___reading___optional___link = 'frontmatter.reading.optional.link',
-  frontmatter___reading___required = 'frontmatter.reading.required',
-  frontmatter___reading___required___title = 'frontmatter.reading.required.title',
-  frontmatter___reading___required___link = 'frontmatter.reading.required.link',
   frontmatter___resources = 'frontmatter.resources',
   frontmatter___resources___title = 'frontmatter.resources.title',
   frontmatter___resources___link = 'frontmatter.resources.link',
@@ -2030,44 +2018,6 @@ type MdxFilterListInput = {
 
 type MdxFrontmatter = {
   readonly title: Scalars['String'];
-};
-
-type MdxFrontmatterReading = {
-  readonly optional: Maybe<ReadonlyArray<Maybe<MdxFrontmatterReadingOptional>>>;
-  readonly required: Maybe<ReadonlyArray<Maybe<MdxFrontmatterReadingRequired>>>;
-};
-
-type MdxFrontmatterReadingFilterInput = {
-  readonly optional: Maybe<MdxFrontmatterReadingOptionalFilterListInput>;
-  readonly required: Maybe<MdxFrontmatterReadingRequiredFilterListInput>;
-};
-
-type MdxFrontmatterReadingOptional = {
-  readonly title: Maybe<Scalars['String']>;
-  readonly link: Maybe<Scalars['String']>;
-};
-
-type MdxFrontmatterReadingOptionalFilterInput = {
-  readonly title: Maybe<StringQueryOperatorInput>;
-  readonly link: Maybe<StringQueryOperatorInput>;
-};
-
-type MdxFrontmatterReadingOptionalFilterListInput = {
-  readonly elemMatch: Maybe<MdxFrontmatterReadingOptionalFilterInput>;
-};
-
-type MdxFrontmatterReadingRequired = {
-  readonly title: Maybe<Scalars['String']>;
-  readonly link: Maybe<Scalars['String']>;
-};
-
-type MdxFrontmatterReadingRequiredFilterInput = {
-  readonly title: Maybe<StringQueryOperatorInput>;
-  readonly link: Maybe<StringQueryOperatorInput>;
-};
-
-type MdxFrontmatterReadingRequiredFilterListInput = {
-  readonly elemMatch: Maybe<MdxFrontmatterReadingRequiredFilterInput>;
 };
 
 type MdxFrontmatterResources = {
@@ -3805,8 +3755,6 @@ enum TopicsYamlFieldsEnum {
   items___frontmatter___topic___id = 'items.frontmatter.topic.id',
   items___frontmatter___topic___children = 'items.frontmatter.topic.children',
   items___frontmatter___title = 'items.frontmatter.title',
-  items___frontmatter___reading___optional = 'items.frontmatter.reading.optional',
-  items___frontmatter___reading___required = 'items.frontmatter.reading.required',
   items___frontmatter___resources = 'items.frontmatter.resources',
   items___frontmatter___resources___title = 'items.frontmatter.resources.title',
   items___frontmatter___resources___link = 'items.frontmatter.resources.link',
@@ -4026,7 +3974,7 @@ type DocTemplateQuery = { readonly mdx: Maybe<(
           Pick<Mdx, 'slug'>
           & { readonly frontmatter: Maybe<Pick<Frontmatter, 'title'>> }
         )>>> }
-      )>, readonly reading: Maybe<{ readonly required: Maybe<ReadonlyArray<Maybe<Pick<MdxFrontmatterReadingRequired, 'title' | 'link'>>>>, readonly optional: Maybe<ReadonlyArray<Maybe<Pick<MdxFrontmatterReadingOptional, 'title' | 'link'>>>> }> }
+      )>, readonly resources: Maybe<ReadonlyArray<Maybe<Pick<MdxFrontmatterResources, 'title' | 'link'>>>> }
     )> }
   )> };
 

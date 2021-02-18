@@ -77,15 +77,9 @@ export const query = graphql`
             }
           }
         }
-        reading {
-          required {
-            title
-            link
-          }
-          optional {
-            title
-            link
-          }
+        resources {
+          title
+          link
         }
       }
     }
