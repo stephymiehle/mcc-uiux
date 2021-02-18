@@ -844,6 +844,7 @@ enum FileFieldsEnum {
   childrenTopicsYaml
   childrenTopicsYaml___items
   childrenTopicsYaml___items___frontmatter___title
+  childrenTopicsYaml___items___frontmatter___draft
   childrenTopicsYaml___items___frontmatter___resources
   childrenTopicsYaml___items___rawBody
   childrenTopicsYaml___items___fileAbsolutePath
@@ -860,6 +861,7 @@ enum FileFieldsEnum {
   childrenTopicsYaml___items___wordCount___paragraphs @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childrenTopicsYaml___items___wordCount___sentences @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childrenTopicsYaml___items___wordCount___words @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___fields___draft @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childrenTopicsYaml___items___fields___handle @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childrenTopicsYaml___items___gatsbyPath @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childrenTopicsYaml___items___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -917,6 +919,7 @@ enum FileFieldsEnum {
   childrenTopicsYaml___internal___type
   childTopicsYaml___items
   childTopicsYaml___items___frontmatter___title
+  childTopicsYaml___items___frontmatter___draft
   childTopicsYaml___items___frontmatter___resources
   childTopicsYaml___items___rawBody
   childTopicsYaml___items___fileAbsolutePath
@@ -933,6 +936,7 @@ enum FileFieldsEnum {
   childTopicsYaml___items___wordCount___paragraphs @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childTopicsYaml___items___wordCount___sentences @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childTopicsYaml___items___wordCount___words @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___fields___draft @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childTopicsYaml___items___fields___handle @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childTopicsYaml___items___gatsbyPath @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childTopicsYaml___items___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -994,6 +998,7 @@ enum FileFieldsEnum {
   childrenMdx___frontmatter___topic___id
   childrenMdx___frontmatter___topic___children
   childrenMdx___frontmatter___title
+  childrenMdx___frontmatter___draft
   childrenMdx___frontmatter___resources
   childrenMdx___frontmatter___resources___title
   childrenMdx___frontmatter___resources___link
@@ -1014,6 +1019,7 @@ enum FileFieldsEnum {
   childrenMdx___wordCount___paragraphs @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childrenMdx___wordCount___sentences @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childrenMdx___wordCount___words @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenMdx___fields___draft @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childrenMdx___fields___handle @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childrenMdx___gatsbyPath @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childrenMdx___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -1059,6 +1065,7 @@ enum FileFieldsEnum {
   childMdx___frontmatter___topic___id
   childMdx___frontmatter___topic___children
   childMdx___frontmatter___title
+  childMdx___frontmatter___draft
   childMdx___frontmatter___resources
   childMdx___frontmatter___resources___title
   childMdx___frontmatter___resources___link
@@ -1079,6 +1086,7 @@ enum FileFieldsEnum {
   childMdx___wordCount___paragraphs @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childMdx___wordCount___sentences @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childMdx___wordCount___words @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childMdx___fields___draft @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childMdx___fields___handle @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childMdx___gatsbyPath @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childMdx___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -1282,6 +1290,7 @@ input FloatQueryOperatorInput {
 type Frontmatter {
   topic: TopicsYaml
   title: String
+  draft: Boolean
   resources: [MdxFrontmatterResources]
   reading: MdxFrontmatterReading
 }
@@ -1289,6 +1298,7 @@ type Frontmatter {
 input FrontmatterFilterInput {
   topic: TopicsYamlFilterInput
   title: StringQueryOperatorInput
+  draft: BooleanQueryOperatorInput
   resources: MdxFrontmatterResourcesFilterListInput
   reading: MdxFrontmatterReadingFilterInput
 }
@@ -1911,6 +1921,7 @@ type MdxEdge {
 }
 
 type MdxFields {
+  draft: Boolean
   handle: String
 }
 
@@ -1945,6 +1956,7 @@ enum MdxFieldsEnum {
   frontmatter___topic___internal___owner
   frontmatter___topic___internal___type
   frontmatter___title
+  frontmatter___draft
   frontmatter___resources
   frontmatter___resources___title
   frontmatter___resources___link
@@ -1969,6 +1981,7 @@ enum MdxFieldsEnum {
   wordCount___paragraphs @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   wordCount___sentences @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   wordCount___words @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  fields___draft @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   fields___handle @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   gatsbyPath @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -2060,6 +2073,7 @@ enum MdxFieldsEnum {
 }
 
 input MdxFieldsFilterInput {
+  draft: BooleanQueryOperatorInput
   handle: StringQueryOperatorInput
 }
 
@@ -2387,7 +2401,7 @@ type Query {
   allDirectory(filter: DirectoryFilterInput, sort: DirectorySortInput, skip: Int, limit: Int): DirectoryConnection!
   site(buildTime: DateQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput, port: IntQueryOperatorInput, host: StringQueryOperatorInput, pathPrefix: StringQueryOperatorInput, flags: SiteFlagsFilterInput, polyfill: BooleanQueryOperatorInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput): Site
   allSite(filter: SiteFilterInput, sort: SiteSortInput, skip: Int, limit: Int): SiteConnection!
-  sitePage(path: StringQueryOperatorInput, component: StringQueryOperatorInput, internalComponentName: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, matchPath: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, context: SitePageContextFilterInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput, componentPath: StringQueryOperatorInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput): SitePage
+  sitePage(path: StringQueryOperatorInput, component: StringQueryOperatorInput, internalComponentName: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, matchPath: StringQueryOperatorInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, context: SitePageContextFilterInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput, componentPath: StringQueryOperatorInput): SitePage
   allSitePage(filter: SitePageFilterInput, sort: SitePageSortInput, skip: Int, limit: Int): SitePageConnection!
   imageSharp(fixed: ImageSharpFixedFilterInput, resolutions: ImageSharpResolutionsFilterInput, fluid: ImageSharpFluidFilterInput, sizes: ImageSharpSizesFilterInput, gatsbyImageData: JSONQueryOperatorInput, original: ImageSharpOriginalFilterInput, resize: ImageSharpResizeFilterInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput): ImageSharp
   allImageSharp(filter: ImageSharpFilterInput, sort: ImageSharpSortInput, skip: Int, limit: Int): ImageSharpConnection!
@@ -2750,15 +2764,15 @@ type SitePage implements Node {
   internalComponentName: String!
   componentChunkName: String!
   matchPath: String
+  id: ID!
+  parent: Node
+  children: [Node!]!
+  internal: Internal!
   isCreatedByStatefulCreatePages: Boolean
   context: SitePageContext
   pluginCreator: SitePlugin
   pluginCreatorId: String
   componentPath: String
-  id: ID!
-  parent: Node
-  children: [Node!]!
-  internal: Internal!
 }
 
 type SitePageConnection {
@@ -2771,23 +2785,11 @@ type SitePageConnection {
 }
 
 type SitePageContext {
-  id: String
-  slug: String
-  _xparams: SitePageContext_xparams
-}
-
-type SitePageContext_xparams {
-  slug: String
-}
-
-input SitePageContext_xparamsFilterInput {
-  slug: StringQueryOperatorInput
+  handle: String
 }
 
 input SitePageContextFilterInput {
-  id: StringQueryOperatorInput
-  slug: StringQueryOperatorInput
-  _xparams: SitePageContext_xparamsFilterInput
+  handle: StringQueryOperatorInput
 }
 
 type SitePageEdge {
@@ -2802,108 +2804,6 @@ enum SitePageFieldsEnum {
   internalComponentName
   componentChunkName
   matchPath
-  isCreatedByStatefulCreatePages
-  context___id
-  context___slug
-  context____xparams___slug
-  pluginCreator___id
-  pluginCreator___parent___id
-  pluginCreator___parent___parent___id
-  pluginCreator___parent___parent___children
-  pluginCreator___parent___children
-  pluginCreator___parent___children___id
-  pluginCreator___parent___children___children
-  pluginCreator___parent___internal___content
-  pluginCreator___parent___internal___contentDigest
-  pluginCreator___parent___internal___description
-  pluginCreator___parent___internal___fieldOwners
-  pluginCreator___parent___internal___ignoreType
-  pluginCreator___parent___internal___mediaType
-  pluginCreator___parent___internal___owner
-  pluginCreator___parent___internal___type
-  pluginCreator___children
-  pluginCreator___children___id
-  pluginCreator___children___parent___id
-  pluginCreator___children___parent___children
-  pluginCreator___children___children
-  pluginCreator___children___children___id
-  pluginCreator___children___children___children
-  pluginCreator___children___internal___content
-  pluginCreator___children___internal___contentDigest
-  pluginCreator___children___internal___description
-  pluginCreator___children___internal___fieldOwners
-  pluginCreator___children___internal___ignoreType
-  pluginCreator___children___internal___mediaType
-  pluginCreator___children___internal___owner
-  pluginCreator___children___internal___type
-  pluginCreator___internal___content
-  pluginCreator___internal___contentDigest
-  pluginCreator___internal___description
-  pluginCreator___internal___fieldOwners
-  pluginCreator___internal___ignoreType
-  pluginCreator___internal___mediaType
-  pluginCreator___internal___owner
-  pluginCreator___internal___type
-  pluginCreator___resolve
-  pluginCreator___name
-  pluginCreator___version
-  pluginCreator___pluginOptions___allExtensions
-  pluginCreator___pluginOptions___isTSX
-  pluginCreator___pluginOptions___jsxPragma
-  pluginCreator___pluginOptions___outputPath
-  pluginCreator___pluginOptions___emitSchema___src___generated___gatsby_introspection_json
-  pluginCreator___pluginOptions___emitSchema___src___generated___gatsby_schema_graphql
-  pluginCreator___pluginOptions___emitPluginDocuments___src___generated___gatsby_plugin_documents_graphql
-  pluginCreator___pluginOptions___path
-  pluginCreator___pluginOptions___name
-  pluginCreator___pluginOptions___extensions
-  pluginCreator___pluginOptions___short_name
-  pluginCreator___pluginOptions___description
-  pluginCreator___pluginOptions___homepage_url
-  pluginCreator___pluginOptions___start_url
-  pluginCreator___pluginOptions___background_color
-  pluginCreator___pluginOptions___theme_color
-  pluginCreator___pluginOptions___icon
-  pluginCreator___pluginOptions___icon_options___purpose
-  pluginCreator___pluginOptions___cache_busting_mode
-  pluginCreator___pluginOptions___include_favicon
-  pluginCreator___pluginOptions___legacy
-  pluginCreator___pluginOptions___theme_color_in_head
-  pluginCreator___pluginOptions___cacheDigest
-  pluginCreator___pluginOptions___trackingId
-  pluginCreator___pluginOptions___anonymize
-  pluginCreator___pluginOptions___respectDNT
-  pluginCreator___pluginOptions___mergeSecurityHeaders
-  pluginCreator___pluginOptions___mergeLinkHeaders
-  pluginCreator___pluginOptions___mergeCachingHeaders
-  pluginCreator___pluginOptions___postCssPlugins
-  pluginCreator___pluginOptions___postCssPlugins___postcssPlugin
-  pluginCreator___pluginOptions___fonts
-  pluginCreator___pluginOptions___fonts___family
-  pluginCreator___pluginOptions___fonts___variable
-  pluginCreator___pluginOptions___fonts___weights
-  pluginCreator___pluginOptions___pathCheck
-  pluginCreator___nodeAPIs
-  pluginCreator___browserAPIs
-  pluginCreator___ssrAPIs
-  pluginCreator___pluginFilepath
-  pluginCreator___packageJson___name
-  pluginCreator___packageJson___description
-  pluginCreator___packageJson___version
-  pluginCreator___packageJson___main
-  pluginCreator___packageJson___license
-  pluginCreator___packageJson___dependencies
-  pluginCreator___packageJson___dependencies___name
-  pluginCreator___packageJson___dependencies___version
-  pluginCreator___packageJson___devDependencies
-  pluginCreator___packageJson___devDependencies___name
-  pluginCreator___packageJson___devDependencies___version
-  pluginCreator___packageJson___peerDependencies
-  pluginCreator___packageJson___peerDependencies___name
-  pluginCreator___packageJson___peerDependencies___version
-  pluginCreator___packageJson___keywords
-  pluginCreatorId
-  componentPath
   id
   parent___id
   parent___parent___id
@@ -2990,6 +2890,107 @@ enum SitePageFieldsEnum {
   internal___mediaType
   internal___owner
   internal___type
+  isCreatedByStatefulCreatePages
+  context___handle
+  pluginCreator___id
+  pluginCreator___parent___id
+  pluginCreator___parent___parent___id
+  pluginCreator___parent___parent___children
+  pluginCreator___parent___children
+  pluginCreator___parent___children___id
+  pluginCreator___parent___children___children
+  pluginCreator___parent___internal___content
+  pluginCreator___parent___internal___contentDigest
+  pluginCreator___parent___internal___description
+  pluginCreator___parent___internal___fieldOwners
+  pluginCreator___parent___internal___ignoreType
+  pluginCreator___parent___internal___mediaType
+  pluginCreator___parent___internal___owner
+  pluginCreator___parent___internal___type
+  pluginCreator___children
+  pluginCreator___children___id
+  pluginCreator___children___parent___id
+  pluginCreator___children___parent___children
+  pluginCreator___children___children
+  pluginCreator___children___children___id
+  pluginCreator___children___children___children
+  pluginCreator___children___internal___content
+  pluginCreator___children___internal___contentDigest
+  pluginCreator___children___internal___description
+  pluginCreator___children___internal___fieldOwners
+  pluginCreator___children___internal___ignoreType
+  pluginCreator___children___internal___mediaType
+  pluginCreator___children___internal___owner
+  pluginCreator___children___internal___type
+  pluginCreator___internal___content
+  pluginCreator___internal___contentDigest
+  pluginCreator___internal___description
+  pluginCreator___internal___fieldOwners
+  pluginCreator___internal___ignoreType
+  pluginCreator___internal___mediaType
+  pluginCreator___internal___owner
+  pluginCreator___internal___type
+  pluginCreator___resolve
+  pluginCreator___name
+  pluginCreator___version
+  pluginCreator___pluginOptions___allExtensions
+  pluginCreator___pluginOptions___isTSX
+  pluginCreator___pluginOptions___jsxPragma
+  pluginCreator___pluginOptions___outputPath
+  pluginCreator___pluginOptions___emitSchema___src___generated___gatsby_introspection_json
+  pluginCreator___pluginOptions___emitSchema___src___generated___gatsby_schema_graphql
+  pluginCreator___pluginOptions___emitPluginDocuments___src___generated___gatsby_plugin_documents_graphql
+  pluginCreator___pluginOptions___path
+  pluginCreator___pluginOptions___name
+  pluginCreator___pluginOptions___extensions
+  pluginCreator___pluginOptions___short_name
+  pluginCreator___pluginOptions___description
+  pluginCreator___pluginOptions___homepage_url
+  pluginCreator___pluginOptions___start_url
+  pluginCreator___pluginOptions___background_color
+  pluginCreator___pluginOptions___theme_color
+  pluginCreator___pluginOptions___icon
+  pluginCreator___pluginOptions___icon_options___purpose
+  pluginCreator___pluginOptions___cache_busting_mode
+  pluginCreator___pluginOptions___include_favicon
+  pluginCreator___pluginOptions___legacy
+  pluginCreator___pluginOptions___theme_color_in_head
+  pluginCreator___pluginOptions___cacheDigest
+  pluginCreator___pluginOptions___trackingId
+  pluginCreator___pluginOptions___anonymize
+  pluginCreator___pluginOptions___respectDNT
+  pluginCreator___pluginOptions___mergeSecurityHeaders
+  pluginCreator___pluginOptions___mergeLinkHeaders
+  pluginCreator___pluginOptions___mergeCachingHeaders
+  pluginCreator___pluginOptions___postCssPlugins
+  pluginCreator___pluginOptions___postCssPlugins___postcssPlugin
+  pluginCreator___pluginOptions___fonts
+  pluginCreator___pluginOptions___fonts___family
+  pluginCreator___pluginOptions___fonts___variable
+  pluginCreator___pluginOptions___fonts___weights
+  pluginCreator___pluginOptions___nodeType
+  pluginCreator___pluginOptions___pathCheck
+  pluginCreator___nodeAPIs
+  pluginCreator___browserAPIs
+  pluginCreator___ssrAPIs
+  pluginCreator___pluginFilepath
+  pluginCreator___packageJson___name
+  pluginCreator___packageJson___description
+  pluginCreator___packageJson___version
+  pluginCreator___packageJson___main
+  pluginCreator___packageJson___license
+  pluginCreator___packageJson___dependencies
+  pluginCreator___packageJson___dependencies___name
+  pluginCreator___packageJson___dependencies___version
+  pluginCreator___packageJson___devDependencies
+  pluginCreator___packageJson___devDependencies___name
+  pluginCreator___packageJson___devDependencies___version
+  pluginCreator___packageJson___peerDependencies
+  pluginCreator___packageJson___peerDependencies___name
+  pluginCreator___packageJson___peerDependencies___version
+  pluginCreator___packageJson___keywords
+  pluginCreatorId
+  componentPath
 }
 
 input SitePageFilterInput {
@@ -2998,15 +2999,15 @@ input SitePageFilterInput {
   internalComponentName: StringQueryOperatorInput
   componentChunkName: StringQueryOperatorInput
   matchPath: StringQueryOperatorInput
+  id: StringQueryOperatorInput
+  parent: NodeFilterInput
+  children: NodeFilterListInput
+  internal: InternalFilterInput
   isCreatedByStatefulCreatePages: BooleanQueryOperatorInput
   context: SitePageContextFilterInput
   pluginCreator: SitePluginFilterInput
   pluginCreatorId: StringQueryOperatorInput
   componentPath: StringQueryOperatorInput
-  id: StringQueryOperatorInput
-  parent: NodeFilterInput
-  children: NodeFilterListInput
-  internal: InternalFilterInput
 }
 
 type SitePageGroupConnection {
@@ -3179,6 +3180,7 @@ enum SitePluginFieldsEnum {
   pluginOptions___fonts___family
   pluginOptions___fonts___variable
   pluginOptions___fonts___weights
+  pluginOptions___nodeType
   pluginOptions___pathCheck
   nodeAPIs
   browserAPIs
@@ -3323,6 +3325,7 @@ type SitePluginPluginOptions {
   mergeCachingHeaders: Boolean
   postCssPlugins: [SitePluginPluginOptionsPostCssPlugins]
   fonts: [SitePluginPluginOptionsFonts]
+  nodeType: String
   pathCheck: Boolean
 }
 
@@ -3375,6 +3378,7 @@ input SitePluginPluginOptionsFilterInput {
   mergeCachingHeaders: BooleanQueryOperatorInput
   postCssPlugins: SitePluginPluginOptionsPostCssPluginsFilterListInput
   fonts: SitePluginPluginOptionsFontsFilterListInput
+  nodeType: StringQueryOperatorInput
   pathCheck: BooleanQueryOperatorInput
 }
 
@@ -3527,6 +3531,7 @@ enum TopicsYamlFieldsEnum {
   items___frontmatter___topic___id
   items___frontmatter___topic___children
   items___frontmatter___title
+  items___frontmatter___draft
   items___frontmatter___resources
   items___frontmatter___resources___title
   items___frontmatter___resources___link
@@ -3547,6 +3552,7 @@ enum TopicsYamlFieldsEnum {
   items___wordCount___paragraphs @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   items___wordCount___sentences @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   items___wordCount___words @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___fields___draft @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   items___fields___handle @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   items___gatsbyPath @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   items___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")

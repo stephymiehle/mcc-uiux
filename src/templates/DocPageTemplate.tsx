@@ -49,6 +49,11 @@ const DocPageTemplate: React.FC<PageProps<GatsbyTypes.DocTemplateQuery>> = ({
       <MDXProvider components={elements}>
         <div className="container px-4 mx-auto">
           <div className="mx-auto md:text-lg max-w-prose">
+            {data.mdx.fields.draft && (
+              <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-red-100 text-red-800">
+                This Page is a draft
+              </span>
+            )}
             <h1 className="mt-4 mb-8 text-5xl text-black dark:text-white">
               {data.mdx.frontmatter.title}
             </h1>
@@ -70,10 +75,12 @@ const DocPageTemplate: React.FC<PageProps<GatsbyTypes.DocTemplateQuery>> = ({
 export default DocPageTemplate;
 
 export const query = graphql`
-  query DocTemplate($id: String) {
-    mdx(id: { eq: $id }) {
-      slug
+  query DocTemplate($handle: String) {
+    mdx(fields: { handle: { eq: $handle } }) {
       body
+      fields {
+        draft
+      }
       frontmatter {
         title
         topic {

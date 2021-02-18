@@ -2886,6 +2886,7 @@ __metadata:
     gatsby-cli: ^2.17.0
     gatsby-image: ^2.9.0
     gatsby-plugin-catch-links: ^2.8.0
+    gatsby-plugin-draft: ^0.1.0
     gatsby-plugin-feed: ^2.11.0
     gatsby-plugin-google-analytics: ^2.9.0
     gatsby-plugin-google-fonts-v2: ^0.0.6
@@ -10483,6 +10484,17 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-draft@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "gatsby-plugin-draft@npm:0.1.0"
+  dependencies:
+    moment-timezone: ^0.5.23
+  peerDependencies:
+    gatsby: ^2.0.0
+  checksum: 96fdabefa22de11b914369e8dbe1ded5f42b95733b90ad335d8c11600dd4c7dd42df9aba76a8b6226df43deefd212711fded33eda5816d2494723db95c190c5d
+  languageName: node
+  linkType: hard
+
 "gatsby-plugin-feed@npm:^2.11.0":
   version: 2.11.0
   resolution: "gatsby-plugin-feed@npm:2.11.0"
@@ -15865,7 +15877,16 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"moment@npm:^2.27.0":
+"moment-timezone@npm:^0.5.23":
+  version: 0.5.33
+  resolution: "moment-timezone@npm:0.5.33"
+  dependencies:
+    moment: ">= 2.9.0"
+  checksum: d4e72a3514a2885ab26b1cbc640e2f4785c997f9de28bb48bf3994ef137b0a560ca8f07eb07f11121e1223eef0c3bce4bc647b911111481a6a066bbc61285f99
+  languageName: node
+  linkType: hard
+
+"moment@npm:>= 2.9.0, moment@npm:^2.27.0":
   version: 2.29.1
   resolution: "moment@npm:2.29.1"
   checksum: 86729013febf7160de5b93da69273dd304d674b0224f9544b3abd09a87671ddd2cdd57598261ce57588910d63747ffd5590965e83c790d8bf327083c0e0a06e0

@@ -1,4 +1,4 @@
-import { GatsbyNode } from 'gatsby';
+import { GatsbyConfig, GatsbyNode } from 'gatsby';
 import { createFilePath } from 'gatsby-source-filesystem';
 import * as path from 'path';
 
@@ -22,6 +22,7 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({
   const { createNodeField } = actions;
 
   if (node.internal.type === 'MarkdownRemark' || node.internal.type === 'Mdx') {
+    // Create handle/ID for linking
     const handle = createFilePath({
       node,
       getNode,
@@ -34,6 +35,39 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({
       value: handle.replace('/', ''),
     });
   }
+};
+
+export const createPages: GatsbyNode['createPages'] = async ({
+  graphql,
+  actions,
+  reporter,
+}) => {
+  const { createPage } = actions;
+  const result = await graphql<any>(
+    `
+      query($draft: Boolean) {
+        allMdx(filter: { fields: { draft: { in: [false, $draft] } } }) {
+          nodes {
+            fields {
+              handle
+            }
+          }
+        }
+      }
+    `,
+    // when the env is also dev, include drafts
+    { draft: process.env.NODE_ENV === 'development' },
+  );
+
+  result.data.allMdx.nodes.forEach(({ fields }) => {
+    createPage({
+      path: fields.handle,
+      component: path.resolve(`./src/templates/DocPageTemplate.tsx`),
+      context: {
+        handle: fields.handle,
+      },
+    });
+  });
 };
 
 export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] = async ({
