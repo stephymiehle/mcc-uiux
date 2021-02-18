@@ -767,7 +767,6 @@ The original NBC peacock logo was much busier than its current design. The peaco
         <path fill="#FCB711" d="M-17.278 160.107H168.36L15.297 53.22C-20.064 30.5-59.826 43.794-74.18 81.496c-12.167 43.16 18.212 78.611 56.902 78.611"/>
       </svg>
     </Panel>
-
   </div>
 
   <License
@@ -800,25 +799,19 @@ When we see elements forming a path, we treat those elements as a related set. W
 
 This one is huge on mobile! We can take advantage of horizontal scrolling to show additional content without taking up as much vertical room. Once we see enough elements creating a horizontal path, we understand that we can scroll to see more, especially if we see the last one partially cut-off.
 
-<figure>
-
-  <div className="grid gap-6 md:grid-cols-3">
-    <div className="w-full">
-      <Panel defaultPadding={false} fullHeight={false}>
-        <Img src="./netflix-avatars.png" alt="Avatar selection on Netflix" />
-      </Panel>
-      <License
-        type="copyright"
-        mediaType="Avatar selection screen"
-        authors={[
-          {
-            name: 'Netflix'
-          },
-        ]}
-      />
-    </div>
+<figure className="grid gap-6 md:grid-cols-3">
+  <div>
+    <Img src="./netflix-avatars.png" alt="Avatar selection on Netflix" />
+    <figcaption>Avatar selection on Netflix uses horizontal and vertical continuity, as there are many more rows to choose from</figcaption>
   </div>
-
+  <div>
+    <Img src="./google-play-games.png" alt="Google Play Games" />
+    <figcaption>Google Play Games has horizontal and vertical continuity</figcaption>
+  </div>
+  <div>
+    <Img src="./stardew.png" alt="Google Play Games" />
+    <figcaption>Google Play Games features many rows of content cut off horizontally</figcaption>
+  </div>
 </figure>
 
 ### Common Fate
