@@ -994,11 +994,11 @@ enum FileFieldsEnum {
   childrenMdx___frontmatter___topic___id
   childrenMdx___frontmatter___topic___children
   childrenMdx___frontmatter___title
-  childrenMdx___frontmatter___reading___optional
-  childrenMdx___frontmatter___reading___required
   childrenMdx___frontmatter___resources
   childrenMdx___frontmatter___resources___title
   childrenMdx___frontmatter___resources___link
+  childrenMdx___frontmatter___reading___optional
+  childrenMdx___frontmatter___reading___required
   childrenMdx___rawBody
   childrenMdx___fileAbsolutePath
   childrenMdx___slug
@@ -1059,11 +1059,11 @@ enum FileFieldsEnum {
   childMdx___frontmatter___topic___id
   childMdx___frontmatter___topic___children
   childMdx___frontmatter___title
-  childMdx___frontmatter___reading___optional
-  childMdx___frontmatter___reading___required
   childMdx___frontmatter___resources
   childMdx___frontmatter___resources___title
   childMdx___frontmatter___resources___link
+  childMdx___frontmatter___reading___optional
+  childMdx___frontmatter___reading___required
   childMdx___rawBody
   childMdx___fileAbsolutePath
   childMdx___slug
@@ -1282,15 +1282,15 @@ input FloatQueryOperatorInput {
 type Frontmatter {
   topic: TopicsYaml
   title: String
-  reading: MdxFrontmatterReading
   resources: [MdxFrontmatterResources]
+  reading: MdxFrontmatterReading
 }
 
 input FrontmatterFilterInput {
   topic: TopicsYamlFilterInput
   title: StringQueryOperatorInput
-  reading: MdxFrontmatterReadingFilterInput
   resources: MdxFrontmatterResourcesFilterListInput
+  reading: MdxFrontmatterReadingFilterInput
 }
 
 enum HeadingsMdx {
@@ -1945,15 +1945,15 @@ enum MdxFieldsEnum {
   frontmatter___topic___internal___owner
   frontmatter___topic___internal___type
   frontmatter___title
+  frontmatter___resources
+  frontmatter___resources___title
+  frontmatter___resources___link
   frontmatter___reading___optional
   frontmatter___reading___optional___title
   frontmatter___reading___optional___link
   frontmatter___reading___required
   frontmatter___reading___required___title
   frontmatter___reading___required___link
-  frontmatter___resources
-  frontmatter___resources___title
-  frontmatter___resources___link
   rawBody
   fileAbsolutePath
   slug
@@ -2870,6 +2870,7 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___legacy
   pluginCreator___pluginOptions___theme_color_in_head
   pluginCreator___pluginOptions___cacheDigest
+  pluginCreator___pluginOptions___trackingId
   pluginCreator___pluginOptions___anonymize
   pluginCreator___pluginOptions___respectDNT
   pluginCreator___pluginOptions___mergeSecurityHeaders
@@ -3166,6 +3167,7 @@ enum SitePluginFieldsEnum {
   pluginOptions___legacy
   pluginOptions___theme_color_in_head
   pluginOptions___cacheDigest
+  pluginOptions___trackingId
   pluginOptions___anonymize
   pluginOptions___respectDNT
   pluginOptions___mergeSecurityHeaders
@@ -3313,6 +3315,7 @@ type SitePluginPluginOptions {
   legacy: Boolean
   theme_color_in_head: Boolean
   cacheDigest: String
+  trackingId: String
   anonymize: Boolean
   respectDNT: Boolean
   mergeSecurityHeaders: Boolean
@@ -3364,6 +3367,7 @@ input SitePluginPluginOptionsFilterInput {
   legacy: BooleanQueryOperatorInput
   theme_color_in_head: BooleanQueryOperatorInput
   cacheDigest: StringQueryOperatorInput
+  trackingId: StringQueryOperatorInput
   anonymize: BooleanQueryOperatorInput
   respectDNT: BooleanQueryOperatorInput
   mergeSecurityHeaders: BooleanQueryOperatorInput
@@ -3523,11 +3527,11 @@ enum TopicsYamlFieldsEnum {
   items___frontmatter___topic___id
   items___frontmatter___topic___children
   items___frontmatter___title
-  items___frontmatter___reading___optional
-  items___frontmatter___reading___required
   items___frontmatter___resources
   items___frontmatter___resources___title
   items___frontmatter___resources___link
+  items___frontmatter___reading___optional
+  items___frontmatter___reading___required
   items___rawBody
   items___fileAbsolutePath
   items___slug

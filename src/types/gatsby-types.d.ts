@@ -880,11 +880,11 @@ enum FileFieldsEnum {
   childrenMdx___frontmatter___topic___id = 'childrenMdx.frontmatter.topic.id',
   childrenMdx___frontmatter___topic___children = 'childrenMdx.frontmatter.topic.children',
   childrenMdx___frontmatter___title = 'childrenMdx.frontmatter.title',
-  childrenMdx___frontmatter___reading___optional = 'childrenMdx.frontmatter.reading.optional',
-  childrenMdx___frontmatter___reading___required = 'childrenMdx.frontmatter.reading.required',
   childrenMdx___frontmatter___resources = 'childrenMdx.frontmatter.resources',
   childrenMdx___frontmatter___resources___title = 'childrenMdx.frontmatter.resources.title',
   childrenMdx___frontmatter___resources___link = 'childrenMdx.frontmatter.resources.link',
+  childrenMdx___frontmatter___reading___optional = 'childrenMdx.frontmatter.reading.optional',
+  childrenMdx___frontmatter___reading___required = 'childrenMdx.frontmatter.reading.required',
   childrenMdx___rawBody = 'childrenMdx.rawBody',
   childrenMdx___fileAbsolutePath = 'childrenMdx.fileAbsolutePath',
   childrenMdx___slug = 'childrenMdx.slug',
@@ -945,11 +945,11 @@ enum FileFieldsEnum {
   childMdx___frontmatter___topic___id = 'childMdx.frontmatter.topic.id',
   childMdx___frontmatter___topic___children = 'childMdx.frontmatter.topic.children',
   childMdx___frontmatter___title = 'childMdx.frontmatter.title',
-  childMdx___frontmatter___reading___optional = 'childMdx.frontmatter.reading.optional',
-  childMdx___frontmatter___reading___required = 'childMdx.frontmatter.reading.required',
   childMdx___frontmatter___resources = 'childMdx.frontmatter.resources',
   childMdx___frontmatter___resources___title = 'childMdx.frontmatter.resources.title',
   childMdx___frontmatter___resources___link = 'childMdx.frontmatter.resources.link',
+  childMdx___frontmatter___reading___optional = 'childMdx.frontmatter.reading.optional',
+  childMdx___frontmatter___reading___required = 'childMdx.frontmatter.reading.required',
   childMdx___rawBody = 'childMdx.rawBody',
   childMdx___fileAbsolutePath = 'childMdx.fileAbsolutePath',
   childMdx___slug = 'childMdx.slug',
@@ -1168,15 +1168,15 @@ type FloatQueryOperatorInput = {
 type Frontmatter = {
   readonly topic: Maybe<TopicsYaml>;
   readonly title: Maybe<Scalars['String']>;
-  readonly reading: Maybe<MdxFrontmatterReading>;
   readonly resources: Maybe<ReadonlyArray<Maybe<MdxFrontmatterResources>>>;
+  readonly reading: Maybe<MdxFrontmatterReading>;
 };
 
 type FrontmatterFilterInput = {
   readonly topic: Maybe<TopicsYamlFilterInput>;
   readonly title: Maybe<StringQueryOperatorInput>;
-  readonly reading: Maybe<MdxFrontmatterReadingFilterInput>;
   readonly resources: Maybe<MdxFrontmatterResourcesFilterListInput>;
+  readonly reading: Maybe<MdxFrontmatterReadingFilterInput>;
 };
 
 enum HeadingsMdx {
@@ -1885,15 +1885,15 @@ enum MdxFieldsEnum {
   frontmatter___topic___internal___owner = 'frontmatter.topic.internal.owner',
   frontmatter___topic___internal___type = 'frontmatter.topic.internal.type',
   frontmatter___title = 'frontmatter.title',
+  frontmatter___resources = 'frontmatter.resources',
+  frontmatter___resources___title = 'frontmatter.resources.title',
+  frontmatter___resources___link = 'frontmatter.resources.link',
   frontmatter___reading___optional = 'frontmatter.reading.optional',
   frontmatter___reading___optional___title = 'frontmatter.reading.optional.title',
   frontmatter___reading___optional___link = 'frontmatter.reading.optional.link',
   frontmatter___reading___required = 'frontmatter.reading.required',
   frontmatter___reading___required___title = 'frontmatter.reading.required.title',
   frontmatter___reading___required___link = 'frontmatter.reading.required.link',
-  frontmatter___resources = 'frontmatter.resources',
-  frontmatter___resources___title = 'frontmatter.resources.title',
-  frontmatter___resources___link = 'frontmatter.resources.link',
   rawBody = 'rawBody',
   fileAbsolutePath = 'fileAbsolutePath',
   slug = 'slug',
@@ -3128,6 +3128,7 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___legacy = 'pluginCreator.pluginOptions.legacy',
   pluginCreator___pluginOptions___theme_color_in_head = 'pluginCreator.pluginOptions.theme_color_in_head',
   pluginCreator___pluginOptions___cacheDigest = 'pluginCreator.pluginOptions.cacheDigest',
+  pluginCreator___pluginOptions___trackingId = 'pluginCreator.pluginOptions.trackingId',
   pluginCreator___pluginOptions___anonymize = 'pluginCreator.pluginOptions.anonymize',
   pluginCreator___pluginOptions___respectDNT = 'pluginCreator.pluginOptions.respectDNT',
   pluginCreator___pluginOptions___mergeSecurityHeaders = 'pluginCreator.pluginOptions.mergeSecurityHeaders',
@@ -3436,6 +3437,7 @@ enum SitePluginFieldsEnum {
   pluginOptions___legacy = 'pluginOptions.legacy',
   pluginOptions___theme_color_in_head = 'pluginOptions.theme_color_in_head',
   pluginOptions___cacheDigest = 'pluginOptions.cacheDigest',
+  pluginOptions___trackingId = 'pluginOptions.trackingId',
   pluginOptions___anonymize = 'pluginOptions.anonymize',
   pluginOptions___respectDNT = 'pluginOptions.respectDNT',
   pluginOptions___mergeSecurityHeaders = 'pluginOptions.mergeSecurityHeaders',
@@ -3583,6 +3585,7 @@ type SitePluginPluginOptions = {
   readonly legacy: Maybe<Scalars['Boolean']>;
   readonly theme_color_in_head: Maybe<Scalars['Boolean']>;
   readonly cacheDigest: Maybe<Scalars['String']>;
+  readonly trackingId: Maybe<Scalars['String']>;
   readonly anonymize: Maybe<Scalars['Boolean']>;
   readonly respectDNT: Maybe<Scalars['Boolean']>;
   readonly mergeSecurityHeaders: Maybe<Scalars['Boolean']>;
@@ -3634,6 +3637,7 @@ type SitePluginPluginOptionsFilterInput = {
   readonly legacy: Maybe<BooleanQueryOperatorInput>;
   readonly theme_color_in_head: Maybe<BooleanQueryOperatorInput>;
   readonly cacheDigest: Maybe<StringQueryOperatorInput>;
+  readonly trackingId: Maybe<StringQueryOperatorInput>;
   readonly anonymize: Maybe<BooleanQueryOperatorInput>;
   readonly respectDNT: Maybe<BooleanQueryOperatorInput>;
   readonly mergeSecurityHeaders: Maybe<BooleanQueryOperatorInput>;
@@ -3805,11 +3809,11 @@ enum TopicsYamlFieldsEnum {
   items___frontmatter___topic___id = 'items.frontmatter.topic.id',
   items___frontmatter___topic___children = 'items.frontmatter.topic.children',
   items___frontmatter___title = 'items.frontmatter.title',
-  items___frontmatter___reading___optional = 'items.frontmatter.reading.optional',
-  items___frontmatter___reading___required = 'items.frontmatter.reading.required',
   items___frontmatter___resources = 'items.frontmatter.resources',
   items___frontmatter___resources___title = 'items.frontmatter.resources.title',
   items___frontmatter___resources___link = 'items.frontmatter.resources.link',
+  items___frontmatter___reading___optional = 'items.frontmatter.reading.optional',
+  items___frontmatter___reading___required = 'items.frontmatter.reading.required',
   items___rawBody = 'items.rawBody',
   items___fileAbsolutePath = 'items.fileAbsolutePath',
   items___slug = 'items.slug',
@@ -4041,14 +4045,6 @@ type FooterDataQuery = { readonly siteBuildMetadata: Maybe<{ buildYear: SiteBuil
       )>>> }
     )> } };
 
-type SiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SiteMetadataQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
-      Pick<SiteSiteMetadata, 'siteUrl' | 'title' | 'description'>
-      & { readonly social: Maybe<{ readonly twitter: Maybe<Pick<SiteSiteMetadataSocialTwitter, 'username'>> }> }
-    )> }> };
-
 type SocialImageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -4058,6 +4054,14 @@ type SocialQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type SocialQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<{ readonly social: Maybe<{ readonly twitter: Maybe<Pick<SiteSiteMetadataSocialTwitter, 'username'>>, readonly facebook: Maybe<Pick<SiteSiteMetadataSocialFacebook, 'username'>>, readonly instagram: Maybe<Pick<SiteSiteMetadataSocialInstagram, 'username'>> }> }> }> };
+
+type SiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SiteMetadataQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
+      Pick<SiteSiteMetadata, 'siteUrl' | 'title' | 'description'>
+      & { readonly social: Maybe<{ readonly twitter: Maybe<Pick<SiteSiteMetadataSocialTwitter, 'username'>> }> }
+    )> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

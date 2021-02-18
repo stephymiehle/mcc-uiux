@@ -20,6 +20,8 @@ import {
   MdxOl,
   MdxLi,
 } from '../components/MdxComponents';
+import { Link } from '../components/Link';
+import { TopicFooter } from '../components/TopicFooter';
 
 const elements = {
   Blockquote,
@@ -51,7 +53,13 @@ const DocPageTemplate: React.FC<PageProps<GatsbyTypes.DocTemplateQuery>> = ({
               {data.mdx.frontmatter.title}
             </h1>
             <MDXRenderer>{data.mdx.body}</MDXRenderer>
-            <footer>{JSON.stringify(topic)}</footer>
+            {topic?.items && (
+              <TopicFooter
+                items={topic.items}
+                label={topic.label}
+                location={location}
+              />
+            )}
           </div>
         </div>
       </MDXProvider>
