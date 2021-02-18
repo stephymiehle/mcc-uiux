@@ -14,26 +14,45 @@ const getChild = (node: any) => {
   return node.childMarkdownRemark || node.childMdx;
 };
 
-// export const onCreateNode: GatsbyNode['onCreateNode'] = ({
-//   actions,
-//   node,
-//   getNode,
-// }) => {
-//   const { createNodeField, createNode } = actions;
-//   if (
-//     node.internal.type === 'Mdx' &&
-//     node.fileAbsolutePath &&
-//     node.internal.fieldOwners.slug !== 'gatsby-plugin-i18n'
-//   ) {
-//     const value = createFilePath({ node, getNode });
-//     console.log({ value, node });
-//     createNodeField({
-//       name: 'slug',
-//       node,
-//       value,
-//     });
-//   }
-// };
+export const onCreateNode: GatsbyNode['onCreateNode'] = ({
+  actions,
+  node,
+  getNode,
+}) => {
+  const { createNodeField } = actions;
+
+  if (node.internal.type === 'MarkdownRemark' || node.internal.type === 'Mdx') {
+    const handle = createFilePath({
+      node,
+      getNode,
+      trailingSlash: false,
+    });
+
+    createNodeField({
+      name: 'handle',
+      node,
+      value: handle.replace('/', ''),
+    });
+  }
+};
+
+export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] = async ({
+  actions,
+}) => {
+  const { createTypes } = actions;
+  const typeDefs = [
+    `type TopicsYaml implements Node {
+      items: [Mdx] @link(by: "fields.handle")
+    }`,
+    `type Mdx implements Node {
+      frontmatter: Frontmatter
+    }`,
+    `type Frontmatter {
+      topic: TopicsYaml @link
+    }`,
+  ];
+  createTypes(typeDefs);
+};
 
 export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
   actions,

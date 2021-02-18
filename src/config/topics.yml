@@ -1,21 +1,26 @@
 - label: Color
+  id: color
   items:
     - color-blindness
 
 - label: Typography
+  id: typography
   items:
     - fonts-and-copyright
 
 - label: Layout
+  id: layout
   items:
     - gestalt-theory
 
 - label: Design Elements
+  id: design-elements
   items:
     - app-icons
     - icons-for-navigation
     - forms
 
 - label: Interaction
+  id: interaction
   items:
     - animation

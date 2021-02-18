@@ -2908,6 +2908,7 @@ __metadata:
     gatsby-remark-images: ^3.9.0
     gatsby-source-filesystem: ^2.9.0
     gatsby-transformer-sharp: ^2.10.0
+    gatsby-transformer-yaml: ^2.11.0
     husky: ^4.3.7
     jest: ^26.6.3
     lint-staged: ^10.5.3
@@ -11062,6 +11063,20 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"gatsby-transformer-yaml@npm:^2.11.0":
+  version: 2.11.0
+  resolution: "gatsby-transformer-yaml@npm:2.11.0"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+    js-yaml: ^3.14.1
+    lodash: ^4.17.20
+    unist-util-select: ^1.5.0
+  peerDependencies:
+    gatsby: ^2.0.15
+  checksum: 94748957446ac510b8d15a6ed7e0fb73efa376dd3e24846de34ce50d27f08a28732a0e531fbd8bd0d990048f5a921882b2c6eb7b6780612920a9e1d60d855417
+  languageName: node
+  linkType: hard
+
 "gatsby@npm:^2.30.1":
   version: 2.30.1
   resolution: "gatsby@npm:2.30.1"
@@ -14245,7 +14260,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"js-yaml@npm:^3.11.0, js-yaml@npm:^3.13.1":
+"js-yaml@npm:^3.11.0, js-yaml@npm:^3.13.1, js-yaml@npm:^3.14.1":
   version: 3.14.1
   resolution: "js-yaml@npm:3.14.1"
   dependencies:

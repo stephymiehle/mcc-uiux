@@ -80,6 +80,16 @@ const config: GatsbyConfig = {
       },
     },
     {
+      resolve: 'gatsby-transformer-yaml',
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'topics',
+        path: `${__dirname}/src/config`,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.mdx', '.md'],

@@ -11,6 +11,18 @@ const Footer: React.FC<IFooterProps> = () => {
       siteBuildMetadata {
         buildYear: buildTime(formatString: "Y")
       }
+      allTopicsYaml {
+        nodes {
+          id
+          label
+          items {
+            slug
+            frontmatter {
+              title
+            }
+          }
+        }
+      }
     }
   `);
 
@@ -19,6 +31,7 @@ const Footer: React.FC<IFooterProps> = () => {
 
   const {
     siteBuildMetadata: { buildYear },
+    allTopicsYaml,
   } = data;
   return (
     <footer className="text-grey-700 dark:text-grey-400 dark:bg-grey-800">
@@ -49,84 +62,25 @@ const Footer: React.FC<IFooterProps> = () => {
           </p>
         </div>
         <div className="flex flex-wrap flex-grow mt-10 -mb-10 text-center md:pl-20 md:mt-0 md:text-left md:justify-end md:-mx-8">
-          <div className="w-full px-4 md:px-8 md:w-auto">
-            <h2 className="mb-3 text-sm font-medium tracking-widest text-grey-900 dark:text-white">
-              CATEGORIES
-            </h2>
-            <nav className="mb-10 list-none">
-              <li>
-                <Link
-                  className="text-grey-600 hover:text-grey-800 dark:text-grey-400 dark:hover:text-grey-200"
-                  to="/"
-                >
-                  First Link
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-grey-600 hover:text-grey-800 dark:text-grey-400 dark:hover:text-grey-200"
-                  to="/"
-                >
-                  Second Link
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-grey-600 hover:text-grey-800 dark:text-grey-400 dark:hover:text-grey-200"
-                  to="/"
-                >
-                  Third Link
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-grey-600 hover:text-grey-800 dark:text-grey-400 dark:hover:text-grey-200"
-                  to="/"
-                >
-                  Fourth Link
-                </Link>
-              </li>
-            </nav>
-          </div>
-          <div className="w-full px-4 md:px-8 md:w-auto">
-            <h2 className="mb-3 text-sm font-medium tracking-widest text-grey-900 dark:text-white">
-              CATEGORIES
-            </h2>
-            <nav className="mb-10 list-none">
-              <li>
-                <Link
-                  className="text-grey-600 hover:text-grey-800 dark:text-grey-400 dark:hover:text-grey-200"
-                  to="/"
-                >
-                  First Link
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-grey-600 hover:text-grey-800 dark:text-grey-400 dark:hover:text-grey-200"
-                  to="/"
-                >
-                  Second Link
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-grey-600 hover:text-grey-800 dark:text-grey-400 dark:hover:text-grey-200"
-                  to="/"
-                >
-                  Third Link
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-grey-600 hover:text-grey-800 dark:text-grey-400 dark:hover:text-grey-200"
-                  to="/"
-                >
-                  Fourth Link
-                </Link>
-              </li>
-            </nav>
-          </div>
+          {allTopicsYaml.nodes.map((node) => (
+            <div key={node.id} className="w-full px-4 md:px-8 md:w-auto">
+              <h2 className="mb-3 text-sm font-medium tracking-widest text-grey-900 dark:text-white">
+                {node.label}
+              </h2>
+              <nav className="mb-10 list-none">
+                {node.items.map((item) => (
+                  <li key={item.slug}>
+                    <Link
+                      className="text-grey-600 hover:text-grey-800 dark:text-grey-400 dark:hover:text-grey-200"
+                      to={`/${item.slug}`}
+                    >
+                      {item.frontmatter.title}
+                    </Link>
+                  </li>
+                ))}
+              </nav>
+            </div>
+          ))}
         </div>
       </div>
       <div className="bg-grey-100 dark:bg-grey-700">

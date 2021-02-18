@@ -32,7 +32,8 @@ export const License: React.FC<ILicenseProps> = ({
   const unsplashLicenseLink = 'https://unsplash.com/license';
   return (
     <cite className="block mt-4 not-italic">
-      <LicenseTitle title={title} mediaType={mediaType} link={link} /> by{' '}
+      <LicenseTitle title={title} mediaType={mediaType} link={link} />
+      {type === 'copyright' ? ' &copy; ' : ' by '}
       <LicenseAuthors authors={authors} />
       {type === 'cc' && (
         <>

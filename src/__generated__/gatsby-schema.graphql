@@ -589,6 +589,12 @@ type File implements Node {
   # Returns the first child node of type ImageSharp or null if there are no children of given type on this node
   childImageSharp: ImageSharp
 
+  # Returns all children nodes filtered by type TopicsYaml
+  childrenTopicsYaml: [TopicsYaml]
+
+  # Returns the first child node of type TopicsYaml or null if there are no children of given type on this node
+  childTopicsYaml: TopicsYaml
+
   # Returns all children nodes filtered by type Mdx
   childrenMdx: [Mdx]
 
@@ -835,15 +841,166 @@ enum FileFieldsEnum {
   childImageSharp___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childImageSharp___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childImageSharp___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml
+  childrenTopicsYaml___items
+  childrenTopicsYaml___items___frontmatter___title
+  childrenTopicsYaml___items___frontmatter___resources
+  childrenTopicsYaml___items___rawBody
+  childrenTopicsYaml___items___fileAbsolutePath
+  childrenTopicsYaml___items___slug
+  childrenTopicsYaml___items___body
+  childrenTopicsYaml___items___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___headings @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___headings___value @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___headings___depth @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___html @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___mdxAST @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___tableOfContents @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___timeToRead @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___wordCount___paragraphs @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___wordCount___sentences @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___wordCount___words @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___fields___handle @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___gatsbyPath @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___items___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenTopicsYaml___label
+  childrenTopicsYaml___id
+  childrenTopicsYaml___parent___id
+  childrenTopicsYaml___parent___parent___id
+  childrenTopicsYaml___parent___parent___children
+  childrenTopicsYaml___parent___children
+  childrenTopicsYaml___parent___children___id
+  childrenTopicsYaml___parent___children___children
+  childrenTopicsYaml___parent___internal___content
+  childrenTopicsYaml___parent___internal___contentDigest
+  childrenTopicsYaml___parent___internal___description
+  childrenTopicsYaml___parent___internal___fieldOwners
+  childrenTopicsYaml___parent___internal___ignoreType
+  childrenTopicsYaml___parent___internal___mediaType
+  childrenTopicsYaml___parent___internal___owner
+  childrenTopicsYaml___parent___internal___type
+  childrenTopicsYaml___children
+  childrenTopicsYaml___children___id
+  childrenTopicsYaml___children___parent___id
+  childrenTopicsYaml___children___parent___children
+  childrenTopicsYaml___children___children
+  childrenTopicsYaml___children___children___id
+  childrenTopicsYaml___children___children___children
+  childrenTopicsYaml___children___internal___content
+  childrenTopicsYaml___children___internal___contentDigest
+  childrenTopicsYaml___children___internal___description
+  childrenTopicsYaml___children___internal___fieldOwners
+  childrenTopicsYaml___children___internal___ignoreType
+  childrenTopicsYaml___children___internal___mediaType
+  childrenTopicsYaml___children___internal___owner
+  childrenTopicsYaml___children___internal___type
+  childrenTopicsYaml___internal___content
+  childrenTopicsYaml___internal___contentDigest
+  childrenTopicsYaml___internal___description
+  childrenTopicsYaml___internal___fieldOwners
+  childrenTopicsYaml___internal___ignoreType
+  childrenTopicsYaml___internal___mediaType
+  childrenTopicsYaml___internal___owner
+  childrenTopicsYaml___internal___type
+  childTopicsYaml___items
+  childTopicsYaml___items___frontmatter___title
+  childTopicsYaml___items___frontmatter___resources
+  childTopicsYaml___items___rawBody
+  childTopicsYaml___items___fileAbsolutePath
+  childTopicsYaml___items___slug
+  childTopicsYaml___items___body
+  childTopicsYaml___items___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___headings @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___headings___value @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___headings___depth @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___html @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___mdxAST @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___tableOfContents @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___timeToRead @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___wordCount___paragraphs @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___wordCount___sentences @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___wordCount___words @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___fields___handle @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___gatsbyPath @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___items___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childTopicsYaml___label
+  childTopicsYaml___id
+  childTopicsYaml___parent___id
+  childTopicsYaml___parent___parent___id
+  childTopicsYaml___parent___parent___children
+  childTopicsYaml___parent___children
+  childTopicsYaml___parent___children___id
+  childTopicsYaml___parent___children___children
+  childTopicsYaml___parent___internal___content
+  childTopicsYaml___parent___internal___contentDigest
+  childTopicsYaml___parent___internal___description
+  childTopicsYaml___parent___internal___fieldOwners
+  childTopicsYaml___parent___internal___ignoreType
+  childTopicsYaml___parent___internal___mediaType
+  childTopicsYaml___parent___internal___owner
+  childTopicsYaml___parent___internal___type
+  childTopicsYaml___children
+  childTopicsYaml___children___id
+  childTopicsYaml___children___parent___id
+  childTopicsYaml___children___parent___children
+  childTopicsYaml___children___children
+  childTopicsYaml___children___children___id
+  childTopicsYaml___children___children___children
+  childTopicsYaml___children___internal___content
+  childTopicsYaml___children___internal___contentDigest
+  childTopicsYaml___children___internal___description
+  childTopicsYaml___children___internal___fieldOwners
+  childTopicsYaml___children___internal___ignoreType
+  childTopicsYaml___children___internal___mediaType
+  childTopicsYaml___children___internal___owner
+  childTopicsYaml___children___internal___type
+  childTopicsYaml___internal___content
+  childTopicsYaml___internal___contentDigest
+  childTopicsYaml___internal___description
+  childTopicsYaml___internal___fieldOwners
+  childTopicsYaml___internal___ignoreType
+  childTopicsYaml___internal___mediaType
+  childTopicsYaml___internal___owner
+  childTopicsYaml___internal___type
   childrenMdx
-  childrenMdx___rawBody
-  childrenMdx___fileAbsolutePath
+  childrenMdx___frontmatter___topic___items
+  childrenMdx___frontmatter___topic___label
+  childrenMdx___frontmatter___topic___id
+  childrenMdx___frontmatter___topic___children
   childrenMdx___frontmatter___title
-  childrenMdx___frontmatter___reading___required
   childrenMdx___frontmatter___reading___optional
+  childrenMdx___frontmatter___reading___required
   childrenMdx___frontmatter___resources
   childrenMdx___frontmatter___resources___title
   childrenMdx___frontmatter___resources___link
+  childrenMdx___rawBody
+  childrenMdx___fileAbsolutePath
   childrenMdx___slug
   childrenMdx___body
   childrenMdx___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -857,6 +1014,7 @@ enum FileFieldsEnum {
   childrenMdx___wordCount___paragraphs @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childrenMdx___wordCount___sentences @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childrenMdx___wordCount___words @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childrenMdx___fields___handle @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childrenMdx___gatsbyPath @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childrenMdx___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childrenMdx___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -896,14 +1054,18 @@ enum FileFieldsEnum {
   childrenMdx___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childrenMdx___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childrenMdx___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
-  childMdx___rawBody
-  childMdx___fileAbsolutePath
+  childMdx___frontmatter___topic___items
+  childMdx___frontmatter___topic___label
+  childMdx___frontmatter___topic___id
+  childMdx___frontmatter___topic___children
   childMdx___frontmatter___title
-  childMdx___frontmatter___reading___required
   childMdx___frontmatter___reading___optional
+  childMdx___frontmatter___reading___required
   childMdx___frontmatter___resources
   childMdx___frontmatter___resources___title
   childMdx___frontmatter___resources___link
+  childMdx___rawBody
+  childMdx___fileAbsolutePath
   childMdx___slug
   childMdx___body
   childMdx___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -917,6 +1079,7 @@ enum FileFieldsEnum {
   childMdx___wordCount___paragraphs @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childMdx___wordCount___sentences @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childMdx___wordCount___words @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  childMdx___fields___handle @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childMdx___gatsbyPath @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childMdx___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   childMdx___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -1081,6 +1244,8 @@ input FileFilterInput {
   publicURL: StringQueryOperatorInput
   childrenImageSharp: ImageSharpFilterListInput
   childImageSharp: ImageSharpFilterInput
+  childrenTopicsYaml: TopicsYamlFilterListInput
+  childTopicsYaml: TopicsYamlFilterInput
   childrenMdx: MdxFilterListInput
   childMdx: MdxFilterInput
   id: StringQueryOperatorInput
@@ -1112,6 +1277,20 @@ input FloatQueryOperatorInput {
   lte: Float
   in: [Float]
   nin: [Float]
+}
+
+type Frontmatter {
+  topic: TopicsYaml
+  title: String
+  reading: MdxFrontmatterReading
+  resources: [MdxFrontmatterResources]
+}
+
+input FrontmatterFilterInput {
+  topic: TopicsYamlFilterInput
+  title: StringQueryOperatorInput
+  reading: MdxFrontmatterReadingFilterInput
+  resources: MdxFrontmatterResourcesFilterListInput
 }
 
 enum HeadingsMdx {
@@ -1696,9 +1875,9 @@ input JSONQueryOperatorInput {
 }
 
 type Mdx implements Node {
+  frontmatter: Frontmatter
   rawBody: String!
   fileAbsolutePath: String!
-  frontmatter: MdxFrontmatter
   slug: String
   body: String!
   excerpt(pruneLength: Int = 140, truncate: Boolean = false): String!
@@ -1708,6 +1887,7 @@ type Mdx implements Node {
   tableOfContents(maxDepth: Int): JSON
   timeToRead: Int
   wordCount: MdxWordCount
+  fields: MdxFields
   gatsbyPath(filePath: String): String
   id: ID!
   parent: Node
@@ -1730,19 +1910,52 @@ type MdxEdge {
   previous: Mdx
 }
 
+type MdxFields {
+  handle: String
+}
+
 enum MdxFieldsEnum {
-  rawBody
-  fileAbsolutePath
+  frontmatter___topic___items
+  frontmatter___topic___items___rawBody
+  frontmatter___topic___items___fileAbsolutePath
+  frontmatter___topic___items___slug
+  frontmatter___topic___items___body
+  frontmatter___topic___items___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  frontmatter___topic___items___headings @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  frontmatter___topic___items___html @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  frontmatter___topic___items___mdxAST @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  frontmatter___topic___items___tableOfContents @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  frontmatter___topic___items___timeToRead @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  frontmatter___topic___items___gatsbyPath @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  frontmatter___topic___items___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  frontmatter___topic___items___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  frontmatter___topic___label
+  frontmatter___topic___id
+  frontmatter___topic___parent___id
+  frontmatter___topic___parent___children
+  frontmatter___topic___children
+  frontmatter___topic___children___id
+  frontmatter___topic___children___children
+  frontmatter___topic___internal___content
+  frontmatter___topic___internal___contentDigest
+  frontmatter___topic___internal___description
+  frontmatter___topic___internal___fieldOwners
+  frontmatter___topic___internal___ignoreType
+  frontmatter___topic___internal___mediaType
+  frontmatter___topic___internal___owner
+  frontmatter___topic___internal___type
   frontmatter___title
-  frontmatter___reading___required
-  frontmatter___reading___required___title
-  frontmatter___reading___required___link
   frontmatter___reading___optional
   frontmatter___reading___optional___title
   frontmatter___reading___optional___link
+  frontmatter___reading___required
+  frontmatter___reading___required___title
+  frontmatter___reading___required___link
   frontmatter___resources
   frontmatter___resources___title
   frontmatter___resources___link
+  rawBody
+  fileAbsolutePath
   slug
   body
   excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -1756,6 +1969,7 @@ enum MdxFieldsEnum {
   wordCount___paragraphs @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   wordCount___sentences @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   wordCount___words @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  fields___handle @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   gatsbyPath @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
   parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
@@ -1845,10 +2059,14 @@ enum MdxFieldsEnum {
   internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
 }
 
+input MdxFieldsFilterInput {
+  handle: StringQueryOperatorInput
+}
+
 input MdxFilterInput {
+  frontmatter: FrontmatterFilterInput
   rawBody: StringQueryOperatorInput
   fileAbsolutePath: StringQueryOperatorInput
-  frontmatter: MdxFrontmatterFilterInput
   slug: StringQueryOperatorInput
   body: StringQueryOperatorInput
   excerpt: StringQueryOperatorInput
@@ -1858,6 +2076,7 @@ input MdxFilterInput {
   tableOfContents: JSONQueryOperatorInput
   timeToRead: IntQueryOperatorInput
   wordCount: MdxWordCountFilterInput
+  fields: MdxFieldsFilterInput
   gatsbyPath: StringQueryOperatorInput
   id: StringQueryOperatorInput
   parent: NodeFilterInput
@@ -1871,24 +2090,16 @@ input MdxFilterListInput {
 
 type MdxFrontmatter {
   title: String!
-  reading: MdxFrontmatterReading
-  resources: [MdxFrontmatterResources]
-}
-
-input MdxFrontmatterFilterInput {
-  title: StringQueryOperatorInput
-  reading: MdxFrontmatterReadingFilterInput
-  resources: MdxFrontmatterResourcesFilterListInput
 }
 
 type MdxFrontmatterReading {
-  required: [MdxFrontmatterReadingRequired]
   optional: [MdxFrontmatterReadingOptional]
+  required: [MdxFrontmatterReadingRequired]
 }
 
 input MdxFrontmatterReadingFilterInput {
-  required: MdxFrontmatterReadingRequiredFilterListInput
   optional: MdxFrontmatterReadingOptionalFilterListInput
+  required: MdxFrontmatterReadingRequiredFilterListInput
 }
 
 type MdxFrontmatterReadingOptional {
@@ -2170,17 +2381,19 @@ enum PotraceTurnPolicy {
 }
 
 type Query {
-  file(sourceInstanceName: StringQueryOperatorInput, absolutePath: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, extension: StringQueryOperatorInput, size: IntQueryOperatorInput, prettySize: StringQueryOperatorInput, modifiedTime: DateQueryOperatorInput, accessTime: DateQueryOperatorInput, changeTime: DateQueryOperatorInput, birthTime: DateQueryOperatorInput, root: StringQueryOperatorInput, dir: StringQueryOperatorInput, base: StringQueryOperatorInput, ext: StringQueryOperatorInput, name: StringQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, dev: IntQueryOperatorInput, mode: IntQueryOperatorInput, nlink: IntQueryOperatorInput, uid: IntQueryOperatorInput, gid: IntQueryOperatorInput, rdev: IntQueryOperatorInput, ino: FloatQueryOperatorInput, atimeMs: FloatQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, atime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, ctime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, publicURL: StringQueryOperatorInput, childrenImageSharp: ImageSharpFilterListInput, childImageSharp: ImageSharpFilterInput, childrenMdx: MdxFilterListInput, childMdx: MdxFilterInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput): File
+  file(sourceInstanceName: StringQueryOperatorInput, absolutePath: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, extension: StringQueryOperatorInput, size: IntQueryOperatorInput, prettySize: StringQueryOperatorInput, modifiedTime: DateQueryOperatorInput, accessTime: DateQueryOperatorInput, changeTime: DateQueryOperatorInput, birthTime: DateQueryOperatorInput, root: StringQueryOperatorInput, dir: StringQueryOperatorInput, base: StringQueryOperatorInput, ext: StringQueryOperatorInput, name: StringQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, dev: IntQueryOperatorInput, mode: IntQueryOperatorInput, nlink: IntQueryOperatorInput, uid: IntQueryOperatorInput, gid: IntQueryOperatorInput, rdev: IntQueryOperatorInput, ino: FloatQueryOperatorInput, atimeMs: FloatQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, atime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, ctime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, publicURL: StringQueryOperatorInput, childrenImageSharp: ImageSharpFilterListInput, childImageSharp: ImageSharpFilterInput, childrenTopicsYaml: TopicsYamlFilterListInput, childTopicsYaml: TopicsYamlFilterInput, childrenMdx: MdxFilterListInput, childMdx: MdxFilterInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput): File
   allFile(filter: FileFilterInput, sort: FileSortInput, skip: Int, limit: Int): FileConnection!
   directory(sourceInstanceName: StringQueryOperatorInput, absolutePath: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, extension: StringQueryOperatorInput, size: IntQueryOperatorInput, prettySize: StringQueryOperatorInput, modifiedTime: DateQueryOperatorInput, accessTime: DateQueryOperatorInput, changeTime: DateQueryOperatorInput, birthTime: DateQueryOperatorInput, root: StringQueryOperatorInput, dir: StringQueryOperatorInput, base: StringQueryOperatorInput, ext: StringQueryOperatorInput, name: StringQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, dev: IntQueryOperatorInput, mode: IntQueryOperatorInput, nlink: IntQueryOperatorInput, uid: IntQueryOperatorInput, gid: IntQueryOperatorInput, rdev: IntQueryOperatorInput, ino: FloatQueryOperatorInput, atimeMs: FloatQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, atime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, ctime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput): Directory
   allDirectory(filter: DirectoryFilterInput, sort: DirectorySortInput, skip: Int, limit: Int): DirectoryConnection!
   site(buildTime: DateQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput, port: IntQueryOperatorInput, host: StringQueryOperatorInput, pathPrefix: StringQueryOperatorInput, flags: SiteFlagsFilterInput, polyfill: BooleanQueryOperatorInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput): Site
   allSite(filter: SiteFilterInput, sort: SiteSortInput, skip: Int, limit: Int): SiteConnection!
-  sitePage(path: StringQueryOperatorInput, component: StringQueryOperatorInput, internalComponentName: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, matchPath: StringQueryOperatorInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, context: SitePageContextFilterInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput, componentPath: StringQueryOperatorInput): SitePage
+  sitePage(path: StringQueryOperatorInput, component: StringQueryOperatorInput, internalComponentName: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, matchPath: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, context: SitePageContextFilterInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput, componentPath: StringQueryOperatorInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput): SitePage
   allSitePage(filter: SitePageFilterInput, sort: SitePageSortInput, skip: Int, limit: Int): SitePageConnection!
   imageSharp(fixed: ImageSharpFixedFilterInput, resolutions: ImageSharpResolutionsFilterInput, fluid: ImageSharpFluidFilterInput, sizes: ImageSharpSizesFilterInput, gatsbyImageData: JSONQueryOperatorInput, original: ImageSharpOriginalFilterInput, resize: ImageSharpResizeFilterInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput): ImageSharp
   allImageSharp(filter: ImageSharpFilterInput, sort: ImageSharpSortInput, skip: Int, limit: Int): ImageSharpConnection!
-  mdx(rawBody: StringQueryOperatorInput, fileAbsolutePath: StringQueryOperatorInput, frontmatter: MdxFrontmatterFilterInput, slug: StringQueryOperatorInput, body: StringQueryOperatorInput, excerpt: StringQueryOperatorInput, headings: MdxHeadingMdxFilterListInput, html: StringQueryOperatorInput, mdxAST: JSONQueryOperatorInput, tableOfContents: JSONQueryOperatorInput, timeToRead: IntQueryOperatorInput, wordCount: MdxWordCountFilterInput, gatsbyPath: StringQueryOperatorInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput): Mdx
+  topicsYaml(items: MdxFilterListInput, label: StringQueryOperatorInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput): TopicsYaml
+  allTopicsYaml(filter: TopicsYamlFilterInput, sort: TopicsYamlSortInput, skip: Int, limit: Int): TopicsYamlConnection!
+  mdx(frontmatter: FrontmatterFilterInput, rawBody: StringQueryOperatorInput, fileAbsolutePath: StringQueryOperatorInput, slug: StringQueryOperatorInput, body: StringQueryOperatorInput, excerpt: StringQueryOperatorInput, headings: MdxHeadingMdxFilterListInput, html: StringQueryOperatorInput, mdxAST: JSONQueryOperatorInput, tableOfContents: JSONQueryOperatorInput, timeToRead: IntQueryOperatorInput, wordCount: MdxWordCountFilterInput, fields: MdxFieldsFilterInput, gatsbyPath: StringQueryOperatorInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput): Mdx
   allMdx(filter: MdxFilterInput, sort: MdxSortInput, skip: Int, limit: Int): MdxConnection!
   pageTree(id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, isRootPage: BooleanQueryOperatorInput, name: StringQueryOperatorInput, pathRaw: StringQueryOperatorInput): PageTree
   allPageTree(filter: PageTreeFilterInput, sort: PageTreeSortInput, skip: Int, limit: Int): PageTreeConnection!
@@ -2537,15 +2750,15 @@ type SitePage implements Node {
   internalComponentName: String!
   componentChunkName: String!
   matchPath: String
-  id: ID!
-  parent: Node
-  children: [Node!]!
-  internal: Internal!
   isCreatedByStatefulCreatePages: Boolean
   context: SitePageContext
   pluginCreator: SitePlugin
   pluginCreatorId: String
   componentPath: String
+  id: ID!
+  parent: Node
+  children: [Node!]!
+  internal: Internal!
 }
 
 type SitePageConnection {
@@ -2589,92 +2802,6 @@ enum SitePageFieldsEnum {
   internalComponentName
   componentChunkName
   matchPath
-  id
-  parent___id
-  parent___parent___id
-  parent___parent___parent___id
-  parent___parent___parent___children
-  parent___parent___children
-  parent___parent___children___id
-  parent___parent___children___children
-  parent___parent___internal___content
-  parent___parent___internal___contentDigest
-  parent___parent___internal___description
-  parent___parent___internal___fieldOwners
-  parent___parent___internal___ignoreType
-  parent___parent___internal___mediaType
-  parent___parent___internal___owner
-  parent___parent___internal___type
-  parent___children
-  parent___children___id
-  parent___children___parent___id
-  parent___children___parent___children
-  parent___children___children
-  parent___children___children___id
-  parent___children___children___children
-  parent___children___internal___content
-  parent___children___internal___contentDigest
-  parent___children___internal___description
-  parent___children___internal___fieldOwners
-  parent___children___internal___ignoreType
-  parent___children___internal___mediaType
-  parent___children___internal___owner
-  parent___children___internal___type
-  parent___internal___content
-  parent___internal___contentDigest
-  parent___internal___description
-  parent___internal___fieldOwners
-  parent___internal___ignoreType
-  parent___internal___mediaType
-  parent___internal___owner
-  parent___internal___type
-  children
-  children___id
-  children___parent___id
-  children___parent___parent___id
-  children___parent___parent___children
-  children___parent___children
-  children___parent___children___id
-  children___parent___children___children
-  children___parent___internal___content
-  children___parent___internal___contentDigest
-  children___parent___internal___description
-  children___parent___internal___fieldOwners
-  children___parent___internal___ignoreType
-  children___parent___internal___mediaType
-  children___parent___internal___owner
-  children___parent___internal___type
-  children___children
-  children___children___id
-  children___children___parent___id
-  children___children___parent___children
-  children___children___children
-  children___children___children___id
-  children___children___children___children
-  children___children___internal___content
-  children___children___internal___contentDigest
-  children___children___internal___description
-  children___children___internal___fieldOwners
-  children___children___internal___ignoreType
-  children___children___internal___mediaType
-  children___children___internal___owner
-  children___children___internal___type
-  children___internal___content
-  children___internal___contentDigest
-  children___internal___description
-  children___internal___fieldOwners
-  children___internal___ignoreType
-  children___internal___mediaType
-  children___internal___owner
-  children___internal___type
-  internal___content
-  internal___contentDigest
-  internal___description
-  internal___fieldOwners
-  internal___ignoreType
-  internal___mediaType
-  internal___owner
-  internal___type
   isCreatedByStatefulCreatePages
   context___id
   context___slug
@@ -2776,6 +2903,92 @@ enum SitePageFieldsEnum {
   pluginCreator___packageJson___keywords
   pluginCreatorId
   componentPath
+  id
+  parent___id
+  parent___parent___id
+  parent___parent___parent___id
+  parent___parent___parent___children
+  parent___parent___children
+  parent___parent___children___id
+  parent___parent___children___children
+  parent___parent___internal___content
+  parent___parent___internal___contentDigest
+  parent___parent___internal___description
+  parent___parent___internal___fieldOwners
+  parent___parent___internal___ignoreType
+  parent___parent___internal___mediaType
+  parent___parent___internal___owner
+  parent___parent___internal___type
+  parent___children
+  parent___children___id
+  parent___children___parent___id
+  parent___children___parent___children
+  parent___children___children
+  parent___children___children___id
+  parent___children___children___children
+  parent___children___internal___content
+  parent___children___internal___contentDigest
+  parent___children___internal___description
+  parent___children___internal___fieldOwners
+  parent___children___internal___ignoreType
+  parent___children___internal___mediaType
+  parent___children___internal___owner
+  parent___children___internal___type
+  parent___internal___content
+  parent___internal___contentDigest
+  parent___internal___description
+  parent___internal___fieldOwners
+  parent___internal___ignoreType
+  parent___internal___mediaType
+  parent___internal___owner
+  parent___internal___type
+  children
+  children___id
+  children___parent___id
+  children___parent___parent___id
+  children___parent___parent___children
+  children___parent___children
+  children___parent___children___id
+  children___parent___children___children
+  children___parent___internal___content
+  children___parent___internal___contentDigest
+  children___parent___internal___description
+  children___parent___internal___fieldOwners
+  children___parent___internal___ignoreType
+  children___parent___internal___mediaType
+  children___parent___internal___owner
+  children___parent___internal___type
+  children___children
+  children___children___id
+  children___children___parent___id
+  children___children___parent___children
+  children___children___children
+  children___children___children___id
+  children___children___children___children
+  children___children___internal___content
+  children___children___internal___contentDigest
+  children___children___internal___description
+  children___children___internal___fieldOwners
+  children___children___internal___ignoreType
+  children___children___internal___mediaType
+  children___children___internal___owner
+  children___children___internal___type
+  children___internal___content
+  children___internal___contentDigest
+  children___internal___description
+  children___internal___fieldOwners
+  children___internal___ignoreType
+  children___internal___mediaType
+  children___internal___owner
+  children___internal___type
+  internal___content
+  internal___contentDigest
+  internal___description
+  internal___fieldOwners
+  internal___ignoreType
+  internal___mediaType
+  internal___owner
+  internal___type
 }
 
 input SitePageFilterInput {
@@ -2784,15 +2997,15 @@ input SitePageFilterInput {
   internalComponentName: StringQueryOperatorInput
   componentChunkName: StringQueryOperatorInput
   matchPath: StringQueryOperatorInput
-  id: StringQueryOperatorInput
-  parent: NodeFilterInput
-  children: NodeFilterListInput
-  internal: InternalFilterInput
   isCreatedByStatefulCreatePages: BooleanQueryOperatorInput
   context: SitePageContextFilterInput
   pluginCreator: SitePluginFilterInput
   pluginCreatorId: StringQueryOperatorInput
   componentPath: StringQueryOperatorInput
+  id: StringQueryOperatorInput
+  parent: NodeFilterInput
+  children: NodeFilterListInput
+  internal: InternalFilterInput
 }
 
 type SitePageGroupConnection {
@@ -3277,6 +3490,213 @@ input StringQueryOperatorInput {
   nin: [String]
   regex: String
   glob: String
+}
+
+type TopicsYaml implements Node {
+  items: [Mdx]
+  label: String
+  id: ID!
+  parent: Node
+  children: [Node!]!
+  internal: Internal!
+}
+
+type TopicsYamlConnection {
+  totalCount: Int!
+  edges: [TopicsYamlEdge!]!
+  nodes: [TopicsYaml!]!
+  pageInfo: PageInfo!
+  distinct(field: TopicsYamlFieldsEnum!): [String!]!
+  group(skip: Int, limit: Int, field: TopicsYamlFieldsEnum!): [TopicsYamlGroupConnection!]!
+}
+
+type TopicsYamlEdge {
+  next: TopicsYaml
+  node: TopicsYaml!
+  previous: TopicsYaml
+}
+
+enum TopicsYamlFieldsEnum {
+  items
+  items___frontmatter___topic___items
+  items___frontmatter___topic___label
+  items___frontmatter___topic___id
+  items___frontmatter___topic___children
+  items___frontmatter___title
+  items___frontmatter___reading___optional
+  items___frontmatter___reading___required
+  items___frontmatter___resources
+  items___frontmatter___resources___title
+  items___frontmatter___resources___link
+  items___rawBody
+  items___fileAbsolutePath
+  items___slug
+  items___body
+  items___excerpt @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___headings @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___headings___value @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___headings___depth @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___html @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___mdxAST @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___tableOfContents @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___timeToRead @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___wordCount___paragraphs @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___wordCount___sentences @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___wordCount___words @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___fields___handle @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___gatsbyPath @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___parent___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___parent___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___parent___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___parent___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___parent___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___parent___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___parent___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___parent___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___parent___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___parent___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___parent___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___parent___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___children___parent___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___children___parent___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___children___children___id @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___children___children___children @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___children___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___children___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___children___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___children___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___children___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___children___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___children___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___children___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___internal___content @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___internal___contentDigest @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___internal___description @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___internal___fieldOwners @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___internal___ignoreType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___internal___mediaType @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___internal___owner @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  items___internal___type @deprecated(reason: "Sorting on fields that need arguments to resolve is deprecated.")
+  label
+  id
+  parent___id
+  parent___parent___id
+  parent___parent___parent___id
+  parent___parent___parent___children
+  parent___parent___children
+  parent___parent___children___id
+  parent___parent___children___children
+  parent___parent___internal___content
+  parent___parent___internal___contentDigest
+  parent___parent___internal___description
+  parent___parent___internal___fieldOwners
+  parent___parent___internal___ignoreType
+  parent___parent___internal___mediaType
+  parent___parent___internal___owner
+  parent___parent___internal___type
+  parent___children
+  parent___children___id
+  parent___children___parent___id
+  parent___children___parent___children
+  parent___children___children
+  parent___children___children___id
+  parent___children___children___children
+  parent___children___internal___content
+  parent___children___internal___contentDigest
+  parent___children___internal___description
+  parent___children___internal___fieldOwners
+  parent___children___internal___ignoreType
+  parent___children___internal___mediaType
+  parent___children___internal___owner
+  parent___children___internal___type
+  parent___internal___content
+  parent___internal___contentDigest
+  parent___internal___description
+  parent___internal___fieldOwners
+  parent___internal___ignoreType
+  parent___internal___mediaType
+  parent___internal___owner
+  parent___internal___type
+  children
+  children___id
+  children___parent___id
+  children___parent___parent___id
+  children___parent___parent___children
+  children___parent___children
+  children___parent___children___id
+  children___parent___children___children
+  children___parent___internal___content
+  children___parent___internal___contentDigest
+  children___parent___internal___description
+  children___parent___internal___fieldOwners
+  children___parent___internal___ignoreType
+  children___parent___internal___mediaType
+  children___parent___internal___owner
+  children___parent___internal___type
+  children___children
+  children___children___id
+  children___children___parent___id
+  children___children___parent___children
+  children___children___children
+  children___children___children___id
+  children___children___children___children
+  children___children___internal___content
+  children___children___internal___contentDigest
+  children___children___internal___description
+  children___children___internal___fieldOwners
+  children___children___internal___ignoreType
+  children___children___internal___mediaType
+  children___children___internal___owner
+  children___children___internal___type
+  children___internal___content
+  children___internal___contentDigest
+  children___internal___description
+  children___internal___fieldOwners
+  children___internal___ignoreType
+  children___internal___mediaType
+  children___internal___owner
+  children___internal___type
+  internal___content
+  internal___contentDigest
+  internal___description
+  internal___fieldOwners
+  internal___ignoreType
+  internal___mediaType
+  internal___owner
+  internal___type
+}
+
+input TopicsYamlFilterInput {
+  items: MdxFilterListInput
+  label: StringQueryOperatorInput
+  id: StringQueryOperatorInput
+  parent: NodeFilterInput
+  children: NodeFilterListInput
+  internal: InternalFilterInput
+}
+
+input TopicsYamlFilterListInput {
+  elemMatch: TopicsYamlFilterInput
+}
+
+type TopicsYamlGroupConnection {
+  totalCount: Int!
+  edges: [TopicsYamlEdge!]!
+  nodes: [TopicsYaml!]!
+  pageInfo: PageInfo!
+  field: String!
+  fieldValue: String
+}
+
+input TopicsYamlSortInput {
+  fields: [TopicsYamlFieldsEnum]
+  order: [SortOrderEnum] = [ASC]
 }
 
 input TransformOptions {

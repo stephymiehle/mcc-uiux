@@ -41,7 +41,7 @@ const DocPageTemplate: React.FC<PageProps<GatsbyTypes.DocTemplateQuery>> = ({
   data,
   location,
 }) => {
-  // return <>{JSON.stringify(props.data)}</>;
+  const { topic } = data.mdx.frontmatter;
   return (
     <Layout location={location} title={data.mdx.frontmatter.title}>
       <MDXProvider components={elements}>
@@ -51,6 +51,7 @@ const DocPageTemplate: React.FC<PageProps<GatsbyTypes.DocTemplateQuery>> = ({
               {data.mdx.frontmatter.title}
             </h1>
             <MDXRenderer>{data.mdx.body}</MDXRenderer>
+            <footer>{JSON.stringify(topic)}</footer>
           </div>
         </div>
       </MDXProvider>
@@ -67,6 +68,15 @@ export const query = graphql`
       body
       frontmatter {
         title
+        topic {
+          label
+          items {
+            slug
+            frontmatter {
+              title
+            }
+          }
+        }
         reading {
           required {
             title
