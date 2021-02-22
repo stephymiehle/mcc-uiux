@@ -1,6 +1,7 @@
 // Typography
 export * from './MdxH2';
 export * from './MdxH3';
+export * from './MdxH4';
 
 // Media
 export * from './MdxFigcaption';

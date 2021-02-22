@@ -13,6 +13,7 @@ import { FullWidthContainer } from '../components/FullWidthContainer';
 import {
   MdxH2,
   MdxH3,
+  MdxH4,
   MdxFigcaption,
   MdxFigure,
   MdxLink,
@@ -20,7 +21,6 @@ import {
   MdxOl,
   MdxLi,
 } from '../components/MdxComponents';
-import { Link } from '../components/Link';
 import { TopicFooter } from '../components/TopicFooter';
 
 const elements = {
@@ -30,6 +30,7 @@ const elements = {
   FullWidthContainer,
   h2: MdxH2,
   h3: MdxH3,
+  h4: MdxH4,
   figure: MdxFigure,
   figcaption: MdxFigcaption,
   ul: MdxUl,
