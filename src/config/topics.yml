@@ -2,6 +2,7 @@
   id: color
   items:
     - color-blindness
+    - generating-color-schemes
 
 - label: Typography
   id: typography
