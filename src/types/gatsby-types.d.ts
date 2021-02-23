@@ -730,8 +730,8 @@ enum FileFieldsEnum {
   childrenTopicsYaml = 'childrenTopicsYaml',
   childrenTopicsYaml___items = 'childrenTopicsYaml.items',
   childrenTopicsYaml___items___frontmatter___title = 'childrenTopicsYaml.items.frontmatter.title',
-  childrenTopicsYaml___items___frontmatter___resources = 'childrenTopicsYaml.items.frontmatter.resources',
   childrenTopicsYaml___items___frontmatter___draft = 'childrenTopicsYaml.items.frontmatter.draft',
+  childrenTopicsYaml___items___frontmatter___resources = 'childrenTopicsYaml.items.frontmatter.resources',
   childrenTopicsYaml___items___rawBody = 'childrenTopicsYaml.items.rawBody',
   childrenTopicsYaml___items___fileAbsolutePath = 'childrenTopicsYaml.items.fileAbsolutePath',
   childrenTopicsYaml___items___slug = 'childrenTopicsYaml.items.slug',
@@ -804,8 +804,8 @@ enum FileFieldsEnum {
   childrenTopicsYaml___internal___type = 'childrenTopicsYaml.internal.type',
   childTopicsYaml___items = 'childTopicsYaml.items',
   childTopicsYaml___items___frontmatter___title = 'childTopicsYaml.items.frontmatter.title',
-  childTopicsYaml___items___frontmatter___resources = 'childTopicsYaml.items.frontmatter.resources',
   childTopicsYaml___items___frontmatter___draft = 'childTopicsYaml.items.frontmatter.draft',
+  childTopicsYaml___items___frontmatter___resources = 'childTopicsYaml.items.frontmatter.resources',
   childTopicsYaml___items___rawBody = 'childTopicsYaml.items.rawBody',
   childTopicsYaml___items___fileAbsolutePath = 'childTopicsYaml.items.fileAbsolutePath',
   childTopicsYaml___items___slug = 'childTopicsYaml.items.slug',
@@ -882,10 +882,10 @@ enum FileFieldsEnum {
   childrenMdx___frontmatter___topic___id = 'childrenMdx.frontmatter.topic.id',
   childrenMdx___frontmatter___topic___children = 'childrenMdx.frontmatter.topic.children',
   childrenMdx___frontmatter___title = 'childrenMdx.frontmatter.title',
+  childrenMdx___frontmatter___draft = 'childrenMdx.frontmatter.draft',
   childrenMdx___frontmatter___resources = 'childrenMdx.frontmatter.resources',
   childrenMdx___frontmatter___resources___title = 'childrenMdx.frontmatter.resources.title',
   childrenMdx___frontmatter___resources___link = 'childrenMdx.frontmatter.resources.link',
-  childrenMdx___frontmatter___draft = 'childrenMdx.frontmatter.draft',
   childrenMdx___rawBody = 'childrenMdx.rawBody',
   childrenMdx___fileAbsolutePath = 'childrenMdx.fileAbsolutePath',
   childrenMdx___slug = 'childrenMdx.slug',
@@ -946,10 +946,10 @@ enum FileFieldsEnum {
   childMdx___frontmatter___topic___id = 'childMdx.frontmatter.topic.id',
   childMdx___frontmatter___topic___children = 'childMdx.frontmatter.topic.children',
   childMdx___frontmatter___title = 'childMdx.frontmatter.title',
+  childMdx___frontmatter___draft = 'childMdx.frontmatter.draft',
   childMdx___frontmatter___resources = 'childMdx.frontmatter.resources',
   childMdx___frontmatter___resources___title = 'childMdx.frontmatter.resources.title',
   childMdx___frontmatter___resources___link = 'childMdx.frontmatter.resources.link',
-  childMdx___frontmatter___draft = 'childMdx.frontmatter.draft',
   childMdx___rawBody = 'childMdx.rawBody',
   childMdx___fileAbsolutePath = 'childMdx.fileAbsolutePath',
   childMdx___slug = 'childMdx.slug',
@@ -1168,15 +1168,15 @@ type FloatQueryOperatorInput = {
 type Frontmatter = {
   readonly topic: Maybe<TopicsYaml>;
   readonly title: Maybe<Scalars['String']>;
-  readonly resources: Maybe<ReadonlyArray<Maybe<MdxFrontmatterResources>>>;
   readonly draft: Maybe<Scalars['Boolean']>;
+  readonly resources: Maybe<ReadonlyArray<Maybe<MdxFrontmatterResources>>>;
 };
 
 type FrontmatterFilterInput = {
   readonly topic: Maybe<TopicsYamlFilterInput>;
   readonly title: Maybe<StringQueryOperatorInput>;
-  readonly resources: Maybe<MdxFrontmatterResourcesFilterListInput>;
   readonly draft: Maybe<BooleanQueryOperatorInput>;
+  readonly resources: Maybe<MdxFrontmatterResourcesFilterListInput>;
 };
 
 enum HeadingsMdx {
@@ -1879,10 +1879,10 @@ enum MdxFieldsEnum {
   frontmatter___topic___internal___owner = 'frontmatter.topic.internal.owner',
   frontmatter___topic___internal___type = 'frontmatter.topic.internal.type',
   frontmatter___title = 'frontmatter.title',
+  frontmatter___draft = 'frontmatter.draft',
   frontmatter___resources = 'frontmatter.resources',
   frontmatter___resources___title = 'frontmatter.resources.title',
   frontmatter___resources___link = 'frontmatter.resources.link',
-  frontmatter___draft = 'frontmatter.draft',
   rawBody = 'rawBody',
   fileAbsolutePath = 'fileAbsolutePath',
   slug = 'slug',
@@ -3745,10 +3745,10 @@ enum TopicsYamlFieldsEnum {
   items___frontmatter___topic___id = 'items.frontmatter.topic.id',
   items___frontmatter___topic___children = 'items.frontmatter.topic.children',
   items___frontmatter___title = 'items.frontmatter.title',
+  items___frontmatter___draft = 'items.frontmatter.draft',
   items___frontmatter___resources = 'items.frontmatter.resources',
   items___frontmatter___resources___title = 'items.frontmatter.resources.title',
   items___frontmatter___resources___link = 'items.frontmatter.resources.link',
-  items___frontmatter___draft = 'items.frontmatter.draft',
   items___rawBody = 'items.rawBody',
   items___fileAbsolutePath = 'items.fileAbsolutePath',
   items___slug = 'items.slug',

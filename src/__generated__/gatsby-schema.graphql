@@ -844,8 +844,8 @@ enum FileFieldsEnum {
   childrenTopicsYaml
   childrenTopicsYaml___items
   childrenTopicsYaml___items___frontmatter___title
-  childrenTopicsYaml___items___frontmatter___resources
   childrenTopicsYaml___items___frontmatter___draft
+  childrenTopicsYaml___items___frontmatter___resources
   childrenTopicsYaml___items___rawBody
   childrenTopicsYaml___items___fileAbsolutePath
   childrenTopicsYaml___items___slug
@@ -918,8 +918,8 @@ enum FileFieldsEnum {
   childrenTopicsYaml___internal___type
   childTopicsYaml___items
   childTopicsYaml___items___frontmatter___title
-  childTopicsYaml___items___frontmatter___resources
   childTopicsYaml___items___frontmatter___draft
+  childTopicsYaml___items___frontmatter___resources
   childTopicsYaml___items___rawBody
   childTopicsYaml___items___fileAbsolutePath
   childTopicsYaml___items___slug
@@ -996,10 +996,10 @@ enum FileFieldsEnum {
   childrenMdx___frontmatter___topic___id
   childrenMdx___frontmatter___topic___children
   childrenMdx___frontmatter___title
+  childrenMdx___frontmatter___draft
   childrenMdx___frontmatter___resources
   childrenMdx___frontmatter___resources___title
   childrenMdx___frontmatter___resources___link
-  childrenMdx___frontmatter___draft
   childrenMdx___rawBody
   childrenMdx___fileAbsolutePath
   childrenMdx___slug
@@ -1060,10 +1060,10 @@ enum FileFieldsEnum {
   childMdx___frontmatter___topic___id
   childMdx___frontmatter___topic___children
   childMdx___frontmatter___title
+  childMdx___frontmatter___draft
   childMdx___frontmatter___resources
   childMdx___frontmatter___resources___title
   childMdx___frontmatter___resources___link
-  childMdx___frontmatter___draft
   childMdx___rawBody
   childMdx___fileAbsolutePath
   childMdx___slug
@@ -1282,15 +1282,15 @@ input FloatQueryOperatorInput {
 type Frontmatter {
   topic: TopicsYaml
   title: String
-  resources: [MdxFrontmatterResources]
   draft: Boolean
+  resources: [MdxFrontmatterResources]
 }
 
 input FrontmatterFilterInput {
   topic: TopicsYamlFilterInput
   title: StringQueryOperatorInput
-  resources: MdxFrontmatterResourcesFilterListInput
   draft: BooleanQueryOperatorInput
+  resources: MdxFrontmatterResourcesFilterListInput
 }
 
 enum HeadingsMdx {
@@ -1944,10 +1944,10 @@ enum MdxFieldsEnum {
   frontmatter___topic___internal___owner
   frontmatter___topic___internal___type
   frontmatter___title
+  frontmatter___draft
   frontmatter___resources
   frontmatter___resources___title
   frontmatter___resources___link
-  frontmatter___draft
   rawBody
   fileAbsolutePath
   slug
@@ -3469,10 +3469,10 @@ enum TopicsYamlFieldsEnum {
   items___frontmatter___topic___id
   items___frontmatter___topic___children
   items___frontmatter___title
+  items___frontmatter___draft
   items___frontmatter___resources
   items___frontmatter___resources___title
   items___frontmatter___resources___link
-  items___frontmatter___draft
   items___rawBody
   items___fileAbsolutePath
   items___slug
