@@ -1,15 +1,17 @@
 import React from 'react';
+import classNames from 'classnames';
 
 interface IFullWidthContainerProps {
-  author: string;
-  link: string;
-  title?: string;
+  className?: string;
 }
 
 export const FullWidthContainer: React.FC<IFullWidthContainerProps> = ({
+  className,
   children,
-}) => (
-  <div className="relative w-screen transform -translate-x-1/2 left-1/2">
-    {children}
-  </div>
-);
+}) => {
+  const classes = classNames(
+    'relative w-screen transform -translate-x-1/2 left-1/2',
+    className,
+  );
+  return <div className={classes}>{children}</div>;
+};
