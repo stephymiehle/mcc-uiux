@@ -58,13 +58,21 @@ const DocPageTemplate: React.FC<PageProps<GatsbyTypes.DocTemplateQuery>> = ({
             <h1 className="mt-4 mb-8 text-5xl text-black dark:text-white">
               {data.mdx.frontmatter.title}
             </h1>
-            <MDXRenderer>{data.mdx.body}</MDXRenderer>
+            <div className="mb-12 mdx-content">
+              <MDXRenderer>{data.mdx.body}</MDXRenderer>
+            </div>
             {topic?.items && (
-              <TopicFooter
-                items={topic.items}
-                label={topic.label}
-                location={location}
-              />
+              <FullWidthContainer className="py-12 mt-12 bg-grey-100 dark:bg-grey-800">
+                <div className="container px-4 mx-auto">
+                  <div className="mx-auto md:text-lg max-w-prose">
+                    <TopicFooter
+                      items={topic.items}
+                      label={topic.label}
+                      location={location}
+                    />
+                  </div>
+                </div>
+              </FullWidthContainer>
             )}
           </div>
         </div>

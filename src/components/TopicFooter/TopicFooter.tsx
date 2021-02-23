@@ -27,11 +27,11 @@ const TopicFooter: React.FC<TopicFooterProps> = ({
   }
 
   return (
-    <footer>
-      <h4 className="mb-3 text-sm font-medium tracking-widest text-grey-900 dark:text-white">
-        {label}
+    <>
+      <h4 className="mb-3 font-medium text-grey-900 dark:text-white">
+        Other Pages in {label}
       </h4>
-      <nav className="mb-10 list-none">
+      <nav className="list-none">
         {filteredItems.map((item) => (
           <li key={item.slug}>
             <Link
@@ -43,7 +43,7 @@ const TopicFooter: React.FC<TopicFooterProps> = ({
           </li>
         ))}
       </nav>
-    </footer>
+    </>
   );
 };
 

@@ -16,7 +16,7 @@ export const Layout: React.FC<ILayoutProps> = ({
   <>
     <SEO pathName={location.pathname} title={title} />
     <Nav />
-    <div className="flex-grow pb-12 site-container text-grey-800 dark:bg-grey-900 dark:text-grey-400">
+    <div className="flex-grow site-container text-grey-800 dark:bg-grey-900 dark:text-grey-400">
       {children}
     </div>
     <Footer />
