@@ -8,6 +8,7 @@
   id: typography
   items:
     - fonts-and-copyright
+    - choosing-fonts
 
 - label: Layout
   id: layout
