@@ -3980,11 +3980,6 @@ type FooterDataQuery = { readonly siteBuildMetadata: Maybe<{ buildYear: SiteBuil
       )>>> }
     )> } };
 
-type SocialImageQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SocialImageQueryQuery = { readonly socialImage: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<Pick<ImageSharpFluid, 'src'>> }> }> };
-
 type SiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3997,6 +3992,11 @@ type SocialQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type SocialQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<{ readonly social: Maybe<{ readonly twitter: Maybe<Pick<SiteSiteMetadataSocialTwitter, 'username'>>, readonly facebook: Maybe<Pick<SiteSiteMetadataSocialFacebook, 'username'>>, readonly instagram: Maybe<Pick<SiteSiteMetadataSocialInstagram, 'username'>> }> }> }> };
+
+type SocialImageQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SocialImageQueryQuery = { readonly socialImage: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<Pick<ImageSharpFluid, 'src'>> }> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

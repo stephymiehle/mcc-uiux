@@ -5,3 +5,17 @@
 figure .gatsby-resp-image-wrapper {
   @apply rounded overflow-hidden;
 }
+
+.iframe-16-9 {
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  @apply my-5 relative overflow-hidden h-0;
+
+  iframe {
+    @apply absolute inset-0 w-full h-full;
+  }
+
+  & + & {
+    @apply mt-4;
+  }
+}
