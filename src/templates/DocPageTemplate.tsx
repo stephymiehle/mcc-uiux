@@ -20,6 +20,9 @@ import {
   MdxUl,
   MdxOl,
   MdxLi,
+  MdxTable,
+  MdxTh,
+  MdxTd,
 } from '../components/MdxComponents';
 import { TopicFooter } from '../components/TopicFooter';
 
@@ -36,6 +39,9 @@ const elements = {
   ul: MdxUl,
   ol: MdxOl,
   li: MdxLi,
+  table: MdxTable,
+  th: MdxTh,
+  td: MdxTd,
   License,
   Panel,
 };

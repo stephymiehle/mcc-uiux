@@ -12,3 +12,8 @@ export * from './MdxLink';
 export * from './MdxUl';
 export * from './MdxOl';
 export * from './MdxLi';
+
+// Tables
+export * from './MdxTable';
+export * from './MdxTh';
+export * from './MdxTd';
