@@ -2906,6 +2906,7 @@ __metadata:
     gatsby-remark-autolink-headers: ^2.9.0
     gatsby-remark-embedder: ^4.1.0
     gatsby-remark-external-links: ^0.0.4
+    gatsby-remark-gifs: ^1.0.0
     gatsby-remark-images: ^3.9.0
     gatsby-source-filesystem: ^2.9.0
     gatsby-transformer-sharp: ^2.10.0
@@ -10987,6 +10988,18 @@ fsevents@~2.1.2:
     unist-util-find: ^1.0.1
     unist-util-visit: ^1.1.3
   checksum: c65e95b72ee0a3903903433f3bb9c319e01f7cafb1666ad2f1045fe233232dd988c350c1d4b1b9b5acf355ef04611cc6b871d024424ffe732fdf2a8005844fe7
+  languageName: node
+  linkType: hard
+
+"gatsby-remark-gifs@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "gatsby-remark-gifs@npm:1.0.0"
+  dependencies:
+    is-relative-url: ^3.0.0
+    unist-util-visit: ^2.0.3
+  peerDependencies:
+    gatsby: ^2.0.0
+  checksum: 4d681c5af83f2b52e00c14c14b0bf14498dc326cea42c7c544a1ed76f8193fa610ab65433851f566434aa93ae5955de0a4e50341e64ffaa56d241cded11beb77
   languageName: node
   linkType: hard
 

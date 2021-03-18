@@ -38,6 +38,7 @@ const remarkPlugins = [
     },
   },
   'gatsby-remark-external-links',
+  'gatsby-remark-gifs',
 ];
 
 const config: GatsbyConfig = {
