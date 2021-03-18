@@ -2,6 +2,7 @@
   id: software
   items:
     - screen-recording
+    - figma
 
 - label: Color
   id: color
@@ -14,6 +15,11 @@
   items:
     - fonts-and-copyright
     - choosing-fonts
+
+- label: Project Planning
+  id: project-planning
+  items:
+    - flowcharts
 
 - label: Layout
   id: layout
