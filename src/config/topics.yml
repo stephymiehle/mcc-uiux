@@ -1,3 +1,8 @@
+- label: Software
+  id: software
+  items:
+    - screen-recording
+
 - label: Color
   id: color
   items:
