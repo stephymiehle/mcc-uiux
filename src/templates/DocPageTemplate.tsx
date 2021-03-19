@@ -9,6 +9,7 @@ import { Layout } from '../components/Layout';
 import { Blockquote } from '../components/Blockquote';
 import { License } from '../components/License';
 import { Panel } from '../components/Panel';
+import { Button } from '../components/Button';
 import { FullWidthContainer } from '../components/FullWidthContainer';
 import {
   MdxH2,
@@ -44,6 +45,7 @@ const elements = {
   td: MdxTd,
   License,
   Panel,
+  Button,
 };
 
 const DocPageTemplate: React.FC<PageProps<GatsbyTypes.DocTemplateQuery>> = ({
