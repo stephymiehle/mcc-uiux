@@ -5816,6 +5816,18 @@
             "deprecationReason": null
           },
           {
+            "name": "draft",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "resources",
             "description": null,
             "args": [],
@@ -5827,18 +5839,6 @@
                 "name": "MdxFrontmatterResources",
                 "ofType": null
               }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "draft",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -11724,11 +11724,11 @@
             "deprecationReason": null
           },
           {
-            "name": "resources",
+            "name": "draft",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "MdxFrontmatterResourcesFilterListInput",
+              "name": "BooleanQueryOperatorInput",
               "ofType": null
             },
             "defaultValue": null,
@@ -11736,11 +11736,11 @@
             "deprecationReason": null
           },
           {
-            "name": "draft",
+            "name": "resources",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "BooleanQueryOperatorInput",
+              "name": "MdxFrontmatterResourcesFilterListInput",
               "ofType": null
             },
             "defaultValue": null,
@@ -13404,13 +13404,13 @@
             "deprecationReason": null
           },
           {
-            "name": "childrenTopicsYaml___items___frontmatter___resources",
+            "name": "childrenTopicsYaml___items___frontmatter___draft",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "childrenTopicsYaml___items___frontmatter___draft",
+            "name": "childrenTopicsYaml___items___frontmatter___resources",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -13848,13 +13848,13 @@
             "deprecationReason": null
           },
           {
-            "name": "childTopicsYaml___items___frontmatter___resources",
+            "name": "childTopicsYaml___items___frontmatter___draft",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "childTopicsYaml___items___frontmatter___draft",
+            "name": "childTopicsYaml___items___frontmatter___resources",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -14316,6 +14316,12 @@
             "deprecationReason": null
           },
           {
+            "name": "childrenMdx___frontmatter___draft",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "childrenMdx___frontmatter___resources",
             "description": null,
             "isDeprecated": false,
@@ -14329,12 +14335,6 @@
           },
           {
             "name": "childrenMdx___frontmatter___resources___link",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "childrenMdx___frontmatter___draft",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -14700,6 +14700,12 @@
             "deprecationReason": null
           },
           {
+            "name": "childMdx___frontmatter___draft",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "childMdx___frontmatter___resources",
             "description": null,
             "isDeprecated": false,
@@ -14713,12 +14719,6 @@
           },
           {
             "name": "childMdx___frontmatter___resources___link",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "childMdx___frontmatter___draft",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -23520,6 +23520,12 @@
             "deprecationReason": null
           },
           {
+            "name": "items___frontmatter___draft",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "items___frontmatter___resources",
             "description": null,
             "isDeprecated": false,
@@ -23533,12 +23539,6 @@
           },
           {
             "name": "items___frontmatter___resources___link",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "items___frontmatter___draft",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -24996,6 +24996,12 @@
             "deprecationReason": null
           },
           {
+            "name": "frontmatter___draft",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "frontmatter___resources",
             "description": null,
             "isDeprecated": false,
@@ -25009,12 +25015,6 @@
           },
           {
             "name": "frontmatter___resources___link",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "frontmatter___draft",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
