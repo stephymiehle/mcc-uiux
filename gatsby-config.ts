@@ -129,6 +129,7 @@ const config: GatsbyConfig = {
         nodeType: 'Mdx',
       },
     },
+    'gatsby-plugin-create-handle',
   ],
 };
 

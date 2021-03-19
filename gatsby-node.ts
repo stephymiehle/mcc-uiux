@@ -14,28 +14,28 @@ const getChild = (node: any) => {
   return node.childMarkdownRemark || node.childMdx;
 };
 
-export const onCreateNode: GatsbyNode['onCreateNode'] = ({
-  actions,
-  node,
-  getNode,
-}) => {
-  const { createNodeField } = actions;
+// export const onCreateNode: GatsbyNode['onCreateNode'] = ({
+//   actions,
+//   node,
+//   getNode,
+// }) => {
+//   const { createNodeField } = actions;
 
-  if (node.internal.type === 'MarkdownRemark' || node.internal.type === 'Mdx') {
-    // Create handle/ID for linking
-    const handle = createFilePath({
-      node,
-      getNode,
-      trailingSlash: false,
-    });
+//   if (node.internal.type === 'MarkdownRemark' || node.internal.type === 'Mdx') {
+//     // Create handle/ID for linking
+//     const handle = createFilePath({
+//       node,
+//       getNode,
+//       trailingSlash: false,
+//     });
 
-    createNodeField({
-      name: 'handle',
-      node,
-      value: handle.replace('/', ''),
-    });
-  }
-};
+//     createNodeField({
+//       name: 'handle',
+//       node,
+//       value: handle.replace('/', ''),
+//     });
+//   }
+// };
 
 export const createPages: GatsbyNode['createPages'] = async ({
   graphql,

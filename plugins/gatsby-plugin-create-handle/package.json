@@ -1,0 +1,10 @@
+{
+  "name": "gatsby-plugin-create-handle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rob McFadzean <rob@northxsouth.co>"
+}
