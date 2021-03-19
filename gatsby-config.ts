@@ -6,7 +6,6 @@ import {
   manifestOptions,
   googleAnalytics,
   pathPrefix,
-  googleFonts,
   instagramAccessToken,
 } from './config/SiteConfig';
 
@@ -124,12 +123,6 @@ const config: GatsbyConfig = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-sitemap',
     'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-plugin-google-fonts-v2',
-      options: {
-        fonts: googleFonts,
-      },
-    },
     {
       resolve: 'gatsby-plugin-draft',
       options: {

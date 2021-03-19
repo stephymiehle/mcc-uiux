@@ -73,14 +73,6 @@ const manifestOptions = {
   },
 };
 
-const googleFonts = [
-  {
-    family: 'Inter',
-    variable: true,
-    weights: ['300..700'],
-  },
-];
-
 const instagramAccessToken = process.env.INSTAGRAM_ACCESS_TOKEN;
 
 export {
@@ -90,6 +82,5 @@ export {
   googleAnalytics,
   social,
   manifestOptions,
-  googleFonts,
   instagramAccessToken,
 };
