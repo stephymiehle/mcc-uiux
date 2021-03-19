@@ -66,7 +66,7 @@ const DocPageTemplate: React.FC<PageProps<GatsbyTypes.DocTemplateQuery>> = ({
                 This Page is a draft
               </span>
             )}
-            <h1 className="mt-4 mb-8 text-5xl text-black dark:text-white">
+            <h1 className="mt-4 mb-8 text-5xl font-semibold text-black dark:text-white">
               {data.mdx.frontmatter.title}
             </h1>
             {resources && (
