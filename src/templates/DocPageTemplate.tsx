@@ -10,6 +10,7 @@ import { Blockquote } from '../components/Blockquote';
 import { License } from '../components/License';
 import { Panel } from '../components/Panel';
 import { Button } from '../components/Button';
+import { Link } from '../components/Link';
 import { FullWidthContainer } from '../components/FullWidthContainer';
 import {
   MdxH2,
@@ -26,6 +27,7 @@ import {
   MdxTd,
 } from '../components/MdxComponents';
 import { TopicFooter } from '../components/TopicFooter';
+import { ResourceCard } from '../components/ResourceCard';
 
 const elements = {
   Blockquote,
@@ -53,6 +55,7 @@ const DocPageTemplate: React.FC<PageProps<GatsbyTypes.DocTemplateQuery>> = ({
   location,
 }) => {
   const { topic } = data.mdx.frontmatter;
+  const { resources } = data.mdx.frontmatter;
   return (
     <Layout location={location} title={data.mdx.frontmatter.title}>
       <MDXProvider components={elements}>
@@ -66,6 +69,20 @@ const DocPageTemplate: React.FC<PageProps<GatsbyTypes.DocTemplateQuery>> = ({
             <h1 className="mt-4 mb-8 text-5xl text-black dark:text-white">
               {data.mdx.frontmatter.title}
             </h1>
+            {resources && (
+              <div className="mb-12">
+                <MdxH2>Resources</MdxH2>
+                <div className="grid gap-4 resource-container md:grid-cols-2">
+                  {resources.map((resource) => (
+                    <ResourceCard
+                      key={resource.link}
+                      link={resource.link}
+                      title={resource.title}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
             <div className="mb-12 mdx-content">
               <MDXRenderer>{data.mdx.body}</MDXRenderer>
             </div>
