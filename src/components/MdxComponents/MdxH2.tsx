@@ -5,7 +5,7 @@ import * as React from 'react';
 const MdxH2: React.FC = ({ ...props }) => {
   return (
     <h2
-      className="flex mt-16 mb-3 text-4xl text-black dark:text-white"
+      className="flex mt-16 mb-3 text-4xl font-semibold text-black dark:text-white group"
       {...props}
     />
   );

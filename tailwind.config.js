@@ -74,6 +74,7 @@ const theme = {
 const variants = {
   borderWidth: ['responsive', 'first'],
   margin: ['responsive', 'last', 'first'],
+  opacity: ['group-hover'],
 };
 
 const plugins = [];

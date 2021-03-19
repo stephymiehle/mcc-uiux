@@ -5,7 +5,7 @@ import * as React from 'react';
 const MdxH3: React.FC = ({ ...props }) => {
   return (
     <h3
-      className="flex mt-12 mb-3 text-3xl text-black dark:text-white"
+      className="flex mt-12 mb-3 text-3xl text-black dark:text-white group"
       {...props}
     />
   );
