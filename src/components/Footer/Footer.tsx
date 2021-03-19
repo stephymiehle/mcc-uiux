@@ -34,7 +34,10 @@ const Footer: React.FC<IFooterProps> = () => {
     allTopicsYaml,
   } = data;
   return (
-    <footer className="text-grey-700 dark:text-grey-400 dark:bg-grey-700 bg-grey-200">
+    <footer
+      className="text-grey-700 dark:text-grey-400 dark:bg-grey-700 bg-grey-200"
+      id="topics"
+    >
       <div className="container flex flex-col flex-wrap px-4 py-12 mx-auto md:items-center">
         <h2 className="mb-6 text-2xl font-bold text-black dark:text-white">
           All Topics by Category

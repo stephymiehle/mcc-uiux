@@ -51,12 +51,7 @@ export const Nav: React.FC = () => {
         >
           <div className="flex flex-col items-start justify-end flex-1 -mx-1 md:items-center md:flex-row">
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/about/">About</NavLink>
-            <NavLink to="#">
-              <span className="relative inline-block px-3 py-1 text-base uppercase transition-colors duration-200 ease-in-out border-2 rounded text-primary border-primary hover:bg-primary-500 hover:text-white">
-                Sign Up
-              </span>
-            </NavLink>
+            <NavLink to="#topics">All Topics</NavLink>
           </div>
         </div>
       </div>
