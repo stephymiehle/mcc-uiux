@@ -5,6 +5,7 @@ const theme = {
   colors: {
     ...colors,
     primary: {
+      25: '#c2b4ff',
       50: '#e9e6f2',
       100: '#c9c1de',
       200: '#a598c8',
