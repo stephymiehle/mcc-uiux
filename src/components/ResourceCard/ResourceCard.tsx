@@ -24,10 +24,10 @@ const ResourceCard: React.FC<IResourceCardProps> = ({ key, link, title }) => {
     <Link
       key={key}
       to={link}
-      className="block p-3 border border-current rounded text-primary-700 hover:text-primary-500 dark:text-primary-200"
+      className="block p-3 border border-current rounded text-primary-600 hover:text-primary-300 dark:text-primary-200"
     >
-      <div className="mb-2 text-xs opacity-70">{stripWWW(host)}</div>
-      <div className="text-sm font-semibold">{title}</div>
+      <div className="mb-2 text-sm opacity-70">{stripWWW(host)}</div>
+      <div className="font-semibold leading-snug">{title}</div>
     </Link>
   );
 };
