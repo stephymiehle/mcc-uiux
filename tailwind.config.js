@@ -5,8 +5,21 @@ const theme = {
   colors: {
     ...colors,
     primary: {
-      ...colors.teal,
-      DEFAULT: colors.teal[500],
+      50: '#e9e6f2',
+      100: '#c9c1de',
+      200: '#a598c8',
+      300: '#816fb1',
+      400: '#6650a1',
+      500: '#5b429d',
+      600: '#4b3190',
+      700: '#3d2584',
+      800: '#2b1472',
+      900: '#1c0b5e',
+      A100: '#ab99ff',
+      A200: '#8266ff',
+      A400: '#5833ff',
+      A700: '#4319ff',
+      default: '#4b3190',
     },
     grey: {
       ...colors.coolGray,
