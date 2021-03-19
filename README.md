@@ -42,14 +42,6 @@ Tailwind doesn't like the existing tools and fine-tunes each value. If you'd sti
 4. Copy lines 3-12 (and optionally, 13-17) into the "colors" section of [tailwind.config.js](tailwind.config.js)
 5. Restart Gatsby and enjoy your new hue!
 
-### ...change the webfonts?
-
-Update the `googleFonts` section in [config/SiteConfig.js](config/SiteConfig.js).
-
-The starter is already set up for Google Fonts. We use [gatsby-plugin-google-fonts-v2](https://github.com/pocorschi/gatsby-plugin-google-fonts-v2), which has support for variable fonts.
-
-Make sure to add your new font to the `fontFamily` section of [tailwind.config.js](tailwind.config.js)!
-
 ### ...change the favicon?
 
 Replace [favicon.svg](src/assets/images/favicon.svg) with your own SVG data, or update the `icon` path in the `manifestOptions` of [config/SiteConfig.js](config/SiteConfig.js)

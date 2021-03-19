@@ -32,7 +32,7 @@ const theme = {
   },
   fontFamily: {
     sans: [
-      'Inter',
+      'Goldplay',
       '-apple-system',
       'BlinkMacSystemFont',
       'Segoe UI',
