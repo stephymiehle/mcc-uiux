@@ -3721,14 +3721,6 @@ type FooterDataQuery = { readonly siteBuildMetadata: Maybe<{ buildYear: SiteBuil
       )>>> }
     )> } };
 
-type SiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SiteMetadataQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
-      Pick<SiteSiteMetadata, 'siteUrl' | 'title' | 'description'>
-      & { readonly social: Maybe<{ readonly twitter: Maybe<Pick<SiteSiteMetadataSocialTwitter, 'username'>> }> }
-    )> }> };
-
 type SocialImageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3738,11 +3730,6 @@ type SocialQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type SocialQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<{ readonly social: Maybe<{ readonly twitter: Maybe<Pick<SiteSiteMetadataSocialTwitter, 'username'>>, readonly facebook: Maybe<Pick<SiteSiteMetadataSocialFacebook, 'username'>>, readonly instagram: Maybe<Pick<SiteSiteMetadataSocialInstagram, 'username'>> }> }> }> };
-
-type HomepageQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type HomepageQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'buildContext' | 'version'>> }>, readonly siteBuildMetadata: Maybe<Pick<SiteBuildMetadata, 'buildTime'>>, readonly headerImage: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -3770,6 +3757,14 @@ type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
+type SiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SiteMetadataQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
+      Pick<SiteSiteMetadata, 'siteUrl' | 'title' | 'description'>
+      & { readonly social: Maybe<{ readonly twitter: Maybe<Pick<SiteSiteMetadataSocialTwitter, 'username'>> }> }
+    )> }> };
+
 type DocTemplateQueryVariables = Exact<{
   handle: Maybe<Scalars['String']>;
 }>;
@@ -3788,5 +3783,10 @@ type DocTemplateQuery = { readonly mdx: Maybe<(
       )>, readonly resources: Maybe<ReadonlyArray<Maybe<Pick<MdxFrontmatterResources, 'title' | 'link'>>>> }
     )> }
   )> };
+
+type HomepageQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type HomepageQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'buildContext' | 'version'>> }>, readonly siteBuildMetadata: Maybe<Pick<SiteBuildMetadata, 'buildTime'>>, readonly headerImage: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
 
 }

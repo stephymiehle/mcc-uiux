@@ -80,7 +80,7 @@ const variants = {
 
 const plugins = [];
 
-const purge = ['./src/**/*.tsx', './src/**/*.mdx'];
+const purge = ['./src/**/*.tsx', './src/**/*.mdx', './gatsby-*.ts'];
 
 module.exports = {
   purge,
