@@ -10,7 +10,7 @@
   }
 }
 
-@each $weight in (400) {
+@each $weight in (400, 600) {
   @font-face {
     font-family: 'Goldplay';
     font-style: italic;
