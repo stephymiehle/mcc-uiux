@@ -44,6 +44,15 @@ export const License: React.FC<ILicenseProps> = ({
           </Link>
         </>
       )}
+      {type === 'mit' && (
+        <>
+          {' '}
+          licensed under the{' '}
+          <Link to="/mit" className="underline">
+            MIT License
+          </Link>
+        </>
+      )}
       {type === 'unsplash' && (
         <>
           {' '}
