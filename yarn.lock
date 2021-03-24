@@ -2987,7 +2987,7 @@ __metadata:
     gatsby-plugin-sitemap: ^3.1.0
     gatsby-plugin-ts-config: ^1.1.5
     gatsby-plugin-twitter: ^3.1.0
-    gatsby-plugin-typegen: ^2.2.2
+    gatsby-plugin-typegen: ^2.2.4
     gatsby-plugin-typescript: ^3.1.0
     gatsby-remark-autolink-headers: ^3.1.0
     gatsby-remark-embedder: ^4.1.0
@@ -2996,18 +2996,18 @@ __metadata:
     gatsby-remark-images: ^4.1.0
     gatsby-source-filesystem: ^3.1.0
     gatsby-transformer-sharp: ^3.1.0
-    gatsby-transformer-yaml: ^2.11.0
-    husky: ^4.3.7
+    gatsby-transformer-yaml: ^3.1.0
+    husky: ^4.3.8
     jest: ^26.6.3
     lint-staged: ^10.5.3
-    lodash: 4.17.20
+    lodash: 4.17.21
     medium-zoom: ^1.0.6
-    postcss: ^8.2.3
+    postcss: ^8.2.8
     prettier: ^2.2.1
     react: ^17.0.1
     react-dom: ^17.0.1
     react-helmet: ^6.1.0
-    react-hotkeys-hook: ^3.0.3
+    react-hotkeys-hook: ^3.2.1
     sass: ^1.32.8
     tailwindcss: ^2.0.4
     tailwindcss-export-config: ^2.3.0
@@ -10290,7 +10290,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-typegen@npm:^2.2.2":
+"gatsby-plugin-typegen@npm:^2.2.4":
   version: 2.2.4
   resolution: "gatsby-plugin-typegen@npm:2.2.4"
   dependencies:
@@ -10562,17 +10562,17 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"gatsby-transformer-yaml@npm:^2.11.0":
-  version: 2.11.0
-  resolution: "gatsby-transformer-yaml@npm:2.11.0"
+"gatsby-transformer-yaml@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "gatsby-transformer-yaml@npm:3.1.0"
   dependencies:
     "@babel/runtime": ^7.12.5
     js-yaml: ^3.14.1
-    lodash: ^4.17.20
+    lodash: ^4.17.21
     unist-util-select: ^1.5.0
   peerDependencies:
-    gatsby: ^2.0.15
-  checksum: 94748957446ac510b8d15a6ed7e0fb73efa376dd3e24846de34ce50d27f08a28732a0e531fbd8bd0d990048f5a921882b2c6eb7b6780612920a9e1d60d855417
+    gatsby: ^3.0.0-next.0
+  checksum: d6a77ae661444d0c0e3aa95a5ec779d4bf5f0bf0fff69698f2cbd387961cd9de9649f741c2eb7160ed52960554c278d802dd39074273a359b22491fa8bb1889f
   languageName: node
   linkType: hard
 
@@ -11876,7 +11876,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"husky@npm:^4.3.7":
+"husky@npm:^4.3.8":
   version: 4.3.8
   resolution: "husky@npm:4.3.8"
   dependencies:
@@ -14397,14 +14397,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"lodash@npm:4.17.20":
-  version: 4.17.20
-  resolution: "lodash@npm:4.17.20"
-  checksum: c62101d2500c383b5f174a7e9e6fe8098149ddd6e9ccfa85f36d4789446195f5c4afd3cfba433026bcaf3da271256566b04a2bf2618e5a39f6e67f8c12030cb6
-  languageName: node
-  linkType: hard
-
-"lodash@npm:4.x, lodash@npm:^4.17.10, lodash@npm:^4.17.11, lodash@npm:^4.17.13, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.4, lodash@npm:~4.17.20":
+"lodash@npm:4.17.21, lodash@npm:4.x, lodash@npm:^4.17.10, lodash@npm:^4.17.11, lodash@npm:^4.17.13, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.4, lodash@npm:~4.17.20":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: 4983720b9abca930a4a46f18db163d7dad8dd00dbed6db0cc7b499b33b717cce69f80928b27bbb1ff2cbd3b19d251ee90669a8b5ea466072ca81c2ebe91e7468
@@ -17587,7 +17580,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.1.6, postcss@npm:^8.2.1, postcss@npm:^8.2.3, postcss@npm:^8.2.8":
+"postcss@npm:^8.1.6, postcss@npm:^8.2.1, postcss@npm:^8.2.8":
   version: 8.2.8
   resolution: "postcss@npm:8.2.8"
   dependencies:
@@ -18141,7 +18134,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-hotkeys-hook@npm:^3.0.3":
+"react-hotkeys-hook@npm:^3.2.1":
   version: 3.2.1
   resolution: "react-hotkeys-hook@npm:3.2.1"
   dependencies:
