@@ -5,12 +5,11 @@ import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { Layout } from '../components/Layout';
+import { ContainerLayout } from '../components/Layout';
 import { Blockquote } from '../components/Blockquote';
 import { License } from '../components/License';
 import { Panel } from '../components/Panel';
 import { Button } from '../components/Button';
-import { Link } from '../components/Link';
 import { FullWidthContainer } from '../components/FullWidthContainer';
 import {
   MdxH2,
@@ -28,6 +27,7 @@ import {
 } from '../components/MdxComponents';
 import { TopicFooter } from '../components/TopicFooter';
 import { ResourceCard } from '../components/ResourceCard';
+import { Title } from '../components/Title';
 
 const elements = {
   Blockquote,
@@ -57,52 +57,50 @@ const DocPageTemplate: React.FC<PageProps<GatsbyTypes.DocTemplateQuery>> = ({
   const { topic } = data.mdx.frontmatter;
   const { resources } = data.mdx.frontmatter;
   return (
-    <Layout location={location} title={data.mdx.frontmatter.title}>
+    <ContainerLayout
+      location={location}
+      title={data.mdx.frontmatter.title}
+      defaultPadding={false}
+    >
       <MDXProvider components={elements}>
-        <div className="container px-4 mx-auto">
-          <div className="mx-auto md:text-lg max-w-prose">
-            {data.mdx.fields.draft && (
-              <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-red-100 text-red-800">
-                This Page is a draft
-              </span>
-            )}
-            <h1 className="mt-4 mb-8 text-5xl font-semibold text-black dark:text-white">
-              {data.mdx.frontmatter.title}
-            </h1>
-            {resources && (
-              <div className="mb-12">
-                <MdxH2>Resources</MdxH2>
-                <div className="grid gap-4 resource-container md:grid-cols-2">
-                  {resources.map((resource) => (
-                    <ResourceCard
-                      key={resource.link}
-                      link={resource.link}
-                      title={resource.title}
-                    />
-                  ))}
-                </div>
-              </div>
-            )}
-            <div className="mb-12 mdx-content">
-              <MDXRenderer>{data.mdx.body}</MDXRenderer>
+        {data.mdx.fields.draft && (
+          <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-red-100 text-red-800 mb-4">
+            This Page is a draft
+          </span>
+        )}
+        <Title>{data.mdx.frontmatter.title}</Title>
+        {resources && (
+          <div className="mb-12">
+            <MdxH2>Resources</MdxH2>
+            <div className="grid gap-4 resource-container md:grid-cols-2">
+              {resources.map((resource) => (
+                <ResourceCard
+                  key={resource.link}
+                  link={resource.link}
+                  title={resource.title}
+                />
+              ))}
             </div>
-            {topic?.items && (
-              <FullWidthContainer className="py-12 mt-12 bg-grey-100 dark:bg-grey-800">
-                <div className="container px-4 mx-auto">
-                  <div className="mx-auto md:text-lg max-w-prose">
-                    <TopicFooter
-                      items={topic.items}
-                      label={topic.label}
-                      location={location}
-                    />
-                  </div>
-                </div>
-              </FullWidthContainer>
-            )}
           </div>
+        )}
+        <div className="mb-12 mdx-content">
+          <MDXRenderer>{data.mdx.body}</MDXRenderer>
         </div>
+        {topic?.items && (
+          <FullWidthContainer className="py-12 mt-12 bg-grey-100 dark:bg-grey-800">
+            <div className="container px-4 mx-auto">
+              <div className="mx-auto md:text-lg max-w-prose">
+                <TopicFooter
+                  items={topic.items}
+                  label={topic.label}
+                  location={location}
+                />
+              </div>
+            </div>
+          </FullWidthContainer>
+        )}
       </MDXProvider>
-    </Layout>
+    </ContainerLayout>
   );
 };
 
