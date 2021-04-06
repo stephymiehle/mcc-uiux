@@ -1,11 +1,71 @@
 ---
-title: Icons for Navigation
+title: Using Icons for Navigation
 topic: design-elements
+resources:
+  - link: https://uxdesign.cc/when-should-i-be-using-icons-63e7448202c4
+    title: 'Can icons harm usability? When should you use them'
+  - link: https://uxdesign.cc/label-your-icons-e2bd57366d37
+    title: 'Label Your Icons'
+  - link: https://experience.sap.com/topic/hollow-icon-vs-solid-icon-which-is-more-friendly-for-recognizing/
+    title: 'Hollow Icon vs. Solid Icon: Which Is More Friendly for Recognizing?'
 ---
 
-Straightforward concepts are easier to understand than abstract ones. This is especially important when selecting icons for an application. If you choose to use icons, the fastest-interpreted option will perform better than one that is too detailed.
+## The Myth: Icons Enhance Usability
 
-Even then, [label your icons](https://uxdesign.cc/label-your-icons-e2bd57366d37) to make the interpretation and association even easier.
+Icons can _sometimes_ enhance usability, but only when used properly! Relying on only icons for navigation can frustrate and confuse users.
+
+Without labels, icons can be ambiguous. Microsoft discovered the pitfalls when redesigning their menu system in the early 2000s:
+
+<Blockquote
+  author="Jensen Harris via Microsoft"
+  link="https://docs.microsoft.com/en-us/archive/blogs/jensenh/the-importance-of-labels"
+  title="The Importance of Labels"
+>
+  <p>
+    One of the problems noticed again and again among non-expert users was that people didn't use the toolbar at all! With the exception of the "Delete" icon (which was perhaps familiar from the Windows 95 shell), people used the menus to reply, forward, and to create new messages.
+  </p>
+  <p>
+    Different fixes were tried: new icons, rearrangement of the icons, positioning icons under the menus from which the commands came from. <strong>In the end, one change caused a total turnaround: labeling the important toolbar buttons. Almost immediately, the toolbars were a big hit and everyone at all skill levels starting using them.</strong>
+  </p>
+</Blockquote>
+
+<figure>
+
+  <Img src="./old-excel.png" alt="Excel 2010 relied mostly on icons in its toolbar" />
+
+  <figcaption>
+    Excel 2010 relied mostly on icons in its toolbar, but some of the operations were too complex to represent in an easily-recognized design.
+  </figcaption>
+
+  <License
+    type="copyright"
+    link="https://www.addintools.com/documents/excel/where-is-save-as.html"
+    mediaType="Screenshot"
+    authors={[
+      { name: 'Addintools', link: 'https://www.addintools.com' },
+    ]}
+    className="mt-4"
+  />
+
+</figure>
+
+<figure>
+
+  <FullWidthContainer>
+
+  <Img src="./excel-text-labels.png" alt="Excel 16.47.1 on Mac uses labels with icons" />
+
+  </FullWidthContainer>
+
+  <figcaption>
+    Modern Excel still uses icons, but many additional labels have been added and common tasks are highlighted with larger buttons. Notably, this screenshot was taken on a large desktop, which had plenty of room for horizontal content. Older apps didn't have as much room to work with, but neither do mobile apps!
+  </figcaption>
+
+</figure>
+
+## What Does an Icon Mean?
+
+We've gotten used to some common
 
 <Blockquote
   author="Mary Formanek"
@@ -29,8 +89,28 @@ Even then, [label your icons](https://uxdesign.cc/label-your-icons-e2bd57366d37)
   </p>
 </Blockquote>
 
-https://uxdesign.cc/when-should-i-be-using-icons-63e7448202c4
+## Tips for Successful Icon Navigation
 
-https://uxdesign.cc/label-your-icons-e2bd57366d37
+### Keep It Simple, Sunshine
 
-https://experience.sap.com/topic/hollow-icon-vs-solid-icon-which-is-more-friendly-for-recognizing/
+Straightforward concepts are easier to understand than abstract ones. This is especially important when selecting icons for an application. If you choose to use icons, the fastest-interpreted option will perform better than one that is too detailed.
+
+### Consider What's Universal
+
+Despite Mary Formanek's plea, there _are_ a few shapes and symbols considered universal for modern tech. These are a safe bet for the right audience.
+
+<Blockquote
+  author="Jensen Harris via Microsoft"
+  link="https://docs.microsoft.com/en-us/archive/blogs/jensenh/the-importance-of-labels"
+  title="The Importance of Labels"
+>
+  <p>
+    It's not that icons can't work by themselves, but that most people have a fairly limited vocabulary. Floppy disk = save. Printer = print. Play, Pause, Stop, Forward, Back all got defined by tape players from the 1980s. And, yes, if an icon is ideographic enough, it can be infused with meaning and remembered – take the "Apple" menu in Mac OS, for example. But the richness is just not there relative to human language.
+  </p>
+</Blockquote>
+
+Social media has also introduced its share of familiar icons, such as Facebook's Like thumbs-up or Twitter's Retweet arrow icon.
+
+### Add Labels
+
+[Label your icons](https://uxdesign.cc/label-your-icons-e2bd57366d37) to make the interpretation and association even easier. Sometimes, a concept is just too complicated for a tiny icon to convey. Pairing the icon with a text label will reinforce your desired interpretation.

@@ -26,15 +26,18 @@
   id: layout
   items:
     - gestalt-theory
+    - platform-guidelines
 
 - label: Design Elements
   id: design-elements
   items:
     - app-icons
     - icons-for-navigation
+    - symbols-and-icons
     - forms
 
 - label: Interaction
   id: interaction
   items:
+    - mobile-apps-vs-websites
     - animation
