@@ -54,7 +54,7 @@ const siteMetadata = {
 };
 
 const googleAnalytics = {
-  trackingId: process.env.GOOGLE_ANALYTICS_ID,
+  trackingId: process.env.GOOGLE_ANALYTICS_ID || 'UA-',
   anonymize: true,
   respectDNT: true,
 };

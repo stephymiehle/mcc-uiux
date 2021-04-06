@@ -354,8 +354,6 @@ type Site implements Node {
 }
 
 type SiteFlags {
-  FAST_REFRESH: Boolean
-  QUERY_ON_DEMAND: Boolean
   PRESERVE_FILE_DOWNLOAD_CACHE: Boolean
   PRESERVE_WEBPACK_CACHE: Boolean
 }
@@ -395,15 +393,15 @@ type SitePage implements Node {
   internalComponentName: String!
   componentChunkName: String!
   matchPath: String
-  isCreatedByStatefulCreatePages: Boolean
-  pluginCreator: SitePlugin
-  pluginCreatorId: String
-  componentPath: String
   id: ID!
   parent: Node
   children: [Node!]!
   internal: Internal!
+  isCreatedByStatefulCreatePages: Boolean
   context: SitePageContext
+  pluginCreator: SitePlugin
+  pluginCreatorId: String
+  componentPath: String
 }
 
 type SitePageContext {
@@ -792,15 +790,18 @@ type SitePlugin implements Node {
 }
 
 type SitePluginPluginOptions {
-  allExtensions: Boolean
   isTSX: Boolean
   jsxPragma: String
+  allExtensions: Boolean
   outputPath: String
   emitSchema: SitePluginPluginOptionsEmitSchema
   emitPluginDocuments: SitePluginPluginOptionsEmitPluginDocuments
   path: String
   name: String
   extensions: [String]
+  lessBabel: Boolean
+  mediaTypes: [String]
+  root: String
   short_name: String
   description: String
   homepage_url: String
@@ -814,12 +815,21 @@ type SitePluginPluginOptions {
   legacy: Boolean
   theme_color_in_head: Boolean
   cacheDigest: String
+  trackingId: String
   anonymize: Boolean
   respectDNT: Boolean
+  head: Boolean
+  pageTransitionDelay: Int
   mergeSecurityHeaders: Boolean
   mergeLinkHeaders: Boolean
   mergeCachingHeaders: Boolean
   postCssPlugins: [SitePluginPluginOptionsPostCssPlugins]
+  base64Width: Int
+  stripMetadata: Boolean
+  defaultQuality: Int
+  failOnError: Boolean
+  output: String
+  createLinkInHead: Boolean
   nodeType: String
   pathCheck: Boolean
 }
@@ -839,6 +849,7 @@ type SitePluginPluginOptionsIcon_options {
 
 type SitePluginPluginOptionsPostCssPlugins {
   postcssPlugin: String
+  plugins: [Boolean]
 }
 
 type SitePluginPackageJson {
@@ -875,7 +886,7 @@ type Query {
   allDirectory(filter: DirectoryFilterInput, sort: DirectorySortInput, skip: Int, limit: Int): DirectoryConnection!
   site(buildTime: DateQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput, port: IntQueryOperatorInput, host: StringQueryOperatorInput, pathPrefix: StringQueryOperatorInput, flags: SiteFlagsFilterInput, polyfill: BooleanQueryOperatorInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput): Site
   allSite(filter: SiteFilterInput, sort: SiteSortInput, skip: Int, limit: Int): SiteConnection!
-  sitePage(path: StringQueryOperatorInput, component: StringQueryOperatorInput, internalComponentName: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, matchPath: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, context: SitePageContextFilterInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput, componentPath: StringQueryOperatorInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput): SitePage
+  sitePage(path: StringQueryOperatorInput, component: StringQueryOperatorInput, internalComponentName: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, matchPath: StringQueryOperatorInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, context: SitePageContextFilterInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput, componentPath: StringQueryOperatorInput): SitePage
   allSitePage(filter: SitePageFilterInput, sort: SitePageSortInput, skip: Int, limit: Int): SitePageConnection!
   imageSharp(fixed: ImageSharpFixedFilterInput, fluid: ImageSharpFluidFilterInput, gatsbyImageData: JSONQueryOperatorInput, original: ImageSharpOriginalFilterInput, resize: ImageSharpResizeFilterInput, id: StringQueryOperatorInput, parent: NodeFilterInput, children: NodeFilterListInput, internal: InternalFilterInput): ImageSharp
   allImageSharp(filter: ImageSharpFilterInput, sort: ImageSharpSortInput, skip: Int, limit: Int): ImageSharpConnection!
@@ -1957,8 +1968,6 @@ input SiteSiteMetadataSocialInstagramFilterInput {
 }
 
 input SiteFlagsFilterInput {
-  FAST_REFRESH: BooleanQueryOperatorInput
-  QUERY_ON_DEMAND: BooleanQueryOperatorInput
   PRESERVE_FILE_DOWNLOAD_CACHE: BooleanQueryOperatorInput
   PRESERVE_WEBPACK_CACHE: BooleanQueryOperatorInput
 }
@@ -1993,8 +2002,6 @@ enum SiteFieldsEnum {
   port
   host
   pathPrefix
-  flags___FAST_REFRESH
-  flags___QUERY_ON_DEMAND
   flags___PRESERVE_FILE_DOWNLOAD_CACHE
   flags___PRESERVE_WEBPACK_CACHE
   polyfill
@@ -2135,15 +2142,18 @@ input SitePluginFilterInput {
 }
 
 input SitePluginPluginOptionsFilterInput {
-  allExtensions: BooleanQueryOperatorInput
   isTSX: BooleanQueryOperatorInput
   jsxPragma: StringQueryOperatorInput
+  allExtensions: BooleanQueryOperatorInput
   outputPath: StringQueryOperatorInput
   emitSchema: SitePluginPluginOptionsEmitSchemaFilterInput
   emitPluginDocuments: SitePluginPluginOptionsEmitPluginDocumentsFilterInput
   path: StringQueryOperatorInput
   name: StringQueryOperatorInput
   extensions: StringQueryOperatorInput
+  lessBabel: BooleanQueryOperatorInput
+  mediaTypes: StringQueryOperatorInput
+  root: StringQueryOperatorInput
   short_name: StringQueryOperatorInput
   description: StringQueryOperatorInput
   homepage_url: StringQueryOperatorInput
@@ -2157,12 +2167,21 @@ input SitePluginPluginOptionsFilterInput {
   legacy: BooleanQueryOperatorInput
   theme_color_in_head: BooleanQueryOperatorInput
   cacheDigest: StringQueryOperatorInput
+  trackingId: StringQueryOperatorInput
   anonymize: BooleanQueryOperatorInput
   respectDNT: BooleanQueryOperatorInput
+  head: BooleanQueryOperatorInput
+  pageTransitionDelay: IntQueryOperatorInput
   mergeSecurityHeaders: BooleanQueryOperatorInput
   mergeLinkHeaders: BooleanQueryOperatorInput
   mergeCachingHeaders: BooleanQueryOperatorInput
   postCssPlugins: SitePluginPluginOptionsPostCssPluginsFilterListInput
+  base64Width: IntQueryOperatorInput
+  stripMetadata: BooleanQueryOperatorInput
+  defaultQuality: IntQueryOperatorInput
+  failOnError: BooleanQueryOperatorInput
+  output: StringQueryOperatorInput
+  createLinkInHead: BooleanQueryOperatorInput
   nodeType: StringQueryOperatorInput
   pathCheck: BooleanQueryOperatorInput
 }
@@ -2186,6 +2205,7 @@ input SitePluginPluginOptionsPostCssPluginsFilterListInput {
 
 input SitePluginPluginOptionsPostCssPluginsFilterInput {
   postcssPlugin: StringQueryOperatorInput
+  plugins: BooleanQueryOperatorInput
 }
 
 input SitePluginPackageJsonFilterInput {
@@ -2248,102 +2268,6 @@ enum SitePageFieldsEnum {
   internalComponentName
   componentChunkName
   matchPath
-  isCreatedByStatefulCreatePages
-  context___handle
-  pluginCreator___id
-  pluginCreator___parent___id
-  pluginCreator___parent___parent___id
-  pluginCreator___parent___parent___children
-  pluginCreator___parent___children
-  pluginCreator___parent___children___id
-  pluginCreator___parent___children___children
-  pluginCreator___parent___internal___content
-  pluginCreator___parent___internal___contentDigest
-  pluginCreator___parent___internal___description
-  pluginCreator___parent___internal___fieldOwners
-  pluginCreator___parent___internal___ignoreType
-  pluginCreator___parent___internal___mediaType
-  pluginCreator___parent___internal___owner
-  pluginCreator___parent___internal___type
-  pluginCreator___children
-  pluginCreator___children___id
-  pluginCreator___children___parent___id
-  pluginCreator___children___parent___children
-  pluginCreator___children___children
-  pluginCreator___children___children___id
-  pluginCreator___children___children___children
-  pluginCreator___children___internal___content
-  pluginCreator___children___internal___contentDigest
-  pluginCreator___children___internal___description
-  pluginCreator___children___internal___fieldOwners
-  pluginCreator___children___internal___ignoreType
-  pluginCreator___children___internal___mediaType
-  pluginCreator___children___internal___owner
-  pluginCreator___children___internal___type
-  pluginCreator___internal___content
-  pluginCreator___internal___contentDigest
-  pluginCreator___internal___description
-  pluginCreator___internal___fieldOwners
-  pluginCreator___internal___ignoreType
-  pluginCreator___internal___mediaType
-  pluginCreator___internal___owner
-  pluginCreator___internal___type
-  pluginCreator___resolve
-  pluginCreator___name
-  pluginCreator___version
-  pluginCreator___pluginOptions___allExtensions
-  pluginCreator___pluginOptions___isTSX
-  pluginCreator___pluginOptions___jsxPragma
-  pluginCreator___pluginOptions___outputPath
-  pluginCreator___pluginOptions___emitSchema___src___generated___gatsby_introspection_json
-  pluginCreator___pluginOptions___emitSchema___src___generated___gatsby_schema_graphql
-  pluginCreator___pluginOptions___emitPluginDocuments___src___generated___gatsby_plugin_documents_graphql
-  pluginCreator___pluginOptions___path
-  pluginCreator___pluginOptions___name
-  pluginCreator___pluginOptions___extensions
-  pluginCreator___pluginOptions___short_name
-  pluginCreator___pluginOptions___description
-  pluginCreator___pluginOptions___homepage_url
-  pluginCreator___pluginOptions___start_url
-  pluginCreator___pluginOptions___background_color
-  pluginCreator___pluginOptions___theme_color
-  pluginCreator___pluginOptions___icon
-  pluginCreator___pluginOptions___icon_options___purpose
-  pluginCreator___pluginOptions___cache_busting_mode
-  pluginCreator___pluginOptions___include_favicon
-  pluginCreator___pluginOptions___legacy
-  pluginCreator___pluginOptions___theme_color_in_head
-  pluginCreator___pluginOptions___cacheDigest
-  pluginCreator___pluginOptions___anonymize
-  pluginCreator___pluginOptions___respectDNT
-  pluginCreator___pluginOptions___mergeSecurityHeaders
-  pluginCreator___pluginOptions___mergeLinkHeaders
-  pluginCreator___pluginOptions___mergeCachingHeaders
-  pluginCreator___pluginOptions___postCssPlugins
-  pluginCreator___pluginOptions___postCssPlugins___postcssPlugin
-  pluginCreator___pluginOptions___nodeType
-  pluginCreator___pluginOptions___pathCheck
-  pluginCreator___nodeAPIs
-  pluginCreator___browserAPIs
-  pluginCreator___ssrAPIs
-  pluginCreator___pluginFilepath
-  pluginCreator___packageJson___name
-  pluginCreator___packageJson___description
-  pluginCreator___packageJson___version
-  pluginCreator___packageJson___main
-  pluginCreator___packageJson___license
-  pluginCreator___packageJson___dependencies
-  pluginCreator___packageJson___dependencies___name
-  pluginCreator___packageJson___dependencies___version
-  pluginCreator___packageJson___devDependencies
-  pluginCreator___packageJson___devDependencies___name
-  pluginCreator___packageJson___devDependencies___version
-  pluginCreator___packageJson___peerDependencies
-  pluginCreator___packageJson___peerDependencies___name
-  pluginCreator___packageJson___peerDependencies___version
-  pluginCreator___packageJson___keywords
-  pluginCreatorId
-  componentPath
   id
   parent___id
   parent___parent___id
@@ -2430,6 +2354,115 @@ enum SitePageFieldsEnum {
   internal___mediaType
   internal___owner
   internal___type
+  isCreatedByStatefulCreatePages
+  context___handle
+  pluginCreator___id
+  pluginCreator___parent___id
+  pluginCreator___parent___parent___id
+  pluginCreator___parent___parent___children
+  pluginCreator___parent___children
+  pluginCreator___parent___children___id
+  pluginCreator___parent___children___children
+  pluginCreator___parent___internal___content
+  pluginCreator___parent___internal___contentDigest
+  pluginCreator___parent___internal___description
+  pluginCreator___parent___internal___fieldOwners
+  pluginCreator___parent___internal___ignoreType
+  pluginCreator___parent___internal___mediaType
+  pluginCreator___parent___internal___owner
+  pluginCreator___parent___internal___type
+  pluginCreator___children
+  pluginCreator___children___id
+  pluginCreator___children___parent___id
+  pluginCreator___children___parent___children
+  pluginCreator___children___children
+  pluginCreator___children___children___id
+  pluginCreator___children___children___children
+  pluginCreator___children___internal___content
+  pluginCreator___children___internal___contentDigest
+  pluginCreator___children___internal___description
+  pluginCreator___children___internal___fieldOwners
+  pluginCreator___children___internal___ignoreType
+  pluginCreator___children___internal___mediaType
+  pluginCreator___children___internal___owner
+  pluginCreator___children___internal___type
+  pluginCreator___internal___content
+  pluginCreator___internal___contentDigest
+  pluginCreator___internal___description
+  pluginCreator___internal___fieldOwners
+  pluginCreator___internal___ignoreType
+  pluginCreator___internal___mediaType
+  pluginCreator___internal___owner
+  pluginCreator___internal___type
+  pluginCreator___resolve
+  pluginCreator___name
+  pluginCreator___version
+  pluginCreator___pluginOptions___isTSX
+  pluginCreator___pluginOptions___jsxPragma
+  pluginCreator___pluginOptions___allExtensions
+  pluginCreator___pluginOptions___outputPath
+  pluginCreator___pluginOptions___emitSchema___src___generated___gatsby_introspection_json
+  pluginCreator___pluginOptions___emitSchema___src___generated___gatsby_schema_graphql
+  pluginCreator___pluginOptions___emitPluginDocuments___src___generated___gatsby_plugin_documents_graphql
+  pluginCreator___pluginOptions___path
+  pluginCreator___pluginOptions___name
+  pluginCreator___pluginOptions___extensions
+  pluginCreator___pluginOptions___lessBabel
+  pluginCreator___pluginOptions___mediaTypes
+  pluginCreator___pluginOptions___root
+  pluginCreator___pluginOptions___short_name
+  pluginCreator___pluginOptions___description
+  pluginCreator___pluginOptions___homepage_url
+  pluginCreator___pluginOptions___start_url
+  pluginCreator___pluginOptions___background_color
+  pluginCreator___pluginOptions___theme_color
+  pluginCreator___pluginOptions___icon
+  pluginCreator___pluginOptions___icon_options___purpose
+  pluginCreator___pluginOptions___cache_busting_mode
+  pluginCreator___pluginOptions___include_favicon
+  pluginCreator___pluginOptions___legacy
+  pluginCreator___pluginOptions___theme_color_in_head
+  pluginCreator___pluginOptions___cacheDigest
+  pluginCreator___pluginOptions___trackingId
+  pluginCreator___pluginOptions___anonymize
+  pluginCreator___pluginOptions___respectDNT
+  pluginCreator___pluginOptions___head
+  pluginCreator___pluginOptions___pageTransitionDelay
+  pluginCreator___pluginOptions___mergeSecurityHeaders
+  pluginCreator___pluginOptions___mergeLinkHeaders
+  pluginCreator___pluginOptions___mergeCachingHeaders
+  pluginCreator___pluginOptions___postCssPlugins
+  pluginCreator___pluginOptions___postCssPlugins___postcssPlugin
+  pluginCreator___pluginOptions___postCssPlugins___plugins
+  pluginCreator___pluginOptions___base64Width
+  pluginCreator___pluginOptions___stripMetadata
+  pluginCreator___pluginOptions___defaultQuality
+  pluginCreator___pluginOptions___failOnError
+  pluginCreator___pluginOptions___output
+  pluginCreator___pluginOptions___createLinkInHead
+  pluginCreator___pluginOptions___nodeType
+  pluginCreator___pluginOptions___pathCheck
+  pluginCreator___nodeAPIs
+  pluginCreator___browserAPIs
+  pluginCreator___ssrAPIs
+  pluginCreator___pluginFilepath
+  pluginCreator___packageJson___name
+  pluginCreator___packageJson___description
+  pluginCreator___packageJson___version
+  pluginCreator___packageJson___main
+  pluginCreator___packageJson___license
+  pluginCreator___packageJson___dependencies
+  pluginCreator___packageJson___dependencies___name
+  pluginCreator___packageJson___dependencies___version
+  pluginCreator___packageJson___devDependencies
+  pluginCreator___packageJson___devDependencies___name
+  pluginCreator___packageJson___devDependencies___version
+  pluginCreator___packageJson___peerDependencies
+  pluginCreator___packageJson___peerDependencies___name
+  pluginCreator___packageJson___peerDependencies___version
+  pluginCreator___packageJson___keywords
+  pluginCreatorId
+  componentPath
 }
 
 type SitePageGroupConnection {
@@ -2447,15 +2480,15 @@ input SitePageFilterInput {
   internalComponentName: StringQueryOperatorInput
   componentChunkName: StringQueryOperatorInput
   matchPath: StringQueryOperatorInput
+  id: StringQueryOperatorInput
+  parent: NodeFilterInput
+  children: NodeFilterListInput
+  internal: InternalFilterInput
   isCreatedByStatefulCreatePages: BooleanQueryOperatorInput
   context: SitePageContextFilterInput
   pluginCreator: SitePluginFilterInput
   pluginCreatorId: StringQueryOperatorInput
   componentPath: StringQueryOperatorInput
-  id: StringQueryOperatorInput
-  parent: NodeFilterInput
-  children: NodeFilterListInput
-  internal: InternalFilterInput
 }
 
 input SitePageSortInput {
@@ -3328,9 +3361,9 @@ enum SitePluginFieldsEnum {
   resolve
   name
   version
-  pluginOptions___allExtensions
   pluginOptions___isTSX
   pluginOptions___jsxPragma
+  pluginOptions___allExtensions
   pluginOptions___outputPath
   pluginOptions___emitSchema___src___generated___gatsby_introspection_json
   pluginOptions___emitSchema___src___generated___gatsby_schema_graphql
@@ -3338,6 +3371,9 @@ enum SitePluginFieldsEnum {
   pluginOptions___path
   pluginOptions___name
   pluginOptions___extensions
+  pluginOptions___lessBabel
+  pluginOptions___mediaTypes
+  pluginOptions___root
   pluginOptions___short_name
   pluginOptions___description
   pluginOptions___homepage_url
@@ -3351,13 +3387,23 @@ enum SitePluginFieldsEnum {
   pluginOptions___legacy
   pluginOptions___theme_color_in_head
   pluginOptions___cacheDigest
+  pluginOptions___trackingId
   pluginOptions___anonymize
   pluginOptions___respectDNT
+  pluginOptions___head
+  pluginOptions___pageTransitionDelay
   pluginOptions___mergeSecurityHeaders
   pluginOptions___mergeLinkHeaders
   pluginOptions___mergeCachingHeaders
   pluginOptions___postCssPlugins
   pluginOptions___postCssPlugins___postcssPlugin
+  pluginOptions___postCssPlugins___plugins
+  pluginOptions___base64Width
+  pluginOptions___stripMetadata
+  pluginOptions___defaultQuality
+  pluginOptions___failOnError
+  pluginOptions___output
+  pluginOptions___createLinkInHead
   pluginOptions___nodeType
   pluginOptions___pathCheck
   nodeAPIs

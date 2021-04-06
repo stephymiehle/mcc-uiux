@@ -117,7 +117,10 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-sass',
       options: {
-        postCssPlugins: [require('tailwindcss')()],
+        postCssPlugins: [
+          require('@tailwindcss/jit')(),
+          require('postcss-preset-env')(),
+        ],
       },
     },
     'gatsby-plugin-sharp',
