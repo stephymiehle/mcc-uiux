@@ -20,6 +20,7 @@ figure .gatsby-resp-image-wrapper {
   }
 }
 
-.twitter-tweet {
-  @apply mx-auto;
+.twitter-tweet,
+.instagram-media {
+  margin: 1.5rem auto !important;
 }
