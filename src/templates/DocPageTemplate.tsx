@@ -5,6 +5,7 @@ import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ContainerLayout } from '../components/Layout';
 import { Blockquote } from '../components/Blockquote';
 import { License } from '../components/License';
@@ -48,6 +49,7 @@ const elements = {
   License,
   Panel,
   Button,
+  FontAwesomeIcon,
 };
 
 const DocPageTemplate: React.FC<PageProps<GatsbyTypes.DocTemplateQuery>> = ({

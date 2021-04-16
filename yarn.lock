@@ -1639,6 +1639,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fortawesome/free-regular-svg-icons@npm:^5.15.3":
+  version: 5.15.3
+  resolution: "@fortawesome/free-regular-svg-icons@npm:5.15.3::__archiveUrl=https%3A%2F%2Fnpm.fontawesome.com%2F%40fortawesome%2Ffree-regular-svg-icons%2F-%2F5.15.3%2Ffree-regular-svg-icons-5.15.3.tgz"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": ^0.2.35
+  checksum: af6dbf342b2c24e2a2b583148988ca16aefbb5caeefc5d99e115fc831461522d1edfc2f1f1e06c9d4a8045c0ec919cf1b1762a39a8265aa79dbb456c8e3134ec
+  languageName: node
+  linkType: hard
+
 "@fortawesome/pro-duotone-svg-icons@npm:^5.15.1":
   version: 5.15.3
   resolution: "@fortawesome/pro-duotone-svg-icons@npm:5.15.3::__archiveUrl=https%3A%2F%2Fnpm.fontawesome.com%2F%40fortawesome%2Fpro-duotone-svg-icons%2F-%2F5.15.3%2Fpro-duotone-svg-icons-5.15.3.tgz"
@@ -1654,6 +1663,15 @@ __metadata:
   dependencies:
     "@fortawesome/fontawesome-common-types": ^0.2.35
   checksum: 00c13c043f8e9a552f22c61d0a201f30cb045f16cd4ee5b7beff66df39d454891e582335da9a2652f5c66edfcead2369b34bf252ff8128ad583cfb57abb4a084
+  languageName: node
+  linkType: hard
+
+"@fortawesome/pro-regular-svg-icons@npm:^5.15.3":
+  version: 5.15.3
+  resolution: "@fortawesome/pro-regular-svg-icons@npm:5.15.3::__archiveUrl=https%3A%2F%2Fnpm.fontawesome.com%2F%40fortawesome%2Fpro-regular-svg-icons%2F-%2F5.15.3%2Fpro-regular-svg-icons-5.15.3.tgz"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": ^0.2.35
+  checksum: 30f7962e040990b9238ad0319eaa2a7ec2073b6f186beffac40e8047bb6dd282ffaa50a7b1641190ccd7ce5728cd26c24240a66911a1100bf60a93b7603ca7d2
   languageName: node
   linkType: hard
 
@@ -2795,8 +2813,10 @@ __metadata:
     "@dream-bit-de/gatsby-plugin-better-page-tree": ^1.6.0
     "@fortawesome/fontawesome-svg-core": ^1.2.32
     "@fortawesome/free-brands-svg-icons": ^5.15.2
+    "@fortawesome/free-regular-svg-icons": ^5.15.3
     "@fortawesome/pro-duotone-svg-icons": ^5.15.1
     "@fortawesome/pro-light-svg-icons": ^5.15.1
+    "@fortawesome/pro-regular-svg-icons": ^5.15.3
     "@fortawesome/react-fontawesome": ^0.1.14
     "@mdx-js/mdx": ^1.6.22
     "@mdx-js/react": ^1.6.22
