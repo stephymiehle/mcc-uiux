@@ -30,7 +30,7 @@ export const ContainerLayout: React.FC<IContainerLayoutProps> = ({
     <>
       <SEO pathName={location.pathname} title={title} />
       <Nav />
-      <main className="flex-grow site-container text-grey-800 dark:bg-grey-900 dark:text-grey-400">
+      <main className="site-container">
         <section className="container px-4 mx-auto">
           <div className={contentClasses}>{children}</div>
         </section>
