@@ -3,6 +3,7 @@
   items:
     - screen-recording
     - figma
+    - figjam
 
 - label: Color
   id: color
