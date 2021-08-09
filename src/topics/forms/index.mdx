@@ -2,11 +2,11 @@
 title: Forms
 topic: design-elements
 resources:
-  - title: "Mobile Form Usability"
+  - title: 'Mobile Form Usability'
     link: https://uxplanet.org/mobile-form-usability-2279f672917d
-  - title: "Web Form Design Best Practices: 5 Useful UI Patterns"
+  - title: 'Web Form Design Best Practices: 5 Useful UI Patterns'
     link: https://www.uxpin.com/studio/blog/web-form-design-best-practices-5-useful-ui-patterns-2/
-  - title: "Designing More Efficient Forms: Structure, Inputs, Labels and Actions"
+  - title: 'Designing More Efficient Forms: Structure, Inputs, Labels and Actions'
     link: https://uxplanet.org/designing-more-efficient-forms-structure-inputs-labels-and-actions-e3a47007114f
   - title: "Nick Babich's 10 Rules For Efficient Form Design"
     link: https://uxplanet.org/10-rules-for-efficient-form-design-e13dc1fb0e03
@@ -36,20 +36,28 @@ A label is typically used to, well, label the type of data for a specific input.
   link="https://www.nngroup.com/articles/checkboxes-vs-radio-buttons/#:~:text=Radio%20buttons%20are%20used%20when,must%20select%20exactly%20one%20choice.&text=Checkboxes%20are%20used%20when%20there,zero%2C%20one%2C%20or%20several."
   author="Nielsen Norman Group"
 >
-  <p><strong>Radio buttons</strong> are used when there is a list of two or more options that are <strong> mutually exclusive </strong> and the user must select exactly one choice. In other words, clicking a non-selected radio button will deselect whatever other button was previously selected in the list.</p>
-  <p><strong>Checkboxes</strong> are used when there are lists of options and the user may <strong> select any number </strong> of choices, including zero, one, or several. In other words, each checkbox is independent of all other checkboxes in the list, so checking one box doesn't uncheck the others.</p>
-  <p><strong>A stand-alone checkbox </strong> is used for a single option that the user can turn on or off.</p>
+  <p>
+    <strong>Radio buttons</strong> are used when there is a list of two or more
+    options that are <strong> mutually exclusive </strong> and the user must
+    select exactly one choice. In other words, clicking a non-selected radio
+    button will deselect whatever other button was previously selected in the
+    list.
+  </p>
+  <p>
+    <strong>Checkboxes</strong> are used when there are lists of options and the
+    user may <strong> select any number </strong> of choices, including zero,
+    one, or several. In other words, each checkbox is independent of all other
+    checkboxes in the list, so checking one box doesn't uncheck the others.
+  </p>
+  <p>
+    <strong>A stand-alone checkbox </strong> is used for a single option that
+    the user can turn on or off.
+  </p>
 </Blockquote>
 
 There are a few other reasons why you might consider using radio buttons. [Nielsen Norman Group](https://www.nngroup.com/articles/checkboxes-vs-radio-buttons) recommends that "if possible, use radio buttons rather than drop-down menus. Radio buttons have lower cognitive load because they make all options permanently visible so that users can easily compare them."
 
-Of course, there are times when radio buttons aren't recommended! Sliders are more appropriate for interfaces like this volume control panel and drop-down menus are more appropriate for long lists, such as a list of state abbreviations.
-
-https://www.instagram.com/p/B2L_zCYA27Z/
-
-Long drop-downs can be overwhelming to look at _and_ difficult to use if information is not well-organized. In this example with country codes, a search box would have been extremely helpful for users:
-
-https://www.instagram.com/p/CJjaACigXzN/
+Of course, there are times when radio buttons aren't recommended! Sliders are more appropriate for interfaces like a volume control panel and drop-down menus are more appropriate for long lists, such as a list of state abbreviations. Long drop-downs can be overwhelming to look at _and_ difficult to use if information is not well-organized.
 
 ## Tips for Friendlier Forms
 
@@ -86,18 +94,22 @@ https://www.youtube.com/watch?v=dKu0IUl52Z0
 In a well-developed UI, you design not only the inputs, but feedback styling as well. Error styles are most common, but you may also run across checkmarks in an input for good data, etc. If there is something wrong with a user's input, help them fix it; angry red styling may not be informative enough.
 
 <figure>
-  <Img src="./tumblr.png" alt="Screenshot of error displaying the text 'Something Went Wrong'" />
+  <Img
+    src="./tumblr.png"
+    alt="Screenshot of error displaying the text 'Something Went Wrong'"
+  />
   <figcaption>
-    Screenshot of an error on <a href="https://www.tumblr.com">Tumblr</a>. What should a user do in this situation? Clear feedback would let them know whether to try again or if their action was complete.
+    Screenshot of an error on <a href="https://www.tumblr.com">Tumblr</a>. What
+    should a user do in this situation? Clear feedback would let them know
+    whether to try again or if their action was complete.
   </figcaption>
 </figure>
 
 <figure className="mt-12 mb-6 mx-auto grid gap-12 md:grid-cols-2 items-center">
 
-  <Img
-    src="./back-pain.jpg"
-    className="w-full h-full"
-  />
+{' '}
+
+<Img src="./back-pain.jpg" className="w-full h-full" />
 
   <figcaption>
     <p>
@@ -123,10 +135,21 @@ One of the easiest upgrades is to change your button text from a generic "Submit
   author="UX Movement"
 >
   <p>
-    When users click the "Ok" button, they’re not saying "okay", they’re doing a specific action.
+    When users click the "Ok" button, they’re not saying "okay", they’re doing a
+    specific action.
   </p>
   <p>
-    An action specific button would enable users to do their task much more quickly and accurately. Not all users will read the question or message in a dialog box. Most will make decisions without reading it carefully or completely. <strong>If an action button is labeled "Ok", this could lead users who ignore dialog box text to click the wrong button. But if you label your "Ok" button with a specific action, users will be able to see what action they’re about to do</strong> without reading the dialog box.
+    An action specific button would enable users to do their task much more
+    quickly and accurately. Not all users will read the question or message in a
+    dialog box. Most will make decisions without reading it carefully or
+    completely.{' '}
+    <strong>
+      If an action button is labeled "Ok", this could lead users who ignore
+      dialog box text to click the wrong button. But if you label your "Ok"
+      button with a specific action, users will be able to see what action
+      they’re about to do
+    </strong>{' '}
+    without reading the dialog box.
   </p>
 </Blockquote>
 
@@ -140,12 +163,14 @@ If you must ask for more sensitive data, it's best to do so later in the process
 
 ### Avoid dark patterns
 
-<Blockquote
-  link="https://darkpatterns.org"
-  author="Dark Patterns"
->
+<Blockquote link="https://darkpatterns.org" author="Dark Patterns">
   <p>
-    Dark Patterns are tricks used in websites and apps that make you buy or sign up for things that you didn't mean to. When you use the web, you don’t read every word on every page - you skim read and make assumptions. If a company wants to trick you into doing something, they can take advantage of this by making a page look like it is saying one thing when it is in fact saying another.
+    Dark Patterns are tricks used in websites and apps that make you buy or sign
+    up for things that you didn't mean to. When you use the web, you don’t read
+    every word on every page - you skim read and make assumptions. If a company
+    wants to trick you into doing something, they can take advantage of this by
+    making a page look like it is saying one thing when it is in fact saying
+    another.
   </p>
 </Blockquote>
 
@@ -160,33 +185,35 @@ When dealing with complex forms, align similar types of content optically. In th
 <figure>
   <div className="grid gap-6 md:grid-cols-2 items-center">
 
-  <Img
-    src="./optical-before.jpg"
-    alt="Form without optical alignment"
-  />
+{' '}
 
-  <Img
-    src="./optical-after.png"
-    alt="Form with optical alignment"
-  />
+<Img src="./optical-before.jpg" alt="Form without optical alignment" />
+
+{' '}
+
+<Img src="./optical-after.png" alt="Form with optical alignment" />
 
   </div>
 
-  <figcaption>
-    <p>
-      The version with the red lines shows the radio and checkboxes lined up with each other, as well as the top and bottom text inputs lining up. The design here is tidier.
-    </p>
-  </figcaption>
+{' '}
 
-  <License
-    type="mit"
-    link="https://www.ssw.com.au/rules/rules-to-better-interfaces-general-usability-practices"
-    mediaType="App screenshots"
-    authors={[
-      { name: 'SSW', link: 'https://www.ssw.com.au/' },
-    ]}
-    className="mt-4"
-  />
+<figcaption>
+  <p>
+    The version with the red lines shows the radio and checkboxes lined up with
+    each other, as well as the top and bottom text inputs lining up. The design
+    here is tidier.
+  </p>
+</figcaption>
+
+{' '}
+
+<License
+  type="mit"
+  link="https://www.ssw.com.au/rules/rules-to-better-interfaces-general-usability-practices"
+  mediaType="App screenshots"
+  authors={[{ name: 'SSW', link: 'https://www.ssw.com.au/' }]}
+  className="mt-4"
+/>
 
 </figure>
 
@@ -201,12 +228,20 @@ It's important to be clear about which fields are required and which are optiona
   <p>First of all, keep the form simple. Avoid optional input fields in forms, don’t ask users to provide useless information.</p>
   <p>Show the required/optional indicators next to labels instead of input fields to make it easier to scan the form through and see what information needs to be given.</p>
 
-  <p><strong>If most of the form fields are optional:</strong></p>
-  <ul>
-    <li>Use text or asterisk (*) next to each field to indicate required fields.</li>
-    <li>If you choose asterisk, provide a legend which tells the meaning of it.</li>
-    <li>Consider bolding the required field label.</li>
-  </ul>
+{' '}
+
+<p>
+  <strong>If most of the form fields are optional:</strong>
+</p>
+<ul>
+  <li>
+    Use text or asterisk (*) next to each field to indicate required fields.
+  </li>
+  <li>
+    If you choose asterisk, provide a legend which tells the meaning of it.
+  </li>
+  <li>Consider bolding the required field label.</li>
+</ul>
 
   <p><strong>If most of the form fields are required:</strong></p>
   <ul>
