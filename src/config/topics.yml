@@ -41,3 +41,8 @@
   id: interaction
   items:
     - mobile-apps-vs-websites
+
+- label: UX Research
+  id: ux-research
+  items:
+    - bias-ethics-user-research

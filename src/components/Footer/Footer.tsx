@@ -39,7 +39,7 @@ const Footer: React.FC<IFooterProps> = () => {
         <h2 className="mb-6 text-2xl font-bold text-white">
           All Topics by Category
         </h2>
-        <div className="grid grid-cols-2 gap-6 sm:gap-12 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7">
+        <div className="grid grid-cols-2 gap-6 sm:gap-12 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
           {allTopicsYaml.nodes.map((node) => (
             <nav key={node.id}>
               <h3 className="pt-2 mb-3 font-bold tracking-wide uppercase border-t text-primary-25 border-primary-25">
