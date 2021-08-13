@@ -88,7 +88,7 @@ const DocPageTemplate: React.FC<PageProps<GatsbyTypes.DocTemplateQuery>> = ({
         <div className="mb-12 mdx-content">
           <MDXRenderer>{data.mdx.body}</MDXRenderer>
         </div>
-        {topic?.items && (
+        {topic?.items.length >= 2 && (
           <FullWidthContainer className="py-12 mt-12 bg-grey-100 dark:bg-grey-800">
             <div className="container px-4 mx-auto">
               <div className="mx-auto md:text-lg max-w-prose">

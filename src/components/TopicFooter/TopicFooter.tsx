@@ -28,7 +28,7 @@ const TopicFooter: React.FC<TopicFooterProps> = ({
 
   return (
     <>
-      <h4 className="mb-3 font-medium text-grey-900 dark:text-white">
+      <h4 className="mb-3 text-xl font-semibold text-grey-900 dark:text-white">
         Other Pages in {label}
       </h4>
       <nav className="list-none">
