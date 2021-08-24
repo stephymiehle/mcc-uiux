@@ -20,6 +20,10 @@ figure .gatsby-resp-image-wrapper {
   }
 }
 
+iframe {
+  @apply shadow-lg my-6 rounded overflow-hidden border-none;
+}
+
 .twitter-tweet,
 .instagram-media {
   margin: 1.5rem auto !important;
