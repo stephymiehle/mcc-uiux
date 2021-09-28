@@ -3791,25 +3791,6 @@ type HomepageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type HomepageQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'buildContext' | 'version'>> }>, readonly siteBuildMetadata: Maybe<Pick<SiteBuildMetadata, 'buildTime'>>, readonly headerImage: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
 
-type FooterDataQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type FooterDataQuery = { readonly siteBuildMetadata: Maybe<{ buildTime: SiteBuildMetadata['buildTime'] }>, readonly allTopicsYaml: { readonly nodes: ReadonlyArray<(
-      Pick<TopicsYaml, 'id' | 'label'>
-      & { readonly items: Maybe<ReadonlyArray<Maybe<(
-        Pick<Mdx, 'slug'>
-        & { readonly frontmatter: Maybe<Pick<Frontmatter, 'title'>> }
-      )>>> }
-    )> } };
-
-type SiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SiteMetadataQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
-      Pick<SiteSiteMetadata, 'siteUrl' | 'title' | 'description'>
-      & { readonly social: Maybe<{ readonly twitter: Maybe<Pick<SiteSiteMetadataSocialTwitter, 'username'>> }> }
-    )> }> };
-
 type SocialQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3819,6 +3800,14 @@ type SocialImageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type SocialImageQueryQuery = { readonly socialImage: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<Pick<ImageSharpFluid, 'src'>> }> }> };
+
+type SiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SiteMetadataQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
+      Pick<SiteSiteMetadata, 'siteUrl' | 'title' | 'description'>
+      & { readonly social: Maybe<{ readonly twitter: Maybe<Pick<SiteSiteMetadataSocialTwitter, 'username'>> }> }
+    )> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -3843,5 +3832,16 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 't
 type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+type FooterDataQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type FooterDataQuery = { readonly siteBuildMetadata: Maybe<{ buildTime: SiteBuildMetadata['buildTime'] }>, readonly allTopicsYaml: { readonly nodes: ReadonlyArray<(
+      Pick<TopicsYaml, 'id' | 'label'>
+      & { readonly items: Maybe<ReadonlyArray<Maybe<(
+        Pick<Mdx, 'slug'>
+        & { readonly frontmatter: Maybe<Pick<Frontmatter, 'title'>> }
+      )>>> }
+    )> } };
 
 }

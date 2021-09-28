@@ -49,3 +49,10 @@
     - conducting-market-research
     - personas
     - empathy-maps
+
+- label: User Testing
+  id: user-testing
+  items:
+    - sample-test
+    - scripts-and-resources
+    - performing-user-testing
