@@ -52,6 +52,7 @@
 - label: User Testing
   id: user-testing
   items:
+    - create-testable-scenarios
     - sample-test
     - scripts-and-resources
     - performing-user-testing
