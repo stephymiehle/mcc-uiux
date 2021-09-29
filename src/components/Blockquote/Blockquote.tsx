@@ -18,6 +18,6 @@ export const Blockquote: React.FC<IBlockquoteProps> = ({
     className="py-3 pl-6 my-5 italic border-l-4 border-primary-200"
   >
     {children}
-    <Cite author={author} title={title} link={link} />
+    {author && <Cite author={author} title={title} link={link} />}
   </blockquote>
 );

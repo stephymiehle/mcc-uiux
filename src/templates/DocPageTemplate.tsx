@@ -32,6 +32,7 @@ import { Title } from '../components/Title';
 
 const elements = {
   Blockquote,
+  blockquote: Blockquote,
   a: MdxLink,
   Link: MdxLink,
   FullWidthContainer,
